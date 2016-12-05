@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "{summary} interview with steevio"
+date:   2016-04-07 09:51:54 +0200
+categories: summary music
+---
+...When it comes to setting up for any live performance or studio jam, everything in Steevio’s sound begins with a drone made up of all the oscillators humming at once. Starting with a "fundamental" oscillator that will represent the lowest drone, later to perhaps become a kick drum or a bassline, Steevio will then tune each successive oscillator to a harmonic of that "fundamental."
+
+“By the time I'm finished I've got all the oscillators in the modular droning,” he says, “and I will adjust them to the point where it's giving me an emotion, and that comes from things happening in my life that make feel a certain way.”
+
+Once the right mood has been set, Steevio uses filters to shut everything down to silence, but still those oscillators are continuing to drone away underneath the rest of the rig. In essence, all the musical sounds that you hear in the actual performance are just snippets of that original drone being allowed to peek through in a particular way. While he isn’t sure that everyone approaches a modular performance in this way, the setting of the harmonics in the drone are an essential part of creating music that reflects Steevio’s emotions at the time.
+
+“It's all of the sound, all at once,” he says, “so if you can handle that, then you can handle little bits of it. There's something fundamentally right about it.”
+
+[https://www.xlr8r.com/features/2016/04/a-guide-to-modular-synthesis/](https://www.xlr8r.com/features/2016/04/a-guide-to-modular-synthesis/)

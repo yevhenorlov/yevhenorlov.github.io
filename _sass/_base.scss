@@ -164,6 +164,8 @@ pre {
     margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
+    // border: 2px #f1f1f1 dashed;
+
     @extend %clearfix;
 
     @include media-query($on-laptop) {

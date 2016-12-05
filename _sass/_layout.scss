@@ -196,7 +196,7 @@
     list-style: none;
 
     > li {
-        margin-bottom: $spacing-unit;
+        margin-bottom: $spacing-unit / 2;
     }
 }
 
@@ -207,7 +207,7 @@
 
 .post-link {
     display: block;
-    font-size: $base-font-size * 1.618;
+    font-size: $base-font-size;
 }
 
 /**

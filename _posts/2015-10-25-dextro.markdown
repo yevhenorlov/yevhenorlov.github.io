@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[summary] interview with dextro"
+title:  "{summary} interview with dextro"
 date:   2015-10-25 17:47:47 +0200
 categories: summary music
 ---

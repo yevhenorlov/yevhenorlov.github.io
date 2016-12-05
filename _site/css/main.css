@@ -44,7 +44,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 14px; }
+  font-size: 12.4px; }
 
 /**
  * Lists
@@ -283,15 +283,15 @@ pre {
   margin-left: 0;
   list-style: none; }
   .post-list > li {
-    margin-bottom: 30px; }
+    margin-bottom: 15px; }
 
 .post-meta {
-  font-size: 14px;
+  font-size: 12.4px;
   color: #828282; }
 
 .post-link {
   display: block;
-  font-size: 25.888px; }
+  font-size: 16px; }
 
 /**
  * Landing Page
