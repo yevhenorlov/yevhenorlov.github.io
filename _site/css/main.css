@@ -113,16 +113,16 @@ pre {
  * Wrapper
  */
 .wrapper, .landing-wrapper {
-  max-width: -webkit-calc(800px - (30px * 2));
-  max-width: calc(800px - (30px * 2));
+  max-width: -webkit-calc(760px - (30px * 2));
+  max-width: calc(760px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 760px) {
     .wrapper, .landing-wrapper {
-      max-width: -webkit-calc(800px - (30px));
-      max-width: calc(800px - (30px));
+      max-width: -webkit-calc(760px - (30px));
+      max-width: calc(760px - (30px));
       padding-right: 15px;
       padding-left: 15px; } }
 
@@ -199,6 +199,8 @@ pre {
           height: 15px; }
           .site-nav .menu-icon > svg path {
             fill: #424242; }
+        .site-nav .menu-icon:hover > svg path {
+          fill: #fff; }
       .site-nav .trigger {
         clear: both;
         display: none; }
@@ -209,10 +211,6 @@ pre {
         display: block;
         padding: 5px 10px;
         margin-left: 20px; }
-        .site-nav .page-link:visited {
-          color: #000;
-          text-decoration: none;
-          background-color: inherit; }
         .site-nav .page-link:not(:last-child) {
           margin-right: 0; } }
 
@@ -226,10 +224,11 @@ pre {
   font-size: 18px;
   margin-bottom: 15px; }
 
-.contact-list,
-.social-media-list {
+.contact-list {
   list-style: none;
   margin-left: 0; }
+  .contact-list > li {
+    margin-bottom: 18.54141px; }
 
 .copyright {
   font-size: 9.88875px; }
@@ -256,7 +255,7 @@ pre {
   width: -webkit-calc(45% - (30px / 2));
   width: calc(45% - (30px / 2)); }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 760px) {
   .footer-col-1,
   .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
@@ -319,7 +318,7 @@ a.landing-title {
   font-size: 25.888px;
   letter-spacing: -1px;
   line-height: 1; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 760px) {
     .post-title {
       font-size: 36px; } }
 
@@ -327,17 +326,17 @@ a.landing-title {
   margin-bottom: 30px; }
   .post-content h2 {
     font-size: 32px; }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 760px) {
       .post-content h2 {
         font-size: 28px; } }
   .post-content h3 {
     font-size: 26px; }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 760px) {
       .post-content h3 {
         font-size: 22px; } }
   .post-content h4 {
     font-size: 20px; }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 760px) {
       .post-content h4 {
         font-size: 18px; } }
 
