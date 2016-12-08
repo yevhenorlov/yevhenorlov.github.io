@@ -11,7 +11,7 @@ email: studio@yevhenorlov.com
 description: > # this means to ignore newlines until "baseurl:"
   computer music, generative art, front-end, creative coding
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yevhenorlov.github.io" # the base hostname & protocol for your site
+url: "http://yevhenorlov.com" # the base hostname & protocol for your site
 # twitter_username: yevhenorlov
 # github_username:  yevhenorlov
 
