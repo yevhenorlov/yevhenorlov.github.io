@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "{summary} interview with mark fell 2"
+date:   2016-09-30 13:38:26 +0200
+categories: summary music
+---
+It’s good to be fixated by technology—and I clearly am. But that fixation should be in terms of how it behaves, not what it looks like on the shelf or how much you paid for it.
+
+Don’t get hung up on trying to create the perfect studio environment—there isn’t one. I have known so many people who get fixated on what equipment they need or want, instead of using what they have. I also know people who spend more time perpetually rebuilding their studio rather than actually using it to make music.
+
+Likewise, don’t worry about how good or bad your speakers are. I made my first few albums on a pair of second-hand bottom-of-the-range hi fi speakers that should really have been thrown away years before I acquired them. ...Over the years most listeners wrongly assumed that those early pieces had been made on expensive monitors, perhaps in some research institute. But the opposite was true: these tracks were made on crap speakers in the spare room of a social housing project, in a small town in the North of England. It’s comforting to know that a piece of work which won acclaim at ARS Electronica was made with such meagre resources, compared to several other submissions produced in some of the world's most highly funded research centres. Even these days I use a pair of reasonably cheap studio monitors or old hi fi speakers. In my experience, if you get your work sounding good in your studio, whatever the speakers are, a skilful mastering engineer will be able to make the final thing sound good too.
+
+If a piece of music is not working, simply adding more and more components will not rescue it. Instead, I find it helps to be selective and subtractive, and to keep things as simple as possible. 
+
+...I still enjoy messing around on a synthesizer or building max patches, and I can easily spend the whole night doing this. But this pleasurable side is almost totally outweighed by the difficulty of actually making work. My advice is this: face up to the fact that music making is mentally and physically demanding; it’s hard, not fun, and probably unhealthy. Because of this I recommend taking lots of breaks, doing housework, walking to the shops, eating good food and so on. Also, I find that it helps if I listen at a relatively quiet level, and to listen carefully. Your ears, like anything else, get tired if you use them too much.
+
+...In my experience, a clear idea is only any use as a starting point; it is never a destination. It is what you uncover in the process of making a piece of music that makes it interesting. Often, in the process of making work it’s likely that you come up with something quite familiar, and for the music producer (as well as audiences), this can have an instant appeal. A good example is an analog step sequencer triggering a synthesizer with variable filter cutoff with some form of synchronized delay. Let’s admit it: we have all done it, and probably enjoyed it. But for me the instant appeal of the familiar is perhaps less engaging than the ambivalent relationship to unfamiliar musical structures. So, I have this awareness that the familiar has a sort of gravitational pull which I try to avoid; instead, I try to be sensitive to the unfamiliar structures that I encounter while working with technologies and processes.
+
+...When I first started making music I thought that tracks had to be complicated with lots of different ingredients, levels of energy and sections. It took me a while to realize this was a problem. I remember spending about a year on one track that just kept getting worse and worse. My approach now is to make lots of related tracks that explore the same materials and processes, but each is a different outcome or combination of those materials and processes.
+
+...for me I found that I simply could not make any kind of decent music using time line environments. With the benefit of several years hindsight, I think the problem is (and was) how those timeline systems structure time—how they position you as a composer outside the music. In effect, your role becomes one of organizing bits of information in a grid like space, where you can see the beginning, middle and end, and all the layers running alongside one another.
+
+Find some people you can trust and ask their advice lots about everything you do. Community is important, and like any other profession some form of peer support can be very helpful. Don’t move to London or Berlin to further your career. It might work but it’s not worth it.
+
+[https://www.xlr8r.com/features/2016/06/artist-tips-mark-fell/](https://www.xlr8r.com/features/2016/06/artist-tips-mark-fell/)

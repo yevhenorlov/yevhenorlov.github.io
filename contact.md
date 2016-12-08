@@ -1,21 +1,16 @@
 ---
-layout: page
+layout: default
 title: contact
 permalink: /contact
 ---
 <ul class="contact-list">
-  <li>{{ site.title }}</li>
   <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-  {% if site.github_username %}
   <li>
-    {% include icon-github.html username=site.github_username %}
+    <a href="http://twitter.com/yevhenorlov">tw</a> | 
+    <a href="http://soundcloud.com/yvhn">sc</a> | 
+    <a href="http://github.com/yevhenorlov">gh</a> | 
+    <a href="http://linkedin.com/in/yevhenorlov">in</a>
   </li>
-  {% endif %}
-
-  {% if site.twitter_username %}
-  <li>
-    {% include icon-twitter.html username=site.twitter_username %}
-  </li>
-  {% endif %}
-
 </ul>
+
+

@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "{summary} mark fell: patterns in radical spectra"
+date:   2016-09-30 12:56:01 +0200
+categories: summary music
+---
+Why post-techno?
+
+Like many of my peers I am uncomfortable with the term ‘post-techno’, unfortunately most of us also agree there are few alternatives and find those even more problematic: intelligent dance music (IDM) places an undue emphasis on intellect; electronic dance music (EDM) is too general to be meaningful; and others awkwardly assert beliefs about malfunctioning technologies and creative process. My preferred term, and one gaining some popularity with my peers, is Unusual Electronic Music Typically Without Academic Affiliation (UEMTWAA)
+
+Table 1: Classification of a-rhythmic slow-change works in unusual electronic music typically without academic affiliation.
+
+![table 1]({{ site.url }}/assets/images/mark-fell-table1.jpg)
+
+...My intention in Long Mix NYC (the title itself clearly a reference to Cage) was to undermine the non-teleological, progression-free, time as vertical rather than linear, the sense of being outside time. Thus. I placed time (in the form of a large LED clock) centre stage, incessantly reminding the audience of exactly how much time they had spent, and more importantly how much more time was left of the performance, how long to go before their meal, or alcohol intake, or whatever they had planned/intended/expected/designed (the teleological, consequential). In opposition to the idealised ‘vertical’ time the piece therefore emphasises a very different temporal abstraction - the western clock-time that “ticks on even if nothing occurs; its emancipation from events is ensured by its own subjugation of an ongoing numbered measure.” (Swain, 1993).
+
+[http://www.divergencepress.com/Journal/JournalIssue/tabid/85/ID/28/categoryId/4/Patterns-in-Radical-Spectra.aspx](http://www.divergencepress.com/Journal/JournalIssue/tabid/85/ID/28/categoryId/4/Patterns-in-Radical-Spectra.aspx)

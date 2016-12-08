@@ -73,6 +73,13 @@
                     fill: $grey-color-dark;
                 }
             }
+            &:hover {
+                > svg {
+                    path {
+                        fill: $background-color;
+                    }
+                }
+            }
         }
 
         .trigger {
@@ -89,11 +96,11 @@
             display: block;
             padding: 5px 10px;
 
-            &:visited {
-                color: $brand-color;
-                text-decoration: none;
-                background-color: inherit;
-            }
+            // &:visited {
+            //     // color: $brand-color;
+            //     // text-decoration: none;
+            //     // background-color: inherit;
+            // }
 
             &:not(:last-child) {
                 margin-right: 0;
@@ -119,10 +126,14 @@
     margin-bottom: $spacing-unit / 2;
 }
 
-.contact-list,
-.social-media-list {
+.contact-list {
+    // font-size: $base-font-size / 1.618;
     list-style: none;
     margin-left: 0;
+
+    > li {
+        margin-bottom: $spacing-unit / 1.618;
+    }
 }
 
 .copyright {
