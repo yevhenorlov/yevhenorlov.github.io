@@ -73,14 +73,14 @@
                     fill: $grey-color-dark;
                 }
             }
-        &:hover {
-            > svg {
-                path {
-                    fill: $background-color;
+            &:hover {
+                > svg {
+                    path {
+                        fill: $background-color;
+                    }
                 }
             }
         }
-        
 
         .trigger {
             clear: both;
