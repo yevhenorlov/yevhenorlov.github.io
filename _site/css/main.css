@@ -66,8 +66,7 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #000;
-  text-decoration: none; }
+  color: #000; }
   a:visited {
     color: #aaa; }
   a:hover {
@@ -151,6 +150,8 @@ pre {
 .site-header {
   min-height: 56px;
   position: relative; }
+  .site-header * {
+    text-decoration: none; }
 
 .site-title {
   color: #000;
@@ -290,7 +291,8 @@ pre {
 
 .post-link {
   display: block;
-  font-size: 16px; }
+  font-size: 16px;
+  text-decoration: none; }
 
 /**
  * Landing Page
@@ -301,12 +303,33 @@ pre {
   left: 50%;
   transform: translate(-50%, -50%); }
 
-a.landing-title {
+#landing-title, #landing-title * {
   font-size: 25.888px;
-  color: #000; }
-  a.landing-title:hover {
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 0; }
+  #landing-title:hover, #landing-title *:hover {
+    text-decoration: inherit;
     background-color: inherit; }
+
+#landing-subtitle {
+  font-size: 12.8px;
+  margin-bottom: 30px; }
+
+.landing-list {
+  list-style-type: none;
+  margin-left: 0; }
+  .landing-list > li {
+    margin-bottom: 15px; }
+    .landing-list > li a {
+      text-decoration: none;
+      color: #000; }
+      .landing-list > li a:hover {
+        color: #fff; }
+
+.rss-subscribe {
+  font-size: 9.88875px;
+  margin-top: 30px; }
 
 /**
  * Posts
@@ -315,12 +338,12 @@ a.landing-title {
   margin-bottom: 30px; }
 
 .post-title {
-  font-size: 25.888px;
+  font-size: 19.2px;
   letter-spacing: -1px;
   line-height: 1; }
   @media screen and (max-width: 760px) {
     .post-title {
-      font-size: 36px; } }
+      font-size: 19.2px; } }
 
 .post-content {
   margin-bottom: 30px; }
@@ -339,6 +362,16 @@ a.landing-title {
     @media screen and (max-width: 760px) {
       .post-content h4 {
         font-size: 18px; } }
+
+/**
+ * Works
+ */
+.works-content {
+  font-size: 13.33333px; }
+  .works-content ul {
+    list-style-type: square; }
+    .works-content ul li {
+      margin-bottom: 18.54141px; }
 
 /**
  * Syntax highlighting styles

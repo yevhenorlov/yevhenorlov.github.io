@@ -3,11 +3,13 @@ layout: landing
 ---
 
 <div class="home">
-  <p><a class="landing-title" href="{{ "/blog" | prepend: site.baseurl }}">{{ site.title | upcase }} | {{ "
-⠠⠽⠑⠧⠓⠑⠝ ⠠⠕⠗⠇⠕⠧" | upcase }}</a></p>
-  <p>computer music, generative art, front-end, creative coding<br />
-  <span style="background-color:red; color:white">{under construction}</span></p>
-
+  <h1 id="landing-title"><a href="{{ "works" | prepend: site.baseurl }}">{{ site.title | upcase }}</a></h1>
+  <h2 id="landing-subtitle">{{ site.description }}</h2>
+	<ul class="landing-list">
+    <li><a class="landing-link" href="{{ "works" | prepend: site.baseurl }}">.works</a></li>
+    <li><a class="landing-link" href="{{ "blog" | prepend: site.baseurl }}">.blog</a></li>
+    <li><a class="landing-link" href="{{ "contact" | prepend: site.baseurl }}">.contact</a></li>
+	</ul>
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>

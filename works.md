@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: works
 title: works
 permalink: /works
 ---
@@ -16,6 +16,7 @@ as microsconn
 - [la matrice performative](http://microsconn.bandcamp.com/album/la-matrice-performative) (2015)
 
 with Sew Saw Thief
+- live @ [Art Meetings Festival 2014](http://meetings2014.azh.com.ua) ([invitation video](https://www.youtube.com/watch?v=KGXRJY0T3WQ))
 - Ferry Tales (2013)
 
 as The Eardrummer

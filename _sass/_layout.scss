@@ -9,6 +9,10 @@
 
     // Positioning context for the mobile navigation icon
     position: relative;
+
+    * {
+        text-decoration: none;
+    }
 }
 
 .site-title {
@@ -219,7 +223,10 @@
 .post-link {
     display: block;
     font-size: $base-font-size;
+    text-decoration: none;
 }
+
+
 
 /**
  * Landing Page
@@ -233,15 +240,44 @@
     // background-color: $season-color;
 }
 
- a.landing-title {
+ #landing-title, #landing-title * {
     // font-family: widespace;
     font-size: $base-font-size * 1.618;
     color: $brand-color;
+    text-decoration: none;
+    margin-bottom: 0;
     &:hover {
-        text-decoration: none;
+        text-decoration: inherit;
         background-color: inherit;
     }
  }
+
+ #landing-subtitle {
+    font-size: $base-font-size * 0.8;
+    margin-bottom: $spacing-unit;
+ }
+
+ .landing-list {
+    list-style-type: none;
+    margin-left: 0;
+
+    > li {
+        margin-bottom: $spacing-unit / 2;
+        a {
+            text-decoration: none;
+            color: $brand-color;
+        &:hover {
+            color: $background-color;
+        }
+        }
+    }
+}
+
+.rss-subscribe {
+    font-size: $base-font-size / 1.618;
+    margin-top: $spacing-unit;
+ }
+
 
 /**
  * Posts
@@ -251,12 +287,12 @@
 }
 
 .post-title {
-    font-size: $base-font-size * 1.618;
+    font-size: $base-font-size * 1.2;
     letter-spacing: -1px;
     line-height: 1;
 
     @include media-query($on-laptop) {
-        font-size: 36px;
+        font-size: $base-font-size * 1.2;
     }
 }
 
@@ -284,6 +320,20 @@
 
         @include media-query($on-laptop) {
             font-size: 18px;
+        }
+    }
+}
+
+/**
+ * Works
+ */
+
+ .works-content {
+    font-size: $base-font-size / 1.2;
+    ul {
+        list-style-type: square;
+        li {
+        margin-bottom: $spacing-unit / 1.618;
         }
     }
 }
