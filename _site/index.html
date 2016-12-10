@@ -24,6 +24,11 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="/">
   <link rel="alternate" type="application/rss+xml" title="yevhen orlov" href="/feed.xml">
+  <!-- jquery -->
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 </head>
 
 
@@ -32,6 +37,7 @@
 
     <div class="page-content">
       <div class="landing-wrapper">
+      <script>$('.landing-wrapper').hide();</script>
         <div class="home">
   <h1 id="landing-title"><a href="works">YEVHEN ORLOV</a></h1>
   <!-- <img src="/assets/images/landing-img-01.png"> -->
@@ -46,15 +52,11 @@
   <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
 
 </div>
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+
 <script>
-$('.landing-wrapper').hide();
 
 var path = '/assets/images/lpi/',
-    imgs = ['01.png', '02.png', '03.png', '04.png', '05.png', '06.png', '07.png', '08.png'],
+    imgs = ['01.png', '02.png', '03.png', '04.png', '05.png', '06.png', '07.png'],
     i = Math.floor(Math.random()*imgs.length);
 $('#lpi').append("<img src='"+path+imgs[i]+"'>");
 
