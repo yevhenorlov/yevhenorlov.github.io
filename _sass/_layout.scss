@@ -252,6 +252,11 @@
     }
  }
 
+ #lpi {
+    min-width: 300px;
+    height: 40px;
+ }
+
  #landing-subtitle {
     font-size: $base-font-size * 0.8;
     margin-bottom: $spacing-unit;

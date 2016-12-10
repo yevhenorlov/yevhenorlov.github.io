@@ -18,7 +18,7 @@
 </script>
 
   <title>yevhen orlov</title>
-  <meta name="description" content="computer music, generative art, front-end, creative coding
+  <meta name="description" content="computer music, front-end, creative coding
 ">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -34,7 +34,9 @@
       <div class="landing-wrapper">
         <div class="home">
   <h1 id="landing-title"><a href="works">YEVHEN ORLOV</a></h1>
-  <h2 id="landing-subtitle">computer music, generative art, front-end, creative coding
+  <!-- <img src="/assets/images/landing-img-01.png"> -->
+  <div id="lpi"></div>
+  <h2 id="landing-subtitle">computer music, front-end, creative coding
 </h2>
 	<ul class="landing-list">
     <li><a class="landing-link" href="works">.works</a></li>
@@ -44,6 +46,22 @@
   <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
 
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script>
+$('.landing-wrapper').hide();
+
+var path = '/assets/images/lpi/',
+    imgs = ['01.png', '02.png', '03.png', '04.png', '05.png', '06.png', '07.png', '08.png'],
+    i = Math.floor(Math.random()*imgs.length);
+$('#lpi').append("<img src='"+path+imgs[i]+"'>");
+
+$( document ).ready(function() {
+	$('.landing-wrapper').fadeIn(2000);
+});
+</script>
 
       </div>
     </div>

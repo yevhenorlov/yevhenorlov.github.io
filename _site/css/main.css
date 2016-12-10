@@ -312,6 +312,10 @@ pre {
     text-decoration: inherit;
     background-color: inherit; }
 
+#lpi {
+  min-width: 300px;
+  height: 40px; }
+
 #landing-subtitle {
   font-size: 12.8px;
   margin-bottom: 30px; }
