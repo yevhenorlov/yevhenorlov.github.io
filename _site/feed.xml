@@ -6,8 +6,8 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Dec 2016 18:28:34 +0200</pubDate>
-    <lastBuildDate>Sat, 10 Dec 2016 18:28:34 +0200</lastBuildDate>
+    <pubDate>Sun, 11 Dec 2016 13:30:45 +0200</pubDate>
+    <lastBuildDate>Sun, 11 Dec 2016 13:30:45 +0200</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -90,6 +90,52 @@
         
         
         <category>summary</category>
+        
+        <category>music</category>
+        
+      </item>
+    
+      <item>
+        <title>taking the stage: programme of contemporary uk drama by british council</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/images/lungs-photo.jpg&quot; alt=&quot;photo&quot; /&gt;
+photo credit: Vasyl Shevchenko&lt;/p&gt;
+</description>
+        <pubDate>Mon, 26 Sep 2016 13:53:11 +0300</pubDate>
+        <link>/my-works/music/2016/09/26/taking-the-stage.html</link>
+        <guid isPermaLink="true">/my-works/music/2016/09/26/taking-the-stage.html</guid>
+        
+        
+        <category>my-works</category>
+        
+        <category>music</category>
+        
+      </item>
+    
+      <item>
+        <title>electroacoustic: dimensions (soundcheck from yesterday)</title>
+        <description>&lt;div id=&quot;fb-root&quot;&gt;&lt;/div&gt;
+&lt;script&gt;(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = &quot;//connect.facebook.net/en_GB/sdk.js#xfbml=1&amp;version=v2.8&quot;;
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, &#39;script&#39;, &#39;facebook-jssdk&#39;));&lt;/script&gt;
+
+&lt;div class=&quot;fb-post&quot; data-href=&quot;https://www.facebook.com/newmusicdays/videos/1759304864310478/&quot; data-width=&quot;500&quot; data-show-text=&quot;false&quot;&gt;&lt;blockquote cite=&quot;https://www.facebook.com/newmusicdays/videos/1759304864310478/&quot; class=&quot;fb-xfbml-parse-ignore&quot;&gt;&lt;p&gt;&amp;#x41c;&amp;#x44b; &amp;#x433;&amp;#x43e;&amp;#x442;&amp;#x43e;&amp;#x432;&amp;#x438;&amp;#x43c;&amp;#x441;&amp;#x44f;. 
+
+&amp;#x41f;&amp;#x440;&amp;#x43e;&amp;#x433;&amp;#x440;&amp;#x430;&amp;#x43c;&amp;#x43c;&amp;#x430;: 
+
+Jaime Reis - Omniscience is a Collective - Part 1 (2009/10)
+
+Jaime Reis - Phonopolis...&lt;/p&gt;Posted by &lt;a href=&quot;https://www.facebook.com/newmusicdays/&quot;&gt;Kyiv Contemporary Music Days&lt;/a&gt; on&amp;nbsp;&lt;a href=&quot;https://www.facebook.com/newmusicdays/videos/1759304864310478/&quot;&gt;Saturday, 10 September 2016&lt;/a&gt;&lt;/blockquote&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sun, 11 Sep 2016 11:43:12 +0300</pubDate>
+        <link>/my-works/music/2016/09/11/kcmd-soundcheck.html</link>
+        <guid isPermaLink="true">/my-works/music/2016/09/11/kcmd-soundcheck.html</guid>
+        
+        
+        <category>my-works</category>
         
         <category>music</category>
         
@@ -204,50 +250,6 @@
         <pubDate>Thu, 26 May 2016 00:22:46 +0300</pubDate>
         <link>/summary/music/2016/05/26/autechre2.html</link>
         <guid isPermaLink="true">/summary/music/2016/05/26/autechre2.html</guid>
-        
-        
-        <category>summary</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>{summary} interview with raster-noton</title>
-        <description>&lt;p&gt;…we need to survive [laughs], because it’s our lives. It’s not only a company, it’s really a vision for a whole life. You could call Raster-Noton a record label or a company, but in the end, for us, it’s much more like a platform to do what we want to do. I think it survived because it’s not a maximum profit-based idea. We want to release our music or music that we find interesting.&lt;/p&gt;
-
-&lt;p&gt;…We saw this with Mille Plateaux, for instance, where at some point they released four records every week. I think it was part of the problem they created on their own. We said, “We have a very limited audience, we would like that everybody is able to buy the CD. Let’s not put out four CDs a week. Let’s put out one CD a month.” So then people can still follow, and on a real budget it’s OK to buy one. Until today, we have releases that sell around 1000 copies.&lt;/p&gt;
-
-&lt;p&gt;…we all have a very big backbone in visual arts. And if you look from the visual arts side, an artist’s career as we know the classic artist career, they work on one topic their whole life. They have their creative style. So for us, it was actually more normal that you create a kind of style, and that you stick with this style and you work on one topic.&lt;/p&gt;
-
-&lt;p&gt;…the main thing is that we’re trying to develop a language over the years of what we are. You say, you’ve worked all these years and you worked inside developing your own language. As a label we’ve done that. And I think this is a pure artistic idea.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.residentadvisor.net/features/2712&quot;&gt;https://www.residentadvisor.net/features/2712&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 20 May 2016 07:52:47 +0300</pubDate>
-        <link>/summary/music/2016/05/20/raster-noton.html</link>
-        <guid isPermaLink="true">/summary/music/2016/05/20/raster-noton.html</guid>
-        
-        
-        <category>summary</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>{summary} interview with keith fullerton whitman 2</title>
-        <description>&lt;p&gt;…I found a quick cheap and dirty way to make these neat little canons, little Bach-like motor rhythms, very straight, 16th note, 8th note, pulsing, beautiful sounds. It’s a very small part of the patch, it’s just like four oscillators, the slow one doing the rate of the melody and the other one doing the clocking of the melody, going through a quantiser. Simple, just a few modules. And then I play with that for a few weeks, and I’m getting good results. Detuning each oscillator so there’s static intervals in there, like static third, static fourths, octaves of course. And then I got to a set of rules within the piece the more I played with it.&lt;/p&gt;
-
-&lt;p&gt;…It was almost like the exploration itself dictated the piece more than I was as a composer.&lt;/p&gt;
-
-&lt;p&gt;…And then very slowly built it from one tiny little case with just eight modules, then one suitacase, then two suitcases, and then it just got ridiculous. In one year it went from the string quartet to like the Vienna Symphonic version of it. It’s no better, it’s just gets more complicated with the same tonality. And then I had drums, I was having this kick drum every ten beats, and hi-hat every, like, 17… it was getting like prime number things, it was getting Prog. It was Pentangle turns into Genesis.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.thewire.co.uk/in-writing/themire/20880/the-keith-fullerton-whitman-notebooks-&quot;&gt;http://www.thewire.co.uk/in-writing/themire/20880/the-keith-fullerton-whitman-notebooks-&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 09 Apr 2016 16:10:28 +0300</pubDate>
-        <link>/summary/music/2016/04/09/kfw2.html</link>
-        <guid isPermaLink="true">/summary/music/2016/04/09/kfw2.html</guid>
         
         
         <category>summary</category>
