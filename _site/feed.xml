@@ -6,9 +6,26 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 11 Dec 2016 13:41:09 +0200</pubDate>
-    <lastBuildDate>Sun, 11 Dec 2016 13:41:09 +0200</lastBuildDate>
+    <pubDate>Wed, 28 Dec 2016 18:45:01 +0200</pubDate>
+    <lastBuildDate>Wed, 28 Dec 2016 18:45:01 +0200</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>entropia (i-iii)</title>
+        <description>&lt;p&gt;stereo version of my 8-channel piece, composed for and performed at ‘Electroacoustic: Dimensions’ concert (Kyiv Contemporary Music Days festival, 2016.09.10)&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/299919674&amp;amp;color=000000&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Wed, 28 Dec 2016 18:37:00 +0200</pubDate>
+        <link>/my-works/music/2016/12/28/entropia.html</link>
+        <guid isPermaLink="true">/my-works/music/2016/12/28/entropia.html</guid>
+        
+        
+        <category>my-works</category>
+        
+        <category>music</category>
+        
+      </item>
     
       <item>
         <title>{summary} interview with mark fell 2</title>
@@ -232,29 +249,6 @@ Jaime Reis - Phonopolis...&lt;/p&gt;Posted by &lt;a href=&quot;https://www.faceb
         <category>summary</category>
         
         <category>zen</category>
-        
-      </item>
-    
-      <item>
-        <title>{summary} interview with autechre 2</title>
-        <description>&lt;p&gt;&lt;strong&gt;Pitchfork: Once you guys were asked about progress and you said that every record was an asymptotic approach to something– that there wasn’t a perfect Autechre record, just a series of tangential curves towards and away from the same point…is that point itself in motion? Is it changing?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Autechre: We’re kind of following it, so yeah, it’s traveling but not with any given trajectory. It’s bouncing around. It’s confined by moving walls.&lt;/p&gt;
-
-&lt;p&gt;…We work for about a year, usually a bit longer, on an album, and then pick out tracks from what we’ve done that seem to have a thread, and then put them into an order. Then if there’s any changes that need making, a snip here and there, then we make them and there you go, that’s the album…But it never gets defined in language up until the point that we start doing interviews. Not by us, certainly. And only by inference and conversation, you know, some journalist saying “these tracks feel really…. whatever” and you just sit there saying “Okay”. [laughs]&lt;/p&gt;
-
-&lt;p&gt;…People’s focus– you can’t ever take it for granted. It’s absolute. It’s essential. When you listen to a track your focus shifts and moves around within it; obviously, we’re really aware of that, and that’s a big part of what we do. [the track itself] is often not that complex, it’s just that the way that you listen to it is, the way that you are guided through it as you listen.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://pitchfork.com/features/interview/6012-autechre/&quot;&gt;http://pitchfork.com/features/interview/6012-autechre/&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 26 May 2016 00:22:46 +0300</pubDate>
-        <link>/summary/music/2016/05/26/autechre2.html</link>
-        <guid isPermaLink="true">/summary/music/2016/05/26/autechre2.html</guid>
-        
-        
-        <category>summary</category>
-        
-        <category>music</category>
         
       </item>
     
