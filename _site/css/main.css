@@ -11,7 +11,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Lucida Grande", Lucida, Arial, sans-serif;
+  font: 400 14.5px/1.5 "Lucida Grande", Lucida, Arial, sans-serif;
   color: #575757;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
@@ -44,7 +44,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 12.4px; }
+  font-size: 11.2375px; }
 
 /**
  * Lists
@@ -112,16 +112,16 @@ pre {
  * Wrapper
  */
 .wrapper, .landing-wrapper {
-  max-width: -webkit-calc(760px - (30px * 2));
-  max-width: calc(760px - (30px * 2));
+  max-width: -webkit-calc(680px - (30px * 2));
+  max-width: calc(680px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 680px) {
     .wrapper, .landing-wrapper {
-      max-width: -webkit-calc(760px - (30px));
-      max-width: calc(760px - (30px));
+      max-width: -webkit-calc(680px - (30px));
+      max-width: calc(680px - (30px));
       padding-right: 15px;
       padding-left: 15px; } }
 
@@ -155,7 +155,7 @@ pre {
 
 .site-title {
   color: #000;
-  font-size: 25.888px;
+  font-size: 23.461px;
   font-weight: 300;
   line-height: 56px;
   letter-spacing: -1px;
@@ -232,7 +232,7 @@ pre {
     margin-bottom: 18.54141px; }
 
 .copyright {
-  font-size: 9.88875px; }
+  font-size: 8.96168px; }
 
 .footer-col-wrapper {
   font-size: 15px;
@@ -256,7 +256,7 @@ pre {
   width: -webkit-calc(45% - (30px / 2));
   width: calc(45% - (30px / 2)); }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 680px) {
   .footer-col-1,
   .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
@@ -277,7 +277,7 @@ pre {
   padding: 30px 0; }
 
 .page-heading {
-  font-size: 32px; }
+  font-size: 29px; }
 
 .post-list {
   margin-left: 0;
@@ -286,12 +286,12 @@ pre {
     margin-bottom: 15px; }
 
 .post-meta {
-  font-size: 12.4px;
+  font-size: 11.2375px;
   color: #828282; }
 
 .post-link {
   display: block;
-  font-size: 16px;
+  font-size: 14.5px;
   text-decoration: none; }
 
 /**
@@ -305,7 +305,7 @@ pre {
   transform: translate(-50%, -50%); }
 
 #landing-title, #landing-title * {
-  font-size: 25.888px;
+  font-size: 23.461px;
   color: #000;
   text-decoration: none;
   margin-bottom: 0; }
@@ -314,14 +314,14 @@ pre {
     background-color: inherit; }
   @media screen and (max-width: 600px) {
     #landing-title, #landing-title * {
-      font-size: 20.8px; } }
+      font-size: 18.85px; } }
 
 #landing-subtitle {
-  font-size: 12.8px;
+  font-size: 11.6px;
   margin-bottom: 30px; }
   @media screen and (max-width: 600px) {
     #landing-subtitle {
-      font-size: 11.2px; } }
+      font-size: 10.15px; } }
 
 .landing-list {
   list-style-type: none;
@@ -335,7 +335,7 @@ pre {
         color: #fff; }
 
 .rss-subscribe {
-  font-size: 9.88875px;
+  font-size: 8.96168px;
   margin-top: 30px; }
 
 /**
@@ -345,28 +345,28 @@ pre {
   margin-bottom: 30px; }
 
 .post-title {
-  font-size: 19.2px;
+  font-size: 18.85px;
   letter-spacing: -1px;
   line-height: 1; }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 680px) {
     .post-title {
-      font-size: 19.2px; } }
+      font-size: 18.85px; } }
 
 .post-content {
   margin-bottom: 30px; }
   .post-content h2 {
     font-size: 32px; }
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 680px) {
       .post-content h2 {
         font-size: 28px; } }
   .post-content h3 {
     font-size: 26px; }
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 680px) {
       .post-content h3 {
         font-size: 22px; } }
   .post-content h4 {
     font-size: 20px; }
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 680px) {
       .post-content h4 {
         font-size: 18px; } }
 
@@ -374,7 +374,7 @@ pre {
  * Works
  */
 .works-content {
-  font-size: 13.33333px; }
+  font-size: 12.08333px; }
   .works-content ul {
     list-style-type: square; }
     .works-content ul li {
