@@ -16,14 +16,3 @@ layout: landing
 
 </div>
 
-<script>
-
-var path = '{{ site.url }}/assets/images/lpi/',
-    imgs = ['01.png', '02.png', '03.png', '04.png', '05.png', '06.png', '07.png'],
-    i = Math.floor(Math.random()*imgs.length);
-$('#lpi').append("<img src='"+path+imgs[i]+"'>");
-
-$( document ).ready(function() {
-	$('.landing-wrapper').fadeIn(2000);
-});
-</script>
