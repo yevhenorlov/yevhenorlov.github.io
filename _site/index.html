@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,66 +13,52 @@
 
   ga('create', 'UA-88752842-1', 'auto');
   ga('send', 'pageview');
+  </script>
 
-</script>
-
-<!-- favicon -->
-<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
 
 
   <title>yevhen orlov</title>
-  <meta name="description" content="computer music, front-end, creative coding
-">
-
+  <meta name="description" content="computer music, front-end, creative coding">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="/">
   <link rel="alternate" type="application/rss+xml" title="yevhen orlov" href="/feed.xml">
   <!-- jquery -->
-  <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
 </head>
 
-
-  <body>
-
-
-    <div class="page-content">
-      <div class="landing-wrapper">
+<body>
+  <div class="page-content">
+    <div class="landing-wrapper">
       <script>$('.landing-wrapper').hide();</script>
-        <div class="home">
-  <h1 id="landing-title"><a href="works">YEVHEN ORLOV</a></h1>
-  <!-- <img src="/assets/images/landing-img-01.png"> -->
-  <div id="lpi"></div>
-  <h2 id="landing-subtitle">computer music, front-end, creative coding
-</h2>
-	<ul class="landing-list">
-    <li><a class="landing-link" href="works">.works</a></li>
-    <li><a class="landing-link" href="blog">.blog</a></li>
-    <li><a class="landing-link" href="contact">.contact</a></li>
-	</ul>
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
-
-<script>
-
-var path = '/assets/images/lpi/',
-    imgs = ['01.png', '02.png', '03.png', '04.png', '05.png', '06.png', '07.png'],
-    i = Math.floor(Math.random()*imgs.length);
-$('#lpi').append("<img src='"+path+imgs[i]+"'>");
-
-$( document ).ready(function() {
-	$('.landing-wrapper').fadeIn(2000);
-});
-</script>
-
+      <div class="home">
+        <h1 id="landing-title"><a href="works">YEVHEN ORLOV</a></h1>
+        <!-- <img src="/assets/images/landing-img-01.png"> -->
+        <div id="lpi"></div>
+        <h2 id="landing-subtitle">computer music, front-end, creative coding</h2>
+        <ul class="landing-list">
+          <li><a class="landing-link" href="works">.works</a></li>
+          <li><a class="landing-link" href="blog">.blog</a></li>
+          <li><a class="landing-link" href="contact">.contact</a></li>
+      	</ul>
+        <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
       </div>
     </div>
+  </div>
+  <script>
+    var path = '/assets/images/lpi/',
+        imgs = ['01.png', '02.png', '03.png', '04.png', '05.png', '06.png', '07.png'],
+        i = Math.floor(Math.random()*imgs.length);
+    $('#lpi').append("<img src='"+path+imgs[i]+"'>");
 
-  </body>
-
+    $( document ).ready(function() {
+      $('.landing-wrapper').fadeIn(2000);
+    });
+  </script>
+</body>
 </html>
