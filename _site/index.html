@@ -41,8 +41,8 @@
   <body>
 
     <div class="page-content">
-      <div class="landing-wrapper">
-      <script>$('.landing-wrapper').hide();</script>
+      <div class="landing-wrapper" id="lwrapper">
+      <script>$('#lwrapper').hide();</script>
         <div class="home">
   <h1 id="landing-title"><a href="works">YEVHEN ORLOV</a></h1>
   <!-- <img src="/assets/images/landing-img-01.png"> -->
@@ -69,7 +69,7 @@
       $('#lpi').append("<img src='"+path+imgs[i]+"'>");
 
       $( document ).ready(function() {
-        $('.landing-wrapper').fadeIn(2000);
+        $('#lwrapper').fadeIn(2000);
       });
     </script>
 

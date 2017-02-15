@@ -6,8 +6,8 @@
   <body>
 
     <div class="page-content">
-      <div class="landing-wrapper">
-      <script>$('.landing-wrapper').hide();</script>
+      <div class="landing-wrapper" id="lwrapper">
+      <script>$('#lwrapper').hide();</script>
         {{ content }}
       </div>
     </div>
@@ -19,7 +19,7 @@
       $('#lpi').append("<img src='"+path+imgs[i]+"'>");
 
       $( document ).ready(function() {
-        $('.landing-wrapper').fadeIn(2000);
+        $('#lwrapper').fadeIn(2000);
       });
     </script>
 
