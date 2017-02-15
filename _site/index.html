@@ -42,7 +42,6 @@
 
     <div class="page-content">
       <div class="landing-wrapper" id="lwrapper">
-      <script>$('#lwrapper').hide();</script>
         <div class="home">
   <h1 id="landing-title"><a href="works">YEVHEN ORLOV</a></h1>
   <!-- <img src="/assets/images/landing-img-01.png"> -->
@@ -65,11 +64,13 @@
     <script>
       var path = '/assets/images/lpi/',
           imgs = ['01.png', '02.png', '03.png', '04.png', '05.png', '06.png', '07.png'],
-          i = Math.floor(Math.random()*imgs.length);
+          i = Math.floor(Math.random()*imgs.length),
+          lwrapper = $('#lwrapper');
+      lwrapper.hide();
       $('#lpi').append("<img src='"+path+imgs[i]+"'>");
 
       $( document ).ready(function() {
-        $('#lwrapper').fadeIn(2000);
+        lwrapper.fadeIn(2000);
       });
     </script>
 
