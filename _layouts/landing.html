@@ -15,12 +15,15 @@
       var path = '{{ site.url }}/assets/images/lpi/',
           imgs = ['01.png', '02.png', '03.png', '04.png', '05.png', '06.png', '07.png'],
           i = Math.floor(Math.random()*imgs.length),
-          lwrapper = $('#lwrapper');
+          lwrapper = $('#lwrapper'),
+          lpi = $('#lpi');
       lwrapper.hide();
-      $('#lpi').append("<img src='"+path+imgs[i]+"'>");
+      lpi.append("<img src='"+path+imgs[i]+"'>");
+      lpi.slideToggle(0);
 
       $( document ).ready(function() {
         lwrapper.fadeIn(2000);
+        lpi.delay(10).slideToggle(1500);
       });
     </script>
 
