@@ -12,7 +12,7 @@ permalink: /works
 
 - **21.09.2016** 'Lungs' by Duncan Macmillan ([Taking the Stage: programme of contemporary UK drama by British Council](http://www.britishcouncil.org.ua/en/theatre2016)) — music, sound design
 - **06.04.2013** [White Noise]({{ site.url }}/assets/images/pinter-poster.jpg): theatrical and sonic experiment based on 'The Lover' by Harold Pinter — concept, sound design
-- **February—March 2013** ['Yerma']({{ site.url }}/assets/images/yerma-poster1.jpg) by Federico García Lorca — music, sound design
+- **February-March 2013** ['Yerma']({{ site.url }}/assets/images/yerma-poster1.jpg) by Federico García Lorca — music, sound design
 
 ### as microsconn
 
