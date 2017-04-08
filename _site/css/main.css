@@ -185,9 +185,7 @@ pre {
       position: absolute;
       top: 9px;
       right: 15px;
-      background-color: #fff;
-      border: 1px solid #e8e8e8;
-      border-radius: 5px;
+      background-color: #fbfbfb;
       text-align: right; }
       .site-nav .menu-icon {
         display: block;
@@ -214,7 +212,7 @@ pre {
       .site-nav .page-link {
         display: block;
         padding: 5px 10px;
-        margin-left: 20px; }
+        margin-left: 0px; }
         .site-nav .page-link:not(:last-child) {
           margin-right: 0; } }
 

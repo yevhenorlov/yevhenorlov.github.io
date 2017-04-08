@@ -56,9 +56,7 @@
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
+        background-color: #fbfbfb;
         text-align: right;
 
         .menu-icon {
@@ -111,7 +109,7 @@
             &:not(:last-child) {
                 margin-right: 0;
             }
-            margin-left: 20px;
+            margin-left: 0px;
         }
     }
 }
@@ -233,7 +231,6 @@
 /**
  * Landing Page
  */
-
 .landing-wrapper {
     position: absolute;
     min-width: 280px;
