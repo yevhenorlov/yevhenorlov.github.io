@@ -72,8 +72,11 @@
       lpi.slideToggle(0);
 
       $( document ).ready(function() {
-        lwrapper.fadeIn(2000);
-        lpi.delay(10).slideToggle(1500);
+        window.setTimeout(function() {
+          lwrapper.fadeIn(2000);
+          lpi.slideToggle(1500);
+          }, 200
+        );
       });
     </script>
 
