@@ -232,6 +232,21 @@ pre {
   .contact-list > li {
     margin-bottom: 18.54141px; }
 
+.contact-social-icons * {
+  font-size: 31.9px;
+  transition: 500ms;
+  margin-right: 5px; }
+  .contact-social-icons *:hover {
+    color: #000;
+    background-color: #fff; }
+
+.contact-social-icons i {
+  padding: 5px;
+  border: 1px dashed transparent;
+  border-radius: 20%; }
+  .contact-social-icons i:hover {
+    border: 1px dashed #828282; }
+
 .copyright {
   font-size: 8.96168px; }
 

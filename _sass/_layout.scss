@@ -131,12 +131,30 @@
 }
 
 .contact-list {
-    // font-size: $base-font-size / 1.618;
     list-style: none;
     margin-left: 0;
 
     > li {
         margin-bottom: $spacing-unit / 1.618;
+    }
+}
+
+.contact-social-icons * {
+    font-size: $base-font-size * 2.2;
+    transition: 500ms;
+    margin-right: 5px;
+    &:hover {
+        color: $brand-color;
+        background-color: $background-color;
+    }
+}
+
+.contact-social-icons i {
+    padding: 5px;
+    border: 1px dashed transparent;
+    border-radius: 20%;
+    &:hover {
+        border: 1px dashed $grey-color;
     }
 }
 
