@@ -62,7 +62,7 @@ permalink: /ulk
 			var output = $('#ulk-output');
 			if (output.val() !== "") {
 				output.empty();
-			}
+			};
 			output.append(value);
 		});
 	})
