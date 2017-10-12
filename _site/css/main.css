@@ -402,8 +402,7 @@ pre {
  */
 #ulk-title {
   text-align: center;
-  color: #000;
-  line-height: 1; }
+  color: #000; }
 
 #beta {
   font-size: 14.5px;
@@ -423,8 +422,8 @@ pre {
   height: 200px;
   outline: none;
   resize: none;
-  padding: 10px;
-  border: 3px solid #000; }
+  padding: 5px;
+  border: 5px solid #000; }
 
 #ulk-form button {
   display: block;

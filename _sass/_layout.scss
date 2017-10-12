@@ -373,7 +373,6 @@
 #ulk-title {
     text-align: center;
     color: $brand-color;
-    line-height: 1;
 }
 
 #beta {
@@ -398,8 +397,8 @@
     height: 200px;
     outline: none;
     resize: none;
-    padding: 10px;
-    border: 3px solid $brand-color;
+    padding: 5px;
+    border: 5px solid $brand-color;
 }
 
 #ulk-form button {
