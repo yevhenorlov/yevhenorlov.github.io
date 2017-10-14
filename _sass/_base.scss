@@ -100,8 +100,11 @@ a {
     border-bottom: 1px dashed;
 
     &:visited {
-        // color: darken($brand-color, 15%);
-        color: $visited-color;
+        color: $sd-color;
+        border-color: inherit;
+        &:hover {
+          background-color: $sd-color;
+        }
     }
 
     &:hover {
