@@ -158,8 +158,7 @@
 }
 
 .contact-social-icons * {
-    font-size: $base-font-size * 2.2;
-    transition: 500ms;
+    font-size: $base-font-size;
     margin-right: 5px;
     &:hover {
         color: $brand-color;
@@ -245,6 +244,9 @@
 .post-list {
     margin-left: 0;
     list-style: none;
+    padding: 0 10px;
+    border-left: 1px dashed #eee;
+    border-right: 1px dashed #eee;
 
     > li {
         margin-bottom: $spacing-unit / 2;
@@ -414,7 +416,7 @@
     p {
       position: relative;
       &:before{
-        content: counter(p, decimal-leading-zero)'. ';
+        content: counter(p, decimal-leading-zero);
         counter-increment: p;
         position: absolute;
         left: -4em;

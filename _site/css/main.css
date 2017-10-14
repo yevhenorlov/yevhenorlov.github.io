@@ -261,8 +261,7 @@ pre {
     margin-bottom: 18.54141px; }
 
 .contact-social-icons * {
-  font-size: 44px;
-  transition: 500ms;
+  font-size: 20px;
   margin-right: 5px; }
   .contact-social-icons *:hover {
     color: #a7c0cd;
@@ -325,7 +324,10 @@ pre {
 
 .post-list {
   margin-left: 0;
-  list-style: none; }
+  list-style: none;
+  padding: 0 10px;
+  border-left: 1px dashed #eee;
+  border-right: 1px dashed #eee; }
   .post-list > li {
     margin-bottom: 15px; }
 
@@ -454,7 +456,7 @@ pre {
   .post-content p {
     position: relative; }
     .post-content p:before {
-      content: counter(p,decimal-leading-zero) ". ";
+      content: counter(p,decimal-leading-zero);
       counter-increment: p;
       position: absolute;
       left: -4em;
