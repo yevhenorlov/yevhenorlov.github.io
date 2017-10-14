@@ -6,17 +6,20 @@
 
 
 // Our variables
-$base-font-family: 'Lucida Grande', Lucida, Arial, sans-serif;
-$base-font-size:   14.5px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.775;
+$base-font-family: 'Crimson Text', serif;
+$super-font-family: 'Raleway', Lucida, Arial, sans-serif;
+$sans-font-family:  'Open Sans', sans-serif;
+$base-font-size:   20px;
+$base-font-weight: 400; 
+$small-font-size:  $base-font-size * 0.8;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #575757;
-$background-color: #fff;
-$brand-color:      #000;
+$text-color:       #111;
+$background-color: #fafafa;
+$brand-color:      #25ff9b;
+//$brand-color:      #008044;
 // $visited-color:    #aaa;
 $visited-color:    $brand-color;
 
@@ -25,10 +28,10 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    680px;
+$content-width:    760px;
 
-$on-palm:          600px;
-$on-laptop:        680px;
+$on-palm:          760px;
+$on-laptop:        760px;
 
 
 
