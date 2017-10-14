@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #111;
-  background-color: #fafafa;
+  background-color: #f5f5f6;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -69,12 +69,14 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #25ff9b; }
+  color: #f48fb1;
+  text-decoration: none;
+  border-bottom: 1px dashed; }
   a:visited {
-    color: #25ff9b; }
+    color: #bf5f82; }
   a:hover {
-    color: #fafafa;
-    background-color: #25ff9b;
+    color: #f5f5f6;
+    background-color: #f48fb1;
     text-decoration: none;
     transition: 0.3s; }
 
@@ -82,8 +84,8 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: #828282;
-  border-left: 4px solid #e8e8e8;
+  color: #b0bec5;
+  border-left: 4px solid #e2f1f8;
   padding-left: 15px;
   font-size: 18px;
   letter-spacing: -1px;
@@ -97,7 +99,7 @@ blockquote {
 pre,
 code {
   font-size: 15px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #e2f1f8;
   border-radius: 3px;
   background-color: #eef; }
 
@@ -146,7 +148,7 @@ pre {
   height: 16px;
   vertical-align: middle; }
   .icon > svg path {
-    fill: #828282; }
+    fill: #b0bec5; }
 
 /**
  * Site header
@@ -154,21 +156,23 @@ pre {
 .site-header {
   margin: 0 0 40px;
   min-height: 56px;
+  background-color: #b0bec5;
+  border-bottom: 1px dashed #808e95;
   position: relative; }
   .site-header * {
     text-decoration: none; }
 
 .site-title {
   font-family: "Raleway", Lucida, Arial, sans-serif;
-  color: #25ff9b;
+  color: #111;
   font-size: 32.36px;
-  font-weight: 300;
+  font-weight: 100;
   line-height: 56px;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left; }
   .site-title:visited, .site-title:hover {
-    color: #25ff9b;
+    color: inherit;
     text-decoration: none;
     background-color: inherit; }
 
@@ -178,11 +182,23 @@ pre {
   .site-nav .menu-icon {
     display: none; }
   .site-nav .page-link {
-    color: #25ff9b;
+    position: relative;
+    color: #111;
     line-height: 1.5; }
-    .site-nav .page-link:hover {
-      color: #fafafa;
+    .site-nav .page-link:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background: #111;
+      width: 0;
       transition: 0.3s; }
+    .site-nav .page-link:hover {
+      background: transparent; }
+      .site-nav .page-link:hover:after {
+        width: 100%;
+        transition: 0.3s; }
     .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
   @media screen and (max-width: 760px) {
@@ -204,9 +220,9 @@ pre {
           width: 18px;
           height: 15px; }
           .site-nav .menu-icon > svg path {
-            fill: #424242; }
+            fill: #808e95; }
         .site-nav .menu-icon:hover > svg path {
-          fill: #fafafa;
+          fill: #f5f5f6;
           transition: 0.3s; }
       .site-nav .trigger {
         clear: both;
@@ -242,22 +258,22 @@ pre {
   transition: 500ms;
   margin-right: 5px; }
   .contact-social-icons *:hover {
-    color: #25ff9b;
-    background-color: #fafafa; }
+    color: #a7c0cd;
+    background-color: #f5f5f6; }
 
 .contact-social-icons i {
   padding: 5px;
   border: 1px dashed transparent;
   border-radius: 20%; }
   .contact-social-icons i:hover {
-    border: 1px dashed #828282; }
+    border: 1px dashed #b0bec5; }
 
 .copyright {
   font-size: 12.36094px; }
 
 .footer-col-wrapper {
   font-size: 15px;
-  color: #828282;
+  color: #b0bec5;
   margin-left: -15px; }
 
 .footer-col {
@@ -307,13 +323,20 @@ pre {
     margin-bottom: 15px; }
 
 .post-meta {
+  font-family: "Courier", monowidth;
   font-size: 16px;
-  color: #828282; }
+  color: #b0bec5; }
 
 .post-link {
   display: block;
-  font-size: 22px;
+  font-family: "Courier", monowidth;
+  font-size: 20px;
+  font-weight: 700;
   text-decoration: none; }
+  .post-link:visited {
+    color: #f48fb1; }
+  .post-link:hover:visited {
+    color: #f5f5f6; }
 
 /**
  * Landing Page
@@ -327,8 +350,9 @@ pre {
 
 #landing-title, #landing-title * {
   font-family: "Raleway", Lucida, Arial, sans-serif;
+  font-weight: 100;
   font-size: 32.36px;
-  color: #25ff9b;
+  color: #111;
   text-decoration: none;
   margin-bottom: 0; }
   #landing-title:hover, #landing-title *:hover {
@@ -351,11 +375,22 @@ pre {
   .landing-list > li {
     margin-bottom: 15px; }
     .landing-list > li a {
-      text-decoration: none;
-      color: #25ff9b; }
-      .landing-list > li a:hover {
-        color: #fafafa;
+      position: relative;
+      border-bottom: none;
+      color: #111; }
+      .landing-list > li a:before {
+        content: '';
+        position: absolute;
+        background: #111;
+        height: 1px;
+        width: 0;
         transition: 0.3s; }
+      .landing-list > li a:hover {
+        color: #f5f5f6;
+        transition: 0.3s; }
+        .landing-list > li a:hover:before {
+          width: 100%;
+          transition: 0.3s; }
 
 .rss-subscribe {
   font-size: 12.36094px;
@@ -378,7 +413,8 @@ pre {
       font-size: 26px; } }
 
 .post-content {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  counter-reset: p; }
   .post-content h2 {
     font-size: 32px; }
     @media screen and (max-width: 760px) {
@@ -394,6 +430,20 @@ pre {
     @media screen and (max-width: 760px) {
       .post-content h4 {
         font-size: 18px; } }
+  .post-content a {
+    text-decoration: none;
+    border-bottom: 1px dashed; }
+  .post-content p {
+    position: relative; }
+    .post-content p:before {
+      content: counter(p,decimal-leading-zero) ". ";
+      counter-increment: p;
+      position: absolute;
+      left: -4em;
+      line-height: 2.5em;
+      color: #b0bec5;
+      font-family: "Courier", monowidth;
+      font-size: 13.33333px; }
 
 /**
  * Works
@@ -410,11 +460,11 @@ pre {
  */
 #ulk-title {
   text-align: center;
-  color: #25ff9b; }
+  color: #a7c0cd; }
 
 #beta {
   font-size: 20px;
-  color: #424242; }
+  color: #808e95; }
 
 #ulk-form *, #ulk-title {
   font-family: "Crimson Text", serif; }
@@ -431,7 +481,7 @@ pre {
   outline: none;
   resize: none;
   padding: 5px;
-  border: 5px solid #25ff9b; }
+  border: 5px solid #a7c0cd; }
 
 #ulk-form button {
   display: block;
@@ -439,13 +489,13 @@ pre {
   border: none;
   border-radius: 10px;
   padding: 15px 20px;
-  background-color: #e8e8e8;
+  background-color: #e1e2e1;
   cursor: pointer;
   font-size: 32.36px;
   transition: all 0.3s; }
   #ulk-form button:hover {
-    color: #fafafa;
-    background-color: #25ff9b; }
+    color: #f5f5f6;
+    background-color: #a7c0cd; }
 
 /**
  * Syntax highlighting styles

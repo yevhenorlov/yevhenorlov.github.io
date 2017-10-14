@@ -2,11 +2,10 @@
  * Site header
  */
 .site-header {
-    // border-top: 5px solid $grey-color-dark;
-    // border-bottom: 1px solid $grey-color-light;
-    // background-color: darken($background-color, 1%);
     margin: 0 0 40px;
     min-height: 56px;
+    background-color: $p-color;
+    border-bottom: 1px dashed $pd-color;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -18,16 +17,16 @@
 
 .site-title {
     font-family: $super-font-family;
-    color: $brand-color;
+    color: $text-color;
     font-size: $base-font-size * 1.618;
-    font-weight: 300;
+    font-weight: $super-font-weight;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
 
     &:visited, &:hover {
-        color: $brand-color;
+        color: inherit;
         text-decoration: none;
         background-color: inherit;
     }
@@ -42,11 +41,25 @@
     }
 
     .page-link {
-        color: $brand-color;
+        position: relative;
+        color: $text-color;
         line-height: $base-line-height;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1px;
+          background: $text-color;
+          width: 0;
+          transition: $transition-time;
+        }
         &:hover {
-            color: $background-color;
-            transition: 0.3s;
+          background: transparent;
+          &:after {
+            width: 100%;
+            transition: $transition-time;
+          }
         }
         // Gaps between nav items, but not on the last one
         &:not(:last-child) {
@@ -75,14 +88,14 @@
                 height: 15px;
 
                 path {
-                    fill: $grey-color-dark;
+                    fill: $pd-color;
                 }
             }
             &:hover {
                 > svg {
                     path {
                         fill: $background-color;
-                        transition: 0.3s;
+                        transition: $transition-time;
                     }
                 }
             }
@@ -122,9 +135,7 @@
  * Site footer
  */
 .site-footer {
-    // border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
-    // background-color: darken($background-color, 1%);
 }
 
 .footer-heading {
@@ -156,7 +167,7 @@
     border: 1px dashed transparent;
     border-radius: 20%;
     &:hover {
-        border: 1px dashed $grey-color;
+        border: 1px dashed $p-color;
     }
 }
 
@@ -166,7 +177,7 @@
 
 .footer-col-wrapper {
     font-size: 15px;
-    color: $grey-color;
+    color: $p-color;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
 }
@@ -236,14 +247,25 @@
 }
 
 .post-meta {
+  font-family: $mono-font-family;
     font-size: $small-font-size;
-    color: $grey-color;
+    color: $p-color;
 }
 
 .post-link {
-    display: block;
-    font-size: $base-font-size * 1.1;
-    text-decoration: none;
+  display: block;
+  font-family: $mono-font-family;
+  font-size: $base-font-size;
+  font-weight: 700;
+  text-decoration: none;
+  &:visited {
+    color: $s-color;
+  }
+  &:hover {
+    &:visited {
+      color: $white-color;
+    }
+  }
 }
 
 
@@ -261,8 +283,9 @@
 
  #landing-title, #landing-title * {
     font-family: $super-font-family;
+    font-weight: $super-font-weight;
     font-size: $base-font-size * 1.618;
-    color: $brand-color;
+    color: $text-color;
     text-decoration: none;
     margin-bottom: 0;
     &:hover {
@@ -286,21 +309,34 @@
         }
  }
 
- .landing-list {
-    list-style-type: none;
-    margin-left: 0;
+.landing-list {
+  list-style-type: none;
+  margin-left: 0;
 
-    > li {
-        margin-bottom: $spacing-unit / 2;
-        a {
-            text-decoration: none;
-            color: $brand-color;
-        &:hover {
-            color: $background-color;
-            transition: 0.3s;
+  > li {
+    margin-bottom: $spacing-unit / 2;
+    a {
+      position: relative;
+      border-bottom: none;
+      color: $text-color;
+      &:before{
+        content: '';
+        position: absolute;
+        background: $text-color;
+        height: 1px;
+        width: 0;
+        transition: $transition-time;
+      }
+      &:hover {
+        color: $background-color;
+        transition: $transition-time;
+        &:before{
+          width: 100%;
+          transition: $transition-time;
         }
-        }
+      }
     }
+  }
 }
 
 .rss-subscribe {
@@ -330,6 +366,7 @@
 
 .post-content {
     margin-bottom: $spacing-unit;
+    counter-reset: p;
 
     h2 {
         font-size: 32px;
@@ -353,6 +390,25 @@
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    }
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px dashed;
+    }
+
+    p {
+      position: relative;
+      &:before{
+        content: counter(p, decimal-leading-zero)'. ';
+        counter-increment: p;
+        position: absolute;
+        left: -4em;
+        line-height: 2.5em;
+        color: $p-color;
+        font-family: $mono-font-family;
+        font-size: $base-font-size / 1.5;
+      }
     }
 }
 
@@ -381,7 +437,7 @@
 
 #beta {
     font-size: $base-font-size;
-    color: $grey-color-dark;
+    color: $pd-color;
 }
 
 #ulk-form *, #ulk-title {
@@ -411,10 +467,10 @@
     border: none;
     border-radius: 10px;
     padding: 15px 20px;
-    background-color: $grey-color-light;
+    background-color: $gray-color;
     cursor: pointer;
     font-size: 1.618 * $base-font-size;
-    transition: all 0.3s;
+    transition: all $transition-time;
     &:hover {
         color: $background-color;
         background-color: $brand-color;

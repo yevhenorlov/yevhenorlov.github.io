@@ -9,23 +9,31 @@
 $base-font-family: 'Crimson Text', serif;
 $super-font-family: 'Raleway', Lucida, Arial, sans-serif;
 $sans-font-family:  'Open Sans', sans-serif;
+$mono-font-family: 'Courier', monowidth;
 $base-font-size:   20px;
 $base-font-weight: 400; 
+$super-font-weight: 100; 
 $small-font-size:  $base-font-size * 0.8;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
+$transition-time:  0.3s;
 
-$text-color:       #111;
-$background-color: #fafafa;
-$brand-color:      #25ff9b;
-//$brand-color:      #008044;
-// $visited-color:    #aaa;
-$visited-color:    $brand-color;
+$p-color:          #b0bec5; // primary
+$pl-color:         #e2f1f8; // primary light
+$pd-color:         #808e95; // primary dark
+$s-color:          #f48fb1; // secondary
+$sl-color:         #ffc1e3; // secondary light
+$sd-color:         #bf5f82; // secondary dark
+$black-color:      #111;
+$gray-color:       #e1e2e1;
+$white-color:      #f5f5f6;
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$text-color:       $black-color;
+$background-color: $white-color;
+$link-color:       $s-color;
+$brand-color:      #a7c0cd;
+$visited-color:    $sd-color; 
 
 // Width of the content area
 $content-width:    760px;
@@ -38,8 +46,8 @@ $on-laptop:        760px;
 // Use media queries like this:
 // @include media-query($on-palm) {
 //     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
+//         padding-right: 20px;
+//         padding-left:  20px;
 //     }
 // }
 @mixin media-query($device) {
