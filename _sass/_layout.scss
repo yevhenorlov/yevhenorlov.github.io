@@ -3,9 +3,9 @@
  */
 .site-header {
     margin: 0 0 40px;
-    min-height: 56px;
-    background-color: $p-color;
-    border-bottom: 1px dashed $pd-color;
+    padding: 10px 0 15px;
+    border-bottom: 1px dashed $p-color;
+    box-shadow: 5px 5px 20px $gray-color;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -18,6 +18,7 @@
 .site-title {
     font-family: $super-font-family;
     color: $text-color;
+    border-bottom: none;
     font-size: $base-font-size * 1.618;
     font-weight: $super-font-weight;
     line-height: 56px;
@@ -43,7 +44,11 @@
     .page-link {
         position: relative;
         color: $text-color;
+        border-bottom: none;
         line-height: $base-line-height;
+        &:before {
+          content: '.';
+        }
         &:after {
           content: '';
           position: absolute;
@@ -258,6 +263,7 @@
   font-size: $base-font-size;
   font-weight: 700;
   text-decoration: none;
+  border-bottom: none;
   &:visited {
     color: $s-color;
   }
@@ -279,6 +285,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: $white-color;
+    border: 1px dashed $p-color;
+    box-shadow: 5px 5px 20px $gray-color;
+    padding: 20px 45px;
 }
 
  #landing-title, #landing-title * {
@@ -287,6 +297,7 @@
     font-size: $base-font-size * 1.618;
     color: $text-color;
     text-decoration: none;
+    border-bottom: none;
     margin-bottom: 0;
     &:hover {
         text-decoration: inherit;
@@ -319,18 +330,20 @@
       position: relative;
       border-bottom: none;
       color: $text-color;
-      &:before{
+      &:after{
         content: '';
         position: absolute;
+        bottom: 0;
+        left: 0;
         background: $text-color;
         height: 1px;
         width: 0;
         transition: $transition-time;
       }
       &:hover {
-        color: $background-color;
         transition: $transition-time;
-        &:before{
+        background: inherit;
+        &:after{
           width: 100%;
           transition: $transition-time;
         }
