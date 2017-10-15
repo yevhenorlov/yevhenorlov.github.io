@@ -9,7 +9,7 @@
 $base-font-family: 'Crimson Text', serif;
 $super-font-family: 'Raleway', Lucida, Arial, sans-serif;
 $sans-font-family:  'Open Sans', sans-serif;
-$mono-font-family: 'Courier', monowidth;
+$mono-font-family: 'PT Mono', monospace;
 $base-font-size:   20px;
 $base-font-weight: 400; 
 $super-font-weight: 100; 
@@ -46,22 +46,22 @@ $on-laptop:        960px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: 20px;
-//         padding-left:  20px;
-//     }
+//   .wrapper {
+//     padding-right: 20px;
+//     padding-left:  20px;
+//   }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+  @media screen and (max-width: $device) {
+    @content;
+  }
 }
 
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting"
+  "base",
+  "layout",
+  "syntax-highlighting"
 ;
