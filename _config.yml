@@ -18,6 +18,9 @@ url: "" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 
+sass:
+  sass_dir: assets/sass/precompiled
+
 exclude:
   - package.json
   - package-lock.json

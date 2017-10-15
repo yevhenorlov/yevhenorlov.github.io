@@ -1,71 +1,8 @@
-/* Jekyll-specific stuff, no need for it as we're using Gulp */
+// Everything compiles into a single file via gulp and gets prepended with YAML Front Matter dashes ('---') for Jekyll to handle.
 
-/*
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
-*/
-
-@charset "utf-8";
-
-
-// Our variables
-$base-font-family: 'Crimson Text', serif;
-$super-font-family: 'Raleway', Lucida, Arial, sans-serif;
-$sans-font-family:  'Open Sans', sans-serif;
-$mono-font-family: 'PT Mono', monospace;
-$base-font-size:   20px;
-$base-font-weight: 400; 
-$super-font-weight: 100; 
-$small-font-size:  $base-font-size * 0.8;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-$shadow:           5px 5px 20px rgba(0, 0, 0, 0.1);
-$transition-time:  0.3s;
-
-$p-color:          #b0bec5; // primary
-$pl-color:         #e2f1f8; // primary light
-$pd-color:         #808e95; // primary dark
-$s-color:          #d81b60; // secondary
-$sl-color:         #ed6c9b; // secondary light
-$sd-color:         #f0035a; // secondary dark
-$black-color:      #111;
-$gray-color:       #e1e2e1;
-$white-color:      #f5f5f6;
-
-$text-color:       $black-color;
-$background-color: $white-color;
-$link-color:       $s-color;
-$hover-color:      $sd-color;
-$visited-color:    $link-color; 
-
-// Width of the content area
-$content-width:    960px;
-
-$on-palm:          960px;
-$on-laptop:        960px;
-
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//   .wrapper {
-//     padding-right: 20px;
-//     padding-left:  20px;
-//   }
-// }
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
-
-
-
-// Import partials from `sass_dir` (defaults to `_sass`)
 @import
-  "base",
-  "layout",
-  "syntax-highlighting"
-;
+  "variables", // all variables
+  "mixin-extend", // all mixins and extends
+  "base", // reset & general tags
+  "layout", // page-specific layouts
+  "syntax-highlighting"; // syntax highlighting for code snippets

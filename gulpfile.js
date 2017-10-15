@@ -8,10 +8,11 @@ const gulp = require('gulp'),
   iconfont = require('gulp-iconfont'),
   watch = require('gulp-watch'),
   child = require('child_process'),
-  gutil = require('gulp-util');
+  gutil = require('gulp-util'),
+  insert = require('gulp-insert');
 
 const sassFiles = 'assets/sass/main.scss';
-//const cssDest = 'assets/css';
+const cssPrecompiled = 'assets/sass/precompiled';
 const cssDest = '_site/assets/css';
 const iconSource = 'assets/images/icons/*.svg';
 
@@ -38,7 +39,8 @@ gulp.task('sass', function () {
     .pipe(sassGlob())
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(gulp.dest(cssDest));
+    .pipe(insert.prepend('---\n---\n'))
+    .pipe(gulp.dest('assets/css/'));
 });
 
 // Iconfont

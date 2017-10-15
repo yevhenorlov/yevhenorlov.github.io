@@ -1,3 +1,9 @@
+/* Jekyll-specific stuff, no need for it as we're using Gulp */
+/*
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+*/
 /**
  * Reset some basic elements
  */
@@ -364,7 +370,6 @@ pre > code {
  * Site footer
  */
 .site-footer .wrapper {
-  font-family: "Open Sans", sans-serif;
   padding-top: 30px;
   padding-bottom: 30px;
   border-top: 1px dashed #b0bec5;
