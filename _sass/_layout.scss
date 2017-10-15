@@ -206,14 +206,19 @@
 }
 
 .post-list {
-  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  padding: 0 10px;
-  border-left: 1px dashed #eee;
-  border-right: 1px dashed #eee;
+  width: calc(100% + #{$spacing-unit});
+  margin-left: -$spacing-unit / 2;
 
-  >li {
-    margin-bottom: $spacing-unit / 2;
+  > li {
+    width: calc(33.333% - #{$spacing-unit});
+    padding: $spacing-unit / 2;
+    margin: $spacing-unit / 2;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: $shadow;
+    background: $text-color;
   }
 }
 
@@ -225,7 +230,7 @@
 
 .post-link {
   display: block;
-  font-family: $mono-font-family;
+  font-family: $sans-font-family;
   font-size: $base-font-size;
   font-weight: 700;
   letter-spacing: 1px;

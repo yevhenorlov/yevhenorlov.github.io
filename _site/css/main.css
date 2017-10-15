@@ -7,6 +7,12 @@ dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0; }
 
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 /**
  * Basic styling
  */
@@ -295,13 +301,18 @@ pre {
   font-size: 40px; }
 
 .post-list {
-  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  padding: 0 10px;
-  border-left: 1px dashed #eee;
-  border-right: 1px dashed #eee; }
+  width: calc(100% + 30px);
+  margin-left: -15px; }
   .post-list > li {
-    margin-bottom: 15px; }
+    width: calc(33.333% - 30px);
+    padding: 15px;
+    margin: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    background: #111; }
 
 .post-meta {
   font-family: "Courier", monowidth;
@@ -310,7 +321,7 @@ pre {
 
 .post-link {
   display: block;
-  font-family: "Courier", monowidth;
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1px;
