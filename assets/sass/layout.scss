@@ -299,12 +299,9 @@
 #lpi {}
 
 #landing-subtitle {
-  font-size: $base-font-size * 0.9;
+  font-size: $base-font-size * 0.8;
   line-height: 1.2;
   margin-bottom: $spacing-unit;
-  @include media-query($on-palm) {
-    font-size: $base-font-size * 0.7;
-  }
 }
 
 .landing-list {

@@ -530,15 +530,9 @@ pre > code {
 }
 
 #landing-subtitle {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.2;
   margin-bottom: 30px;
-}
-
-@media screen and (max-width: 960px) {
-  #landing-subtitle {
-    font-size: 14px;
-  }
 }
 
 .landing-list {
