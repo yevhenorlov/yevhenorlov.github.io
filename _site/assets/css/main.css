@@ -370,6 +370,7 @@ pre > code {
  * Site footer
  */
 .site-footer .wrapper {
+  font-family: "Open Sans", sans-serif;
   padding-top: 30px;
   padding-bottom: 30px;
   border-top: 1px dashed #b0bec5;
