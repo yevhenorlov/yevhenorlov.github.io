@@ -12,7 +12,6 @@ const gulp = require('gulp'),
   insert = require('gulp-insert');
 
 const sassFiles = 'assets/sass/main.scss';
-const cssPrecompiled = 'assets/sass/precompiled';
 const cssDest = '_site/assets/css';
 const iconSource = 'assets/images/icons/*.svg';
 
