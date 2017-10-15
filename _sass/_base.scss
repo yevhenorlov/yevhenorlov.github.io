@@ -20,7 +20,7 @@ body {
     font-weight: $base-font-weight;
     line-height: $base-line-height;
     color: $text-color;
-    background-color: $background-color;
+    background-color: $p-color;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -100,17 +100,18 @@ a {
     border-bottom: 1px dashed;
 
     &:visited {
-        color: $sd-color;
+        color: $visited-color;
         border-color: inherit;
         &:hover {
-          background-color: $sd-color;
+          color: $visited-color;
         }
     }
 
     &:hover {
-        color: $background-color;
-        background-color: $link-color;
-        text-decoration: none;
+        //color: $background-color;
+        color: $hover-color;
+        border-bottom: 1px solid;
+        //background-color: $link-color;
         transition: $transition-time;
     }
 }
