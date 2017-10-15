@@ -341,6 +341,10 @@
 /**
  * Posts
  */
+.post {
+  margin: $spacing-unit*2 auto;
+  max-width: 70ch;
+}
 
 .post-header {
   margin-bottom: $spacing-unit;

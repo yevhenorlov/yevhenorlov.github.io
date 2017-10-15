@@ -120,16 +120,16 @@ pre {
  * Wrapper
  */
 .wrapper, .landing-wrapper {
-  max-width: -webkit-calc(760px - (30px * 2));
-  max-width: calc(760px - (30px * 2));
+  max-width: -webkit-calc(960px - (30px * 2));
+  max-width: calc(960px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 960px) {
     .wrapper, .landing-wrapper {
-      max-width: -webkit-calc(760px - (30px));
-      max-width: calc(760px - (30px));
+      max-width: -webkit-calc(960px - (30px));
+      max-width: calc(960px - (30px));
       padding-right: 15px;
       padding-left: 15px; } }
 
@@ -209,7 +209,7 @@ pre {
         transition: 0.3s; }
     .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 960px) {
     .site-nav {
       position: absolute;
       top: 9px;
@@ -355,7 +355,7 @@ pre {
   #landing-title *:hover {
     text-decoration: inherit;
     background-color: inherit; }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 960px) {
     #landing-title,
     #landing-title * {
       font-size: 28px; } }
@@ -364,7 +364,7 @@ pre {
   font-size: 18px;
   line-height: 1.2;
   margin-bottom: 30px; }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 960px) {
     #landing-subtitle {
       font-size: 14px; } }
 
@@ -402,6 +402,10 @@ pre {
 /**
  * Posts
  */
+.post {
+  margin: 60px auto;
+  max-width: 70ch; }
+
 .post-header {
   margin-bottom: 30px; }
 
@@ -411,7 +415,7 @@ pre {
   font-size: 26px;
   letter-spacing: 2px;
   line-height: 1; }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 960px) {
     .post-title {
       font-size: 26px; } }
 
@@ -420,17 +424,17 @@ pre {
   counter-reset: p; }
   .post-content h2 {
     font-size: 32px; }
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 960px) {
       .post-content h2 {
         font-size: 28px; } }
   .post-content h3 {
     font-size: 26px; }
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 960px) {
       .post-content h3 {
         font-size: 22px; } }
   .post-content h4 {
     font-size: 20px; }
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 960px) {
       .post-content h4 {
         font-size: 18px; } }
   .post-content a {
