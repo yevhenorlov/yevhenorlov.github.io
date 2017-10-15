@@ -367,7 +367,7 @@
   font-size: $base-font-size * 1.5;
   letter-spacing: 2px;
   line-height: 1;
-  color: $sl-color;
+  color: $hover-color;
 
   @include media-query($on-laptop) {
     font-size: $base-font-size * 1.3;
