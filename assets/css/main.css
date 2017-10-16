@@ -126,6 +126,7 @@ a {
   border-bottom: 1px dashed;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  overflow-wrap: break-word;
 }
 
 a:hover {
@@ -316,6 +317,7 @@ pre > code {
 @media screen and (max-width: 960px) {
   .site-nav {
     position: absolute;
+    z-index: 999;
     top: 20px;
     right: 10px;
     background-color: #fbfbfb;

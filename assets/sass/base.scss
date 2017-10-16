@@ -152,6 +152,7 @@ a {
   text-decoration: none;
   border-bottom: 1px dashed;
   transition: $transition-time;
+  overflow-wrap: break-word;
 
   &:hover {
     color: $hover-color;
