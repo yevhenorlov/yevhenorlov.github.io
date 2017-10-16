@@ -431,10 +431,10 @@ pre > code {
 }
 
 .post-list .post-item {
-  width: calc(50% - 30px * 4);
-  margin: 60px;
-  -webkit-transform: rotate(10deg);
-          transform: rotate(10deg);
+  width: calc(50% - 30px * 2);
+  margin: 30px;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-right: 10px solid #d81b60;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
@@ -451,8 +451,8 @@ pre > code {
 }
 
 .post-list .post-item:hover {
-  -webkit-transform: rotate(5deg);
-          transform: rotate(5deg);
+  -webkit-transform: rotate(1deg);
+          transform: rotate(1deg);
   border-right: 10px solid #f0035a;
 }
 
