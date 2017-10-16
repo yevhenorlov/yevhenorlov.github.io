@@ -591,6 +591,9 @@ pre > code {
 
 .post-header {
   margin-bottom: 30px;
+  background: #111;
+  -webkit-transform: rotate(1deg);
+          transform: rotate(1deg);
 }
 
 .post-title {

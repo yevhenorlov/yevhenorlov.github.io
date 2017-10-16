@@ -356,6 +356,8 @@
 
 .post-header {
   margin-bottom: $spacing-unit;
+  background: $text-color;
+  transform:rotate(1deg);
 }
 
 .post-title {
