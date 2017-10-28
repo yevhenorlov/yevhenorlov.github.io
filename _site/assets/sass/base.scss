@@ -43,8 +43,10 @@ body {
   font-size: $base-font-size * 0.9;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
+  min-height: 100vh;
   color: $text-color;
-  background-color: $p-color;
+  // background-color: $p-color;
+  background: linear-gradient(#b0bec5, #b0bea5);
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -74,7 +76,7 @@ ol,
 dl,
 figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: $spacing-unit;
 }
 
 
