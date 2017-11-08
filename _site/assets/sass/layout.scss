@@ -352,7 +352,7 @@
  */
 .post {
   margin: $spacing-unit*2 auto;
-  max-width: 60ch;
+  max-width: 70ch;
 }
 
 .post-header {
@@ -406,7 +406,7 @@
     text-decoration: none;
   }
 
-  p {
+  > p {
     position: relative;
     &:before {
       content: counter(p, decimal-leading-zero);
@@ -415,6 +415,7 @@
       left: -4em;
       line-height: 2.5em;
       color: $p-color;
+      opacity: 0.2;
       font-family: $mono-font-family;
       font-size: $base-font-size / 1.5;
     }

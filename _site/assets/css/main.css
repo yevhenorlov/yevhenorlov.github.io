@@ -590,7 +590,7 @@ pre > code {
  */
 .post {
   margin: 60px auto;
-  max-width: 60ch;
+  max-width: 70ch;
 }
 
 .post-header {
@@ -654,17 +654,18 @@ pre > code {
   text-decoration: none;
 }
 
-.post-content p {
+.post-content > p {
   position: relative;
 }
 
-.post-content p:before {
+.post-content > p:before {
   content: counter(p, decimal-leading-zero);
   counter-increment: p;
   position: absolute;
   left: -4em;
   line-height: 2.5em;
   color: #b0bec5;
+  opacity: 0.2;
   font-family: "PT Mono", monospace;
   font-size: 13.33333px;
 }

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- google analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88752842-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100|Open+Sans:400,700|PT+Serif:400,400i,700,700i|PT+Mono&amp;subset=cyrillic-ext,latin-ext" rel="stylesheet">
+  <!-- fontawesome -->
+  <script src="https://use.fontawesome.com/9f6fb3027d.js"></script>
+
+  <title>Віддираємо наліпки від вебсторінок за допомогою sticker.js</title>
+  <meta name="description" content="Бібліотека sticker.js пропонує можливість за допомогою кількох рядків CSS додати оригінальну і абсолютнобезглузду красивість на сайт (мій улюблений тип краси...">
+
+  <!-- <link rel="stylesheet" href="assets/css/main.css"> -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="/frontend/2017/10/09/sticker-js.html">
+  <link rel="alternate" type="application/rss+xml" title="yevhen orlov" href="/feed.xml">
+  <!-- jquery -->
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">YEVHEN ORLOV</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <!-- 
+        
+          
+          <a class="page-link" href="/blog">blog</a>
+          
+        
+          
+          <a class="page-link" href="/contact">contact</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/works">works</a>
+          
+         
+        -->
+        <a class="page-link" href="/works">works</a>
+        <a class="page-link" href="/blog">blog</a>
+        <a class="page-link" href="/contact">contact</a>
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Віддираємо наліпки від вебсторінок за допомогою sticker.js</h1>
+    <p class="post-meta"><time datetime="2017-10-09T18:47:47+03:00" itemprop="datePublished">Oct 9, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Бібліотека sticker.js пропонує можливість за допомогою кількох рядків CSS додати оригінальну і абсолютно
+безглузду красивість на сайт (мій улюблений тип красивостей).</p>
+
+<div class="sticker-example">
+<div class="sticker sticker_js sticker-1"></div>
+<div class="sticker sticker_js sticker-2"></div>
+<div class="sticker sticker_js sticker-3"></div>
+</div>
+
+<p>Процес максимально простий.</p>
+
+<ol>
+  <li>
+    <p>Скачати файл // з репозиторію на GitHub і підключити його перед основним файлом, в якому 
+ініціалізуються скрипти (у моєму випадку це <code class="highlighter-rouge">script.js</code>).</p>
+  </li>
+  <li>
+    <p>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде 
+звичайний div (//semantic also?), оскільки бібліотека розрахована на роботу з 
+CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб 
+<code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який 
+запобігатиме його схлопуванню.</p>
+  </li>
+  <li>
+    <p>Присвоїти контейнеру ідентифікатор. Клас <code class="highlighter-rouge">sticker</code> або <code class="highlighter-rouge">sticker_js</code> цілком згодиться 
+— головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки 
+ініціалізація скрипта sticker.js відбуватиметься саме тут.</p>
+  </li>
+  <li>
+    <p>Зображення на наклейці підключається через CSS (або inline-стилі//) на клас <code class="highlighter-rouge">sticker-img</code>.</p>
+  </li>
+  <li>
+    <p>Підключити ініціалізацію скрипта при завантаженні контенту сторінки.</p>
+  </li>
+</ol>
+
+<p>Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри <code class="highlighter-rouge">background</code> - <code class="highlighter-rouge">color</code>, <code class="highlighter-rouge">posiion</code>, <code class="highlighter-rouge">repeat</code> тощо. 
+З мінусів - sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки. З плюсів - наліпки шикарні.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    &copy; 2015
+    <script>new Date().getFullYear()>2015&&document.write("— "+new Date().getFullYear());</script> 
+    yevhen orlov
+  </div>
+</footer>
+
+
+  </body>
+
+</html>
