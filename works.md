@@ -3,8 +3,9 @@ layout: works
 title: works
 permalink: /works
 ---
-### electroacoustic music
+### electronic & electroacoustic music
 
+- **11.11.2017** [01](http://yevhenorlov.bandcamp.com/album/01)
 - **10.09.2016** live @ Electroacoustic: Dimensions (Kyiv, IZOLYATSIA)
 - **05-09.2016** participant composer at [Kyiv Contemporary Music Days masterclass with Jaime Reis](http://www.kecmp.eu/masterclasses-results)
 
