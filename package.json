@@ -1,0 +1,30 @@
+{
+  "name": "yevhenorlov.github.io",
+  "version": "1.0.0",
+  "description": "https://yevhenorlov.github.io/",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-iconfont": "^9.0.2",
+    "gulp-insert": "^0.5.0",
+    "gulp-sass-glob": "^1.0.8",
+    "gulp-watch": "^4.3.11"
+  },
+  "devDependencies": {
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yevhenorlov/yevhenorlov.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yevhenorlov/yevhenorlov.github.io/issues"
+  },
+  "homepage": "https://github.com/yevhenorlov/yevhenorlov.github.io#readme"
+}
