@@ -20,10 +20,23 @@ ul,
 figure {
   margin: 0;
   padding: 0;
+  font-size: $base-font-size;
 }
 
 html {
   box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $draculaGray;
+  }
 }
 
 *,
@@ -32,7 +45,10 @@ html {
   box-sizing: inherit;
 }
 
-
+*:focus{
+  outline: none;
+  background: $draculaGray;
+}
 
 /**
  * Basic styling
@@ -40,13 +56,12 @@ html {
 
 body {
   font-family: $base-font-family;
-  font-size: $base-font-size * 0.9;
+  font-size: $base-font-size;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
   min-height: 100vh;
   color: $text-color;
-  // background-color: $p-color;
-  background: linear-gradient(#b0bec5, #b0bea5);
+  background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -54,9 +69,6 @@ body {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
 }
-
-
-
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -79,9 +91,6 @@ figure,
   margin-bottom: $spacing-unit;
 }
 
-
-
-
 /**
  * Images
  */
@@ -91,23 +100,13 @@ img {
   vertical-align: middle;
 }
 
-
-
-
 /**
  * Figures
  */
 
-figure>img {
+figure > img {
   display: block;
 }
-
-figcaption {
-  font-size: $small-font-size;
-}
-
-
-
 
 /**
  * Lists
@@ -119,14 +118,11 @@ ol {
 }
 
 li {
-  >ul,
-  >ol {
+  > ul,
+  > ol {
     margin-bottom: 0;
   }
 }
-
-
-
 
 /**
  * Headings
@@ -139,47 +135,34 @@ h4,
 h5,
 h6 {
   font-weight: $base-font-weight;
+  text-shadow: $cathodeShadow;
+  color: $draculaGreen;
 }
-
-
-
 
 /**
  * Links
  */
 
-a {
-  color: $link-color;
+a,
+a:visited {
+  color: $draculaLightBlue;
   text-decoration: none;
-  border-bottom: 1px dashed;
+  text-shadow: $cathodeShadow;
   transition: $transition-time;
   overflow-wrap: break-word;
 
   &:hover {
-    color: $hover-color;
-    border-bottom: 1px solid;
     transition: $transition-time;
-  }
-
-  &:visited {
-    color: $visited-color;
-    border-color: inherit;
-    &:hover {
-      color: $hover-color;
-    }
+    background: $draculaGray;
   }
 }
-
-
-
 
 /**
  * Blockquotes
  */
 
 blockquote {
-  color: $p-color;
-  border-left: 4px solid $pl-color;
+  border-left: 4px solid;
   padding-left: $spacing-unit / 2;
   font-size: 18px;
   letter-spacing: -1px;
@@ -190,19 +173,15 @@ blockquote {
   }
 }
 
-
-
-
 /**
  * Code formatting
  */
 
 pre,
 code {
-  font-size: 15px;
-  border: 1px solid $pl-color;
-  border-radius: 3px;
-  background-color: #eef;
+  border: 1px solid $draculaGray;
+  border-radius: 2px;
+  background-color: $draculaGray;
 }
 
 code {
@@ -213,15 +192,12 @@ pre {
   padding: 8px 12px;
   overflow-x: auto;
 
-  >code {
+  > code {
     border: 0;
     padding-right: 0;
     padding-left: 0;
   }
 }
-
-
-
 
 /**
  * Wrapper
@@ -229,8 +205,7 @@ pre {
 
 .wrapper,
 .landing-wrapper {
-  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width : calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width: calc(#{$content-width} - (#{$spacing-unit} * 5));
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit;
@@ -238,22 +213,17 @@ pre {
   @extend %clearfix;
 
   @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width : calc(#{$content-width} - (#{$spacing-unit}));
+    max-width: calc(#{$content-width} - (#{$spacing-unit}));
     padding-right: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
   }
 }
-
-
-
 
 /**
  * Clearfix
  */
 
 %clearfix {
-
   &:after {
     content: "";
     display: table;
@@ -261,23 +231,19 @@ pre {
   }
 }
 
-
-
-
 /**
  * Icons
  */
 
 .icon {
-
-  >svg {
+  > svg {
     display: inline-block;
     width: 16px;
     height: 16px;
     vertical-align: middle;
 
     path {
-      fill: $p-color;
+      fill: $text-color;
     }
   }
 }
