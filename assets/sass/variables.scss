@@ -6,9 +6,8 @@ $super-font-weight: 100;
 $base-line-height: 1.7;
 
 $spacing-unit: 2rem;
-$shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-$cathodeShadow: 0 0 1px;
-$transition-time: 0s;
+$cathodeGlow: 0 0 3px;
+$transition-time: 0.2s;
 
 // dracula colors
 $draculaBlack: #282a36;

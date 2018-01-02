@@ -45,11 +45,6 @@ html {
   box-sizing: inherit;
 }
 
-*:focus{
-  outline: none;
-  background: $draculaGray;
-}
-
 /**
  * Basic styling
  */
@@ -135,24 +130,36 @@ h4,
 h5,
 h6 {
   font-weight: $base-font-weight;
-  text-shadow: $cathodeShadow;
+  text-shadow: $cathodeGlow;
   color: $draculaGreen;
 }
 
 /**
+ * Bold
+ */
+ b, strong {
+   text-shadow: $cathodeGlow;
+ }
+
+ /**
  * Links
  */
 
 a,
 a:visited {
-  color: $draculaLightBlue;
+  color: rgba($draculaLightBlue, 0.7);
   text-decoration: none;
-  text-shadow: $cathodeShadow;
+  text-shadow: $cathodeGlow;
   transition: $transition-time;
   overflow-wrap: break-word;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transition: $transition-time;
+    color: rgba($draculaLightBlue, 1);
+  }
+  &:focus {
+    outline: none;
     background: $draculaGray;
   }
 }
@@ -205,7 +212,8 @@ pre {
 
 .wrapper,
 .landing-wrapper {
-  max-width: calc(#{$content-width} - (#{$spacing-unit} * 5));
+  // max-width: calc(#{$content-width} - (#{$spacing-unit} * 5));
+  max-width: 70ch;
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit;

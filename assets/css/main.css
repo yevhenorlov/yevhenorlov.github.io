@@ -48,11 +48,6 @@ html::-webkit-scrollbar-thumb {
           box-sizing: inherit;
 }
 
-*:focus {
-  outline: none;
-  background: #44475a;
-}
-
 /**
  * Basic styling
  */
@@ -130,8 +125,15 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  text-shadow: 0 0 1px;
+  text-shadow: 0 0 3px;
   color: #50fa7b;
+}
+
+/**
+ * Bold
+ */
+b, strong {
+  text-shadow: 0 0 3px;
 }
 
 /**
@@ -139,18 +141,25 @@ h6 {
  */
 a,
 a:visited {
-  color: #8be9fd;
+  color: rgba(139, 233, 253, 0.7);
   text-decoration: none;
-  text-shadow: 0 0 1px;
-  -webkit-transition: 0s;
-  transition: 0s;
+  text-shadow: 0 0 3px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   overflow-wrap: break-word;
 }
 
-a:hover,
-a:visited:hover {
-  -webkit-transition: 0s;
-  transition: 0s;
+a:hover, a:focus,
+a:visited:hover,
+a:visited:focus {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #8be9fd;
+}
+
+a:focus,
+a:visited:focus {
+  outline: none;
   background: #44475a;
 }
 
@@ -199,7 +208,7 @@ pre > code {
  */
 .wrapper,
 .landing-wrapper {
-  max-width: calc(960px - (2rem * 5));
+  max-width: 70ch;
   margin-right: auto;
   margin-left: auto;
   padding-right: 2rem;
@@ -243,8 +252,8 @@ pre > code {
  * Site header
  */
 .site-header .wrapper {
-  background: #282a36;
-  padding: 1rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .site-header * {
@@ -323,7 +332,6 @@ pre > code {
 .site-footer .wrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background: #282a36;
 }
 
 .footer-heading {
@@ -355,15 +363,15 @@ pre > code {
 .page-content .wrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background: #282a36;
 }
 
 .post-list {
   list-style: none;
+  margin: 0;
 }
 
 .post-item {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .post-link {
@@ -372,6 +380,10 @@ pre > code {
   display: flex;
   width: 100%;
   height: 100%;
+}
+
+.post-link:hover {
+  background: #44475a;
 }
 
 .post-meta {
@@ -387,8 +399,7 @@ pre > code {
  * Posts
  */
 .post {
-  margin: 4rem auto;
-  max-width: 70ch;
+  margin: 4rem 0;
 }
 
 .post-header {
@@ -443,7 +454,7 @@ pre > code {
   counter-increment: p;
   position: absolute;
   left: -4em;
-  color: #44475a;
+  opacity: 0.2;
 }
 
 /**
