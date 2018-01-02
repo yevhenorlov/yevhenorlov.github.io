@@ -3,6 +3,12 @@
  */
 
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: inherit;
+  z-index: 99;
   .wrapper {
     padding-top: $spacing-unit;
     padding-bottom: $spacing-unit;
@@ -10,6 +16,10 @@
 
   * {
     text-decoration: none;
+  }
+
+  + * {
+    margin-top: $spacing-unit * 3;
   }
 }
 
@@ -159,7 +169,7 @@
  * Posts
  */
 .post {
-  margin: $spacing-unit*2 0;
+  margin: $spacing-unit 0;
 }
 
 .post-header {

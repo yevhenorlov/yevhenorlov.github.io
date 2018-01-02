@@ -251,6 +251,15 @@ pre > code {
 /**
  * Site header
  */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: inherit;
+  z-index: 99;
+}
+
 .site-header .wrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -258,6 +267,10 @@ pre > code {
 
 .site-header * {
   text-decoration: none;
+}
+
+.site-header + * {
+  margin-top: 6rem;
 }
 
 .site-title {
@@ -399,7 +412,7 @@ pre > code {
  * Posts
  */
 .post {
-  margin: 4rem 0;
+  margin: 2rem 0;
 }
 
 .post-header {
