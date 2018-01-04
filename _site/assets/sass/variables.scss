@@ -1,36 +1,27 @@
 // Our variables
-$base-font-family: 'PT Serif', serif;
-$super-font-family: 'Raleway', Lucida, Arial, sans-serif;
-$sans-font-family:  'Open Sans', sans-serif;
-$mono-font-family: 'PT Mono', monospace;
-$base-font-size:   20px;
-$base-font-weight: 400; 
-$super-font-weight: 100; 
-$small-font-size:  $base-font-size * 0.8;
-$base-line-height: 1.9;
+$base-font-family: "Fira Mono", monospace;
+$base-font-size: 16px;
+$base-font-weight: 400;
+$super-font-weight: 100;
+$base-line-height: 1.7;
 
-$spacing-unit:     30px;
-$shadow:           5px 5px 20px rgba(0, 0, 0, 0.1);
-$transition-time:  0.3s;
+$spacing-unit: 2rem;
+$cathodeGlow: 0 0 3px;
+$transition-time: 0.2s;
 
-$p-color:          #b0bec5; // primary
-$pl-color:         #e2f1f8; // primary light
-$pd-color:         #808e95; // primary dark
-$s-color:          #d81b60; // secondary
-$sl-color:         #ed6c9b; // secondary light
-$sd-color:         #f0035a; // secondary dark
-$black-color:      #111; 
-$gray-color:       #e1e2e1;
-$white-color:      #f5f5f6;
+// dracula colors
+$draculaBlack: #282a36;
+$draculaGray: #44475a;
+$draculaLightBlue: #8be9fd;
+$draculaBlue: #6272a4;
+$draculaGreen: #50fa7b;
+$draculaPurple: #bd93f2;
 
-$text-color:       rgba(0, 0, 0, 0.84); 
-$background-color: $white-color;
-$link-color:       $s-color;
-$hover-color:      $sd-color;
-$visited-color:    $link-color; 
+$text-color: #ddd;
+$background-color: $draculaBlack;
 
 // Width of the content area
-$content-width:    960px;
+$content-width: 960px;
 
-$on-palm:          960px;
-$on-laptop:        960px;
+$on-palm: 960px;
+$on-laptop: 960px;

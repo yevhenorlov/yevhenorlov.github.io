@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#282a36" />
+  <!-- google analytics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-88752842-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono&amp;subset=cyrillic-ext" rel="stylesheet">
+  <!-- fontawesome -->
+  <script src="https://use.fontawesome.com/9f6fb3027d.js"></script>
+
+  <title>Робимо інтерактивні наліпки за допомогою sticker.js</title>
+  <meta name="description" content="Бібліотека sticker.js дозволяє за допомогою кількох рядків CSS додати оригінальну і досить безглузду красивість на сайт (мій улюблений тип красивостей).">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="/frontend/2017/10/09/sticker-js.html">
+  <link rel="alternate" type="application/rss+xml" title="yevhen orlov" href=" /feed.xml
+    ">
+</head>
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <!-- <a class="site-title" href="/">yevhen orlov</a> -->
+    <a class="site-title" href="/">/</a>
+
+    <nav class="site-nav">
+        <!--
+        
+          
+        
+          
+          <a class="page-link" href="/contact">contact</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/works">works</a>
+          
+        
+        -->
+        <!-- <a class="page-link" href="/works">works</a> -->
+        <a class="page-link" href="/archive">archive</a>
+        <a class="page-link" href="/contact">contact</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Робимо інтерактивні наліпки за допомогою sticker.js</h1>
+    <p class="post-meta"><time datetime="2017-10-09T18:47:47+03:00" itemprop="datePublished">Oct 9, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Бібліотека <strong>sticker.js</strong> дозволяє за допомогою кількох рядків CSS додати оригінальну і досить 
+безглузду красивість на сайт (мій улюблений тип красивостей).</p>
+
+<div class="sticker-example">
+<div class="sticker sticker_js sticker-1"></div>
+<div class="sticker sticker_js sticker-2"></div>
+<div class="sticker sticker_js sticker-3"></div>
+</div>
+
+<p>Процес максимально простий.</p>
+
+<ol>
+  <li>
+    <p>Скачати файл з <a href="https://github.com/cmiscm/stickerjs">репозиторію на GitHub</a> і підключити його перед основним файлом, в якому 
+ініціалізуються скрипти (у моєму випадку це <code class="highlighter-rouge">script.js</code>).</p>
+  </li>
+  <li>
+    <p>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде 
+звичайний div (//semantic also?), оскільки бібліотека розрахована на роботу з 
+CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб 
+<code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який 
+запобігатиме його схлопуванню.</p>
+  </li>
+  <li>
+    <p>Присвоїти контейнеру ідентифікатор. Клас <code class="highlighter-rouge">sticker</code> або <code class="highlighter-rouge">sticker_js</code> цілком згодиться 
+— головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки 
+ініціалізація скрипта sticker.js відбуватиметься саме тут.</p>
+  </li>
+  <li>
+    <p>Зображення на наклейці підключається через CSS (або inline-стилі//) на клас <code class="highlighter-rouge">sticker-img</code>.</p>
+  </li>
+  <li>
+    <p>Підключити ініціалізацію скрипта при завантаженні контенту сторінки.</p>
+  </li>
+</ol>
+
+<p>Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри <code class="highlighter-rouge">background</code> - <code class="highlighter-rouge">color</code>, <code class="highlighter-rouge">posiion</code>, <code class="highlighter-rouge">repeat</code> тощо. 
+З мінусів - sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки. З плюсів - наліпки шикарні.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    &copy; 2015
+    <script>new Date().getFullYear()>2015&&document.write("— "+new Date().getFullYear());</script>
+    yevhen orlov
+  </div>
+</footer>
+
+
+  </body>
+
+</html>
