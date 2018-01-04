@@ -54,7 +54,6 @@ body {
   font-size: $base-font-size;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
-  min-height: 100vh;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
@@ -137,30 +136,44 @@ h6 {
 /**
  * Bold
  */
- b, strong {
-   text-shadow: $cathodeGlow;
- }
+b,
+strong {
+  text-shadow: $cathodeGlow;
+}
 
- /**
+/**
  * Links
  */
 
 a,
 a:visited {
-  color: rgba($draculaLightBlue, 0.7);
   text-decoration: none;
   text-shadow: $cathodeGlow;
   transition: $transition-time;
   overflow-wrap: break-word;
-
   &:hover,
   &:focus {
     transition: $transition-time;
-    color: rgba($draculaLightBlue, 1);
   }
   &:focus {
     outline: none;
     background: $draculaGray;
+  }
+}
+
+a {
+  color: rgba($draculaLightBlue, 0.7);
+  &:hover,
+  &:focus {
+    color: rgba($draculaLightBlue, 1);
+  }
+}
+
+a:visited {
+  color: rgba($draculaPurple, 0.7);
+  &:hover,
+  &:focus {
+    color: rgba($draculaPurple, 1);
   }
 }
 

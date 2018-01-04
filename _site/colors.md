@@ -1,9 +1,0 @@
-.a{
-    color:#282A36;
-    color:#44475A;
-    color:#8BE9FD;
-    color:#6272A4;
-    color:#FFFFFF;
-    color:#50FA7B;
-    color:#FF5555;
-}

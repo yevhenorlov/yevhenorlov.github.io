@@ -1,18 +1,41 @@
 ---
-layout: landing
+layout: default
 ---
 
-<div class="home">
-  <h1 id="landing-title"><a href="{{ "works" | prepend: site.baseurl }}">{{ site.title | upcase }}</a></h1>
-  <!-- <img src="{{ site.url }}/assets/images/landing-img-01.png"> -->
-  <div id="lpi"></div>
-  <h2 id="landing-subtitle">{{ site.description }}</h2>
-	<ul class="landing-list">
-    <li><a class="landing-link" href="{{ "works" | prepend: site.baseurl }}">.works</a></li>
-    <li><a class="landing-link" href="{{ "blog" | prepend: site.baseurl }}">.blog</a></li>
-    <li><a class="landing-link" href="{{ "contact" | prepend: site.baseurl }}">.contact</a></li>
-	</ul>
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<div class="archive">
+  <!--
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li class="post-item">
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h2 class="post-title">{{ post.title }}</h2>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
 
-</div>
+</div> -->
+<main class="main-page">
 
+  <ul class="post-list">
+    {% for post in site.posts limit:10 %}
+    <li class="post-item">
+
+      <article>
+        <header class="post-header">
+          <h2 class="post-title" itemprop="name headline">{{ post.title }}</h2>
+          <p class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </p>
+        </header>
+        {{ post.content | markdownify | truncatewords: 60 }}
+      </article>
+      <p>
+        <a href="{{ post.url }}" class="read-more">Read more&hellip;</a>
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+
+</main>
