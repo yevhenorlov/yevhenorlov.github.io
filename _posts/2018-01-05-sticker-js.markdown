@@ -64,7 +64,7 @@ categories: frontend
       <div class="sticker-1"></div>
       <div class="sticker-2"></div>
       <div class="sticker-3"></div>
-      <figcaption>Інтерактивні наліпки sticker.js</figcaption>
+      <figcaption>Інтерактивні наліпки (торкніться курсором/пальцем)</figcaption>
     </figure>
 
     <style>
@@ -82,7 +82,7 @@ categories: frontend
       <div class="sticker sticker-1"></div>
       <div class="sticker sticker-2"></div>
       <div class="sticker sticker-3"></div>
-      <figcaption>Інтерактивні наліпки sticker.js</figcaption>
+      <figcaption>Інтерактивні наліпки (торкніться курсором/пальцем)</figcaption>
     </figure>
     ```
 
