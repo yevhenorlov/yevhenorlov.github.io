@@ -62,7 +62,7 @@ body {
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
-  @include media-query($on-palm) {
+  @include media-query($in-hand) {
     font-size: $base-font-size-mobile;
   }
 }
