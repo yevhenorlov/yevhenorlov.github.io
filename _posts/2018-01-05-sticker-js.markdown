@@ -2,12 +2,11 @@
 layout: post
 title:  "Робимо інтерактивні наліпки за допомогою sticker.js"
 date:   2018-01-05 12:47:47 +0200
-image: /assets/images/og/og-frontend.png
+image: https://yevhenorlov.com/assets/images/og/og-frontend.png
 categories: frontend
 ---
 
-Бібліотека [sticker.js](http://stickerjs.cmiscm.com/) дозволяє за допомогою кількох рядків CSS додати оригінальну і досить
-безглузду красивість на сайт (мій улюблений тип красивостей).
+Бібліотека [sticker.js](http://stickerjs.cmiscm.com/) дозволяє за допомогою кількох рядків CSS додати оригінальну і досить безглузду красивість на сайт (мій улюблений тип красивостей).
 
 <figure class="sticker-example">
   <div class="sticker sticker-1"></div>
