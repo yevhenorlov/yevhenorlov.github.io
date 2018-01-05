@@ -12,7 +12,7 @@ categories: frontend
   <div class="sticker sticker-1"></div>
   <div class="sticker sticker-2"></div>
   <div class="sticker sticker-3"></div>
-  <figcaption>Інтерактивні наліпки, віддираються мишкою або пальцями</figcaption>
+  <figcaption>Інтерактивні наліпки, торкніться курсором/пальцем</figcaption>
 </figure>
 
 <style>
@@ -60,7 +60,7 @@ categories: frontend
 
 2. Створити HTML-контейнер, який служитиме основою для наклейки&nbsp;- найкраще тут підійде звичайний div<sup><a href="#fn1" id="ref1">1</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю `background-image`, а не з тегом `<img>`. З цієї ж причини важливо, щоб `width` і `height` контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.
 
-    ```
+    {% highlight html %}
     <figure class="sticker-example">
       <div class="sticker-1"></div>
       <div class="sticker-2"></div>
@@ -74,22 +74,22 @@ categories: frontend
         height: 100px;
       }
     </style>
-    ```
+    {% endhighlight %}
 
 3. Присвоїти контейнеру ідентифікатор. Клас `sticker` або `sticker_js` цілком згодиться — головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки ініціалізація скрипта sticker.js відбуватиметься саме тут.
 
-    ```
+    {% highlight html %}
     <figure class="sticker-example">
       <div class="sticker sticker-1"></div>
       <div class="sticker sticker-2"></div>
       <div class="sticker sticker-3"></div>
       <figcaption>Інтерактивні наліпки sticker.js</figcaption>
     </figure>
-    ```
+    {% endhighlight %}
 
 4. Зображення на наклейці підключається через CSS на клас `sticker-img` — елемент з цим класом буде створено всередині контейнера, на якому ініціалізуватиметься `sticker.js`.
 
-    ```
+    {% highlight html %}
     <style>
       .sticker .sticker-img {
         background-size: contain;
@@ -104,7 +104,7 @@ categories: frontend
         background-image: url('/assets/images/robots/03.png');
       }
     </style>
-    ```
+    {% endhighlight %}
 
 5. Підключити ініціалізацію скрипта при завантаженні DOM.
 
@@ -120,7 +120,7 @@ categories: frontend
 
 Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри `background`: `color`, `position`, `repeat` тощо.
 
-    ```
+    {% highlight html %}
     <style>
       /* shadow opacity */
       .sticker-4 .sticker-shadow {
@@ -146,7 +146,7 @@ categories: frontend
         background-image: linear-gradient(to right, rgba(122, 57, 206, 0.75), rgba(38, 102, 232, 0.75));
       }
     </style>
-    ```
+    {% endhighlight %}
 
 <figure class="sticker-example">
   <div class="sticker sticker-4"></div>
@@ -183,7 +183,7 @@ categories: frontend
 Єдиний суттєвий мінус, який вдалось помітити — sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки.
 
 <aside class="footnotes">
-  <sup id="fn1">1. Автор допускає, що HTML5 передбачає більш семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в <a href="https://twitter.com/yevhenorlov">твіттері</a>.<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></sup>
+  <sup id="fn1">1. Автор допускає, що HTML5 передбачає більш адекватну семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в <a href="https://twitter.com/yevhenorlov">твіттері</a>.<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></sup>
 </aside>
 
 <script src="/assets/js/sticker.min.js"></script>

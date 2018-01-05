@@ -137,6 +137,12 @@
   margin: 0;
 }
 
+.footnotes {
+  margin-top: $spacing-unit * 2;
+  border-top: 1px solid $draculaGray;
+  padding: $spacing-unit 0;
+}
+
 /**
  * Posts
  */

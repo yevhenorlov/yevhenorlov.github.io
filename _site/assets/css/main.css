@@ -439,6 +439,12 @@ pre > code {
   margin: 0;
 }
 
+.footnotes {
+  margin-top: 4rem;
+  border-top: 1px solid #44475a;
+  padding: 2rem 0;
+}
+
 /**
  * Posts
  */
@@ -542,6 +548,7 @@ pre > code {
 }
 
 .highlight .o {
+  color: #fa79ca;
   font-weight: bold;
 }
 
@@ -635,12 +642,12 @@ pre > code {
 }
 
 .highlight .kt {
-  color: #458;
+  color: #50fa7b;
   font-weight: bold;
 }
 
 .highlight .m {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .s {
@@ -656,7 +663,7 @@ pre > code {
 }
 
 .highlight .nc {
-  color: #458;
+  color: #50fa7b;
   font-weight: bold;
 }
 
@@ -682,6 +689,10 @@ pre > code {
   color: #555;
 }
 
+.highlight .nl {
+  color: #8be9fd;
+}
+
 .highlight .nt {
   color: #fa79ca;
 }
@@ -699,19 +710,19 @@ pre > code {
 }
 
 .highlight .mf {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .mh {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .mi {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .mo {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .sb {
@@ -775,5 +786,5 @@ pre > code {
 }
 
 .highlight .il {
-  color: #099;
+  color: #bd93f2;
 }
