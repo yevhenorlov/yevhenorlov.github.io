@@ -9,7 +9,7 @@
 title: yevhenorlov.com
 email: yevhenorlov@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  блог про фронтенд, цифрове мистецтво і красивий код
+  блог про веб-розробку, цифрове мистецтво і красивий код
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yevhenorlov.com" # the base hostname & protocol for your site
 twitter_username: yevhenorlov
