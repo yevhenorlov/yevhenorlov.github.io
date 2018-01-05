@@ -64,6 +64,10 @@ body {
   font-kerning: normal;
 }
 
+body * {
+  font-family: $base-font-family;
+}
+
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -216,11 +220,13 @@ code.highlighter-rouge {
   border-radius: 2px;
 }
 
+figure.highlight,
 div.highlighter-rouge {
-  min-width: 65vw;
+  position: relative;
   transform: translateX(-50%);
   left: 50%;
-  position: relative;
+  min-width: 65vw;
+  border-radius: 5px;
 }
 
 pre {

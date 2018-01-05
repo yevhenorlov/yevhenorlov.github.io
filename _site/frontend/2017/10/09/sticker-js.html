@@ -134,81 +134,79 @@
   <li>Скачати бібліотеку з <a href="https://github.com/cmiscm/stickerjs">репозиторію на GitHub</a> і підключити її перед основним файлом, в якому ініціалізуються скрипти (у нашому випадку це буде <code class="highlighter-rouge">script.js</code>).</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  &lt;script src="/assets/js/sticker.min.js"&gt;&lt;/script&gt;
-  &lt;script src="/assets/js/script.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/sticker.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+    </code></pre></figure>
 
 <ol>
-  <li>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде звичайний div<sup><a href="#fn1" id="ref1">1</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб <code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.</li>
-</ol>
+  <li>
+    <p>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде звичайний div<sup><a href="#fn1" id="ref1">1</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб <code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;figure class="sticker-example"&gt;
-  &lt;div class="sticker-1"&gt;&lt;/div&gt;
-  &lt;div class="sticker-2"&gt;&lt;/div&gt;
-  &lt;div class="sticker-3"&gt;&lt;/div&gt;
-  &lt;figcaption&gt;Інтерактивні наліпки sticker.js&lt;/figcaption&gt;
-&lt;/figure&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code> &lt;figure class="sticker-example"&gt;
+   &lt;div class="sticker-1"&gt;&lt;/div&gt;
+   &lt;div class="sticker-2"&gt;&lt;/div&gt;
+   &lt;div class="sticker-3"&gt;&lt;/div&gt;
+   &lt;figcaption&gt;Інтерактивні наліпки sticker.js&lt;/figcaption&gt;
+ &lt;/figure&gt;
 
-&lt;style&gt;
-  .sticker-example &gt; div {
-    width: 100px;
-    height: 100px;
-  }
-&lt;/style&gt;
+ &lt;style&gt;
+   .sticker-example &gt; div {
+     width: 100px;
+     height: 100px;
+   }
+ &lt;/style&gt;
 </code></pre>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>Присвоїти контейнеру ідентифікатор. Клас <code class="highlighter-rouge">sticker</code> або <code class="highlighter-rouge">sticker_js</code> цілком згодиться — головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки ініціалізація скрипта sticker.js відбуватиметься саме тут.</p>
 
-<ol>
-  <li>Присвоїти контейнеру ідентифікатор. Клас <code class="highlighter-rouge">sticker</code> або <code class="highlighter-rouge">sticker_js</code> цілком згодиться — головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки ініціалізація скрипта sticker.js відбуватиметься саме тут.</li>
-</ol>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;figure class="sticker-example"&gt;
-  &lt;div class="sticker sticker-1"&gt;&lt;/div&gt;
-  &lt;div class="sticker sticker-2"&gt;&lt;/div&gt;
-  &lt;div class="sticker sticker-3"&gt;&lt;/div&gt;
-  &lt;figcaption&gt;Інтерактивні наліпки sticker.js&lt;/figcaption&gt;
-&lt;/figure&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code> &lt;figure class="sticker-example"&gt;
+   &lt;div class="sticker sticker-1"&gt;&lt;/div&gt;
+   &lt;div class="sticker sticker-2"&gt;&lt;/div&gt;
+   &lt;div class="sticker sticker-3"&gt;&lt;/div&gt;
+   &lt;figcaption&gt;Інтерактивні наліпки sticker.js&lt;/figcaption&gt;
+ &lt;/figure&gt;
 </code></pre>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>Зображення на наклейці підключається через CSS на клас <code class="highlighter-rouge">sticker-img</code> — елемент з цим класом буде створено всередині контейнера, на якому ініціалізуватиметься <code class="highlighter-rouge">sticker.js</code>.</p>
 
-<ol>
-  <li>Зображення на наклейці підключається через CSS на клас <code class="highlighter-rouge">sticker-img</code> — елемент з цим класом буде створено всередині контейнера, на якому ініціалізуватиметься <code class="highlighter-rouge">sticker.js</code>.</li>
-</ol>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;style&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code> &lt;style&gt;
    .sticker .sticker-img {
-    background-size: contain;
-  }
-  .sticker-1 .sticker-img {
-    background-image: url('/assets/images/robots/01.png');
-  }
-  .sticker-2 .sticker-img {
-    background-image: url('/assets/images/robots/02.png');
-  }
-  .sticker-3 .sticker-img {
-    background-image: url('/assets/images/robots/03.png');
-  }
-&lt;/style&gt;
+     background-size: contain;
+   }
+   .sticker-1 .sticker-img {
+     background-image: url('/assets/images/robots/01.png');
+   }
+   .sticker-2 .sticker-img {
+     background-image: url('/assets/images/robots/02.png');
+   }
+   .sticker-3 .sticker-img {
+     background-image: url('/assets/images/robots/03.png');
+   }
+ &lt;/style&gt;
 </code></pre>
-</div>
-
-<ol>
-  <li>Підключити ініціалізацію скрипта при завантаженні DOM.</li>
+    </div>
+  </li>
+  <li>
+    <p>Підключити ініціалізацію скрипта при завантаженні DOM.</p>
+  </li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/* script.js */
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="cm">/* script.js */</span>
 
-document.addEventListener("DOMContentLoaded", event =&gt; {
-  Sticker.init('.sticker');
-});
-</code></pre>
-</div>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"DOMContentLoaded"</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">Sticker</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s1">'.sticker'</span><span class="p">);</span>
+    <span class="p">});</span>
+    </code></pre></figure>
 
 <p>Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри <code class="highlighter-rouge">background</code>: <code class="highlighter-rouge">color</code>, <code class="highlighter-rouge">position</code>, <code class="highlighter-rouge">repeat</code> тощо.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;style&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>```
+&lt;style&gt;
   /* shadow opacity */
   .sticker-4 .sticker-shadow {
   opacity: 0.6;
@@ -233,6 +231,7 @@ document.addEventListener("DOMContentLoaded", event =&gt; {
     background-image: linear-gradient(to right, rgba(122, 57, 206, 0.75), rgba(38, 102, 232, 0.75));
   }
 &lt;/style&gt;
+```
 </code></pre>
 </div>
 

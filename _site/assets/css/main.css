@@ -64,6 +64,10 @@ body {
           font-kerning: normal;
 }
 
+body * {
+  font-family: "Fira Mono", monospace;
+}
+
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -213,12 +217,14 @@ code.highlighter-rouge {
   border-radius: 2px;
 }
 
+figure.highlight,
 div.highlighter-rouge {
-  min-width: 65vw;
+  position: relative;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   left: 50%;
-  position: relative;
+  min-width: 65vw;
+  border-radius: 5px;
 }
 
 pre {
@@ -514,16 +520,15 @@ pre > code {
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fff;
+  background: #000;
 }
 
 .highlighter-rouge .highlight {
   background: #000;
-  border-radius: 5px;
 }
 
 .highlight .c {
-  color: #998;
+  color: #44475a;
   font-style: italic;
 }
 
@@ -541,7 +546,7 @@ pre > code {
 }
 
 .highlight .cm {
-  color: #998;
+  color: #44475a;
   font-style: italic;
 }
 
@@ -551,7 +556,7 @@ pre > code {
 }
 
 .highlight .c1 {
-  color: #998;
+  color: #44475a;
   font-style: italic;
 }
 
@@ -639,15 +644,15 @@ pre > code {
 }
 
 .highlight .s {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .na {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .nb {
-  color: #0086B3;
+  color: #bd93f2;
 }
 
 .highlight .nc {
@@ -656,7 +661,7 @@ pre > code {
 }
 
 .highlight .no {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .ni {
@@ -678,11 +683,11 @@ pre > code {
 }
 
 .highlight .nt {
-  color: #000080;
+  color: #fa79ca;
 }
 
 .highlight .nv {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .ow {
@@ -710,35 +715,35 @@ pre > code {
 }
 
 .highlight .sb {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sc {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sd {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .s2 {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .se {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sh {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .si {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sx {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sr {
@@ -746,7 +751,7 @@ pre > code {
 }
 
 .highlight .s1 {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .ss {
@@ -758,15 +763,15 @@ pre > code {
 }
 
 .highlight .vc {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .vg {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .vi {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .il {
