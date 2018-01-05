@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yevhenorlov.com</title>
+    <description>блог про фронтенд, цифрове мистецтво і красивий код
+</description>
+    <link>https://yevhenorlov.com/</link>
+    <atom:link href="https://yevhenorlov.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 05 Jan 2018 18:04:24 +0200</pubDate>
+    <lastBuildDate>Fri, 05 Jan 2018 18:04:24 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Робимо інтерактивні наліпки за допомогою sticker.js</title>
+        <description>&lt;p&gt;Бібліотека &lt;a href=&quot;http://stickerjs.cmiscm.com/&quot;&gt;sticker.js&lt;/a&gt; дозволяє за допомогою кількох рядків CSS додати оригінальну і досить
+безглузду красивість на сайт (мій улюблений тип красивостей).&lt;/p&gt;
+
+&lt;figure class=&quot;sticker-example&quot;&gt;
+  &lt;div class=&quot;sticker sticker-1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker sticker-2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker sticker-3&quot;&gt;&lt;/div&gt;
+  &lt;figcaption&gt;Інтерактивні наліпки (торкніться курсором/пальцем)&lt;sup&gt;&lt;a href=&quot;#fn1&quot; id=&quot;ref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;style&gt;
+  .sticker-example {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  .sticker {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+  }
+  @media screen and (max-width: 760px) {
+    .sticker {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+    }
+  }
+  .sticker .sticker-img {
+    background-size: contain;
+  }
+  .sticker-1 .sticker-img {
+    background-image: url(&#39;/assets/images/robots/01.png&#39;);
+  }
+  .sticker-2 .sticker-img {
+    background-image: url(&#39;/assets/images/robots/02.png&#39;);
+  }
+  .sticker-3 .sticker-img {
+    background-image: url(&#39;/assets/images/robots/03.png&#39;);
+  }
+&lt;/style&gt;
+
+&lt;p&gt;Процес максимально простий.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Скачати бібліотеку з &lt;a href=&quot;https://github.com/cmiscm/stickerjs&quot;&gt;репозиторію на GitHub&lt;/a&gt; і підключити її перед основним файлом, в якому ініціалізуються скрипти (у нашому випадку це буде &lt;code class=&quot;highlighter-rouge&quot;&gt;script.js&lt;/code&gt;).&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/js/sticker.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/js/script.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Створити HTML-контейнер, який служитиме основою для наклейки. Тег &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt; не підійде, оскільки бібліотека розрахована на роботу з параметром &lt;code class=&quot;highlighter-rouge&quot;&gt;background-image&lt;/code&gt; згенерованого елемента-нащадка контейнера. Найкраще з цією функцією впорається звичайний &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;&lt;sup&gt;&lt;a href=&quot;#fn2&quot; id=&quot;ref2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. З цієї причини важливо, щоб &lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt; і &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt; контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-example&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Інтерактивні наліпки (торкніться курсором/пальцем)&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
+
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker-example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Присвоїти контейнеру ідентифікатор. Клас &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker&lt;/code&gt; або &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker_js&lt;/code&gt; цілком згодиться — головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки ініціалізація скрипта sticker.js відбуватиметься саме тут.&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-example&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker sticker-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker sticker-2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker sticker-3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Інтерактивні наліпки (торкніться курсором/пальцем)&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Зображення на наклейці підключається через CSS на клас &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker-img&lt;/code&gt; — елемент з цим класом буде створено всередині контейнера, на якому ініціалізуватиметься &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker.js&lt;/code&gt;.&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;background-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker-1&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&#39;/assets/images/robots/01.png&#39;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker-2&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&#39;/assets/images/robots/02.png&#39;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker-3&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&#39;/assets/images/robots/03.png&#39;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Підключити ініціалізацію скрипта при завантаженні DOM.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;cm&quot;&gt;/* script.js */&lt;/span&gt;
+
+ &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;DOMContentLoaded&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;Sticker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;.sticker&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри &lt;code class=&quot;highlighter-rouge&quot;&gt;background&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;position&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;repeat&lt;/code&gt; тощо.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;/* shadow opacity */&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-4&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-shadow&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-5&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-shadow&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-6&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-shadow&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;/* background */&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-4&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rebeccapurple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-5&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&quot;/assets/robots/05.png&quot;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10%&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-6&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linear-gradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;122&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;57&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;206&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.75&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;102&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;232&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.75&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;figure class=&quot;sticker-example&quot;&gt;
+  &lt;div class=&quot;sticker sticker-4&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker sticker-5&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker sticker-6&quot;&gt;&lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;style&gt;
+  /* shadow opacity */
+  .sticker-4 .sticker-shadow {
+  opacity: 0.6;
+  }
+  .sticker-5 .sticker-shadow {
+  opacity: 1;
+  }
+  .sticker-6 .sticker-shadow {
+  opacity: 0.1;
+  }
+
+  /* background */
+  .sticker-4 .sticker-img {
+    background-color: coral;
+  }
+  .sticker-5 .sticker-img {
+    background-image: url(&quot;/assets/images/robots/05.png&quot;);
+    background-size: 10% 10%;
+    background-repeat: repeat;
+  }
+  .sticker-6 .sticker-img {
+    background-image: linear-gradient(80deg, rgba(47, 132, 17, 0.75), rgba(232, 255, 0, 0.75));
+  }
+&lt;/style&gt;
+
+&lt;p&gt;Єдиний недолік, який здався суттєвим — sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки.&lt;/p&gt;
+
+&lt;aside class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn1&quot;&gt;Джерело картинок: &lt;a href=&quot;https://www.behance.net/DanielNyari&quot;&gt;Daniel Nyari&lt;/a&gt;.&lt;a href=&quot;#ref1&quot; title=&quot;Повернутися до зноски 1 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+    &lt;li id=&quot;fn2&quot;&gt;Автор допускає, що стандарт HTML5 передбачає більш адекватну семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в &lt;a href=&quot;https://twitter.com/yevhenorlov&quot;&gt;твіттері&lt;/a&gt;.&lt;a href=&quot;#ref2&quot; title=&quot;Повернутися до зноски 2 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/aside&gt;
+
+&lt;script src=&quot;/assets/js/sticker.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/js/script.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Fri, 05 Jan 2018 12:47:47 +0200</pubDate>
+        <link>https://yevhenorlov.com/frontend/2018/01/05/sticker-js.html</link>
+        <guid isPermaLink="true">https://yevhenorlov.com/frontend/2018/01/05/sticker-js.html</guid>
+        
+        
+        <category>frontend</category>
+        
+      </item>
+    
+  </channel>
+</rss>
