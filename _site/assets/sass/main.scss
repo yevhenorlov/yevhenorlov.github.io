@@ -1,8 +1,0 @@
-// Everything compiles into a single file via gulp and gets prepended with YAML Front Matter dashes ('---') for Jekyll to handle.
-
-@import
-  "variables", // all variables
-  "mixin-extend", // all mixins and extends
-  "base", // reset & general tags
-  "layout", // page-specific layouts
-  "syntax-highlighting"; // syntax highlighting for code snippets
