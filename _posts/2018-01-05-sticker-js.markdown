@@ -132,7 +132,7 @@ categories: frontend
 
   /* background */
   .sticker-4 .sticker-img {
-    background-color: rebeccapurple;
+    background-color: coral;
   }
   .sticker-5 .sticker-img {
     background-image: url("/assets/robots/05.png");
