@@ -97,6 +97,17 @@ img {
 /**
  * Figures
  */
+figure {
+  width: 100%;
+}
+
+figcaption {
+  font-size: smaller;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
 figure > img {
   display: block;
 }
@@ -195,20 +206,28 @@ blockquote > :last-child {
 /**
  * Code formatting
  */
-pre,
-code {
-  border: 1px solid #44475a;
-  border-radius: 2px;
-  background-color: #44475a;
-}
-
 code {
   padding: 1px 5px;
 }
 
+code.highlighter-rouge {
+  background-color: #44475a;
+  border-radius: 2px;
+}
+
+div.highlighter-rouge {
+  min-width: 65vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  position: relative;
+}
+
 pre {
-  padding: 8px 12px;
+  padding: 20px;
   overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 pre > code {
@@ -502,6 +521,7 @@ pre > code {
 
 .highlighter-rouge .highlight {
   background: #000;
+  border-radius: 5px;
 }
 
 .highlight .c {

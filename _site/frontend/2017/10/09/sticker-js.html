@@ -28,7 +28,7 @@
   <script src="https://use.fontawesome.com/9f6fb3027d.js"></script>
 
   <title>Робимо інтерактивні наліпки за допомогою sticker.js</title>
-  <meta name="description" content="Бібліотека sticker.js дозволяє за допомогою кількох рядків CSS додати оригінальну і досить безглузду красивість на сайт (мій улюблений тип красивостей).">
+  <meta name="description" content="Бібліотека sticker.js дозволяє за допомогою кількох рядків CSS додати оригінальну і доситьбезглузду красивість на сайт (мій улюблений тип красивостей).">
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="canonical" href="/frontend/2017/10/09/sticker-js.html">
@@ -85,44 +85,198 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Бібліотека <strong>sticker.js</strong> дозволяє за допомогою кількох рядків CSS додати оригінальну і досить 
+    <p>Бібліотека <a href="http://stickerjs.cmiscm.com/">sticker.js</a> дозволяє за допомогою кількох рядків CSS додати оригінальну і досить
 безглузду красивість на сайт (мій улюблений тип красивостей).</p>
 
-<div class="sticker-example">
-<div class="sticker sticker_js sticker-1"></div>
-<div class="sticker sticker_js sticker-2"></div>
-<div class="sticker sticker_js sticker-3"></div>
-</div>
+<figure class="sticker-example">
+  <div class="sticker sticker-1"></div>
+  <div class="sticker sticker-2"></div>
+  <div class="sticker sticker-3"></div>
+  <figcaption>Інтерактивні наліпки, віддираються мишкою або пальцями</figcaption>
+</figure>
+
+<style>
+  .sticker-example {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  .sticker {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+  }
+  @media screen and (max-width: 760px) {
+    .sticker {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+    }
+  }
+  .sticker .sticker-img {
+    background-size: contain;
+  }
+  .sticker-1 .sticker-img {
+    background-image: url('/assets/images/robots/01.png');
+  }
+  .sticker-2 .sticker-img {
+    background-image: url('/assets/images/robots/02.png');
+  }
+  .sticker-3 .sticker-img {
+    background-image: url('/assets/images/robots/03.png');
+  }
+</style>
 
 <p>Процес максимально простий.</p>
 
 <ol>
-  <li>
-    <p>Скачати файл з <a href="https://github.com/cmiscm/stickerjs">репозиторію на GitHub</a> і підключити його перед основним файлом, в якому 
-ініціалізуються скрипти (у моєму випадку це <code class="highlighter-rouge">script.js</code>).</p>
-  </li>
-  <li>
-    <p>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде 
-звичайний div (//semantic also?), оскільки бібліотека розрахована на роботу з 
-CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб 
-<code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який 
-запобігатиме його схлопуванню.</p>
-  </li>
-  <li>
-    <p>Присвоїти контейнеру ідентифікатор. Клас <code class="highlighter-rouge">sticker</code> або <code class="highlighter-rouge">sticker_js</code> цілком згодиться 
-— головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки 
-ініціалізація скрипта sticker.js відбуватиметься саме тут.</p>
-  </li>
-  <li>
-    <p>Зображення на наклейці підключається через CSS (або inline-стилі//) на клас <code class="highlighter-rouge">sticker-img</code>.</p>
-  </li>
-  <li>
-    <p>Підключити ініціалізацію скрипта при завантаженні контенту сторінки.</p>
-  </li>
+  <li>Скачати бібліотеку з <a href="https://github.com/cmiscm/stickerjs">репозиторію на GitHub</a> і підключити її перед основним файлом, в якому ініціалізуються скрипти (у нашому випадку це буде <code class="highlighter-rouge">script.js</code>).</li>
 </ol>
 
-<p>Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри <code class="highlighter-rouge">background</code> - <code class="highlighter-rouge">color</code>, <code class="highlighter-rouge">posiion</code>, <code class="highlighter-rouge">repeat</code> тощо. 
-З мінусів - sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки. З плюсів - наліпки шикарні.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>  &lt;script src="/assets/js/sticker.min.js"&gt;&lt;/script&gt;
+  &lt;script src="/assets/js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+</div>
+
+<ol>
+  <li>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде звичайний div<sup><a href="#fn1" id="ref1">1</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб <code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;figure class="sticker-example"&gt;
+  &lt;div class="sticker-1"&gt;&lt;/div&gt;
+  &lt;div class="sticker-2"&gt;&lt;/div&gt;
+  &lt;div class="sticker-3"&gt;&lt;/div&gt;
+  &lt;figcaption&gt;Інтерактивні наліпки sticker.js&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;style&gt;
+  .sticker-example &gt; div {
+    width: 100px;
+    height: 100px;
+  }
+&lt;/style&gt;
+</code></pre>
+</div>
+
+<ol>
+  <li>Присвоїти контейнеру ідентифікатор. Клас <code class="highlighter-rouge">sticker</code> або <code class="highlighter-rouge">sticker_js</code> цілком згодиться — головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки ініціалізація скрипта sticker.js відбуватиметься саме тут.</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;figure class="sticker-example"&gt;
+  &lt;div class="sticker sticker-1"&gt;&lt;/div&gt;
+  &lt;div class="sticker sticker-2"&gt;&lt;/div&gt;
+  &lt;div class="sticker sticker-3"&gt;&lt;/div&gt;
+  &lt;figcaption&gt;Інтерактивні наліпки sticker.js&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+</div>
+
+<ol>
+  <li>Зображення на наклейці підключається через CSS на клас <code class="highlighter-rouge">sticker-img</code> — елемент з цим класом буде створено всередині контейнера, на якому ініціалізуватиметься <code class="highlighter-rouge">sticker.js</code>.</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;style&gt;
+   .sticker .sticker-img {
+    background-size: contain;
+  }
+  .sticker-1 .sticker-img {
+    background-image: url('/assets/images/robots/01.png');
+  }
+  .sticker-2 .sticker-img {
+    background-image: url('/assets/images/robots/02.png');
+  }
+  .sticker-3 .sticker-img {
+    background-image: url('/assets/images/robots/03.png');
+  }
+&lt;/style&gt;
+</code></pre>
+</div>
+
+<ol>
+  <li>Підключити ініціалізацію скрипта при завантаженні DOM.</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* script.js */
+
+document.addEventListener("DOMContentLoaded", event =&gt; {
+  Sticker.init('.sticker');
+});
+</code></pre>
+</div>
+
+<p>Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри <code class="highlighter-rouge">background</code>: <code class="highlighter-rouge">color</code>, <code class="highlighter-rouge">position</code>, <code class="highlighter-rouge">repeat</code> тощо.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;style&gt;
+  /* shadow opacity */
+  .sticker-4 .sticker-shadow {
+  opacity: 0.6;
+  }
+  .sticker-5 .sticker-shadow {
+  opacity: 1;
+  }
+  .sticker-6 .sticker-shadow {
+  opacity: 0.1;
+  }
+
+  /* background */
+  .sticker-4 .sticker-img {
+    background-color: rebeccapurple;
+  }
+  .sticker-5 .sticker-img {
+    background-image: url("/assets/robots/05.png");
+    background-size: 10% 10%;
+    background-repeat: repeat;
+  }
+  .sticker-6 .sticker-img {
+    background-image: linear-gradient(to right, rgba(122, 57, 206, 0.75), rgba(38, 102, 232, 0.75));
+  }
+&lt;/style&gt;
+</code></pre>
+</div>
+
+<figure class="sticker-example">
+  <div class="sticker sticker-4"></div>
+  <div class="sticker sticker-5"></div>
+  <div class="sticker sticker-6"></div>
+</figure>
+
+<style>
+  /* shadow opacity */
+  .sticker-4 .sticker-shadow {
+  opacity: 0.6;
+  }
+  .sticker-5 .sticker-shadow {
+  opacity: 1;
+  }
+  .sticker-6 .sticker-shadow {
+  opacity: 0.1;
+  }
+
+  /* background */
+  .sticker-4 .sticker-img {
+    background-color: coral;
+  }
+  .sticker-5 .sticker-img {
+    background-image: url("/assets/images/robots/05.png");
+    background-size: 10% 10%;
+    background-repeat: repeat;
+  }
+  .sticker-6 .sticker-img {
+    background-image: linear-gradient(80deg, rgba(47, 132, 17, 0.75), rgba(232, 255, 0, 0.75));
+  }
+</style>
+
+<p>Єдиний суттєвий мінус, який вдалось помітити — sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки.</p>
+
+<aside class="footnotes">
+  <sup id="fn1">1. Автор допускає, що HTML5 передбачає більш семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в <a href="https://twitter.com/yevhenorlov">твіттері</a>.<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></sup>
+</aside>
+
+<script src="/assets/js/sticker.min.js"></script>
+
+<script src="/assets/js/script.js"></script>
 
 
   </div>
