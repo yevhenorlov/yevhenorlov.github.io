@@ -121,105 +121,104 @@
   <li>
     <p>Скачати бібліотеку з <a href="https://github.com/cmiscm/stickerjs">репозиторію на GitHub</a> і підключити її перед основним файлом, в якому ініціалізуються скрипти (у нашому випадку це буде <code class="highlighter-rouge">script.js</code>).</p>
 
-    <p>&lt;!–</p>
+    <div class="language-html highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/sticker.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде звичайний div<sup><a href="#fn2" id="ref2">2</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб <code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.</p>
+
+    <div class="language-html highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"sticker-example"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker-1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker-2"</span><span class="nt">&gt;&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker-3"</span><span class="nt">&gt;&lt;/div&gt;</span>
+   <span class="nt">&lt;figcaption&gt;</span>Інтерактивні наліпки sticker.js<span class="nt">&lt;/figcaption&gt;</span>
+ <span class="nt">&lt;/figure&gt;</span>
+
+ <span class="nt">&lt;style&gt;</span>
+   <span class="nc">.sticker-example</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="p">{</span>
+     <span class="nl">width</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
+     <span class="nl">height</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
+   <span class="p">}</span>
+ <span class="nt">&lt;/style&gt;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Присвоїти контейнеру ідентифікатор. Клас <code class="highlighter-rouge">sticker</code> або <code class="highlighter-rouge">sticker_js</code> цілком згодиться — головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки ініціалізація скрипта sticker.js відбуватиметься саме тут.</p>
+
+    <div class="language-html highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"sticker-example"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker sticker-1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker sticker-2"</span><span class="nt">&gt;&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker sticker-3"</span><span class="nt">&gt;&lt;/div&gt;</span>
+   <span class="nt">&lt;figcaption&gt;</span>Інтерактивні наліпки sticker.js<span class="nt">&lt;/figcaption&gt;</span>
+ <span class="nt">&lt;/figure&gt;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Зображення на наклейці підключається через CSS на клас <code class="highlighter-rouge">sticker-img</code> — елемент з цим класом буде створено всередині контейнера, на якому ініціалізуватиметься <code class="highlighter-rouge">sticker.js</code>.</p>
+
+    <div class="language-html highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;style&gt;</span>
+   <span class="nc">.sticker</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
+     <span class="nl">background-size</span><span class="p">:</span> <span class="n">contain</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="nc">.sticker-1</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
+     <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('/assets/images/robots/01.png')</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="nc">.sticker-2</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
+     <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('/assets/images/robots/02.png')</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="nc">.sticker-3</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
+     <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('/assets/images/robots/03.png')</span><span class="p">;</span>
+   <span class="p">}</span>
+ <span class="nt">&lt;/style&gt;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Підключити ініціалізацію скрипта при завантаженні DOM.</p>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code> <span class="cm">/* script.js */</span>
+
+ <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"DOMContentLoaded"</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">Sticker</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s1">'.sticker'</span><span class="p">);</span>
+ <span class="p">});</span>
+</code></pre>
+    </div>
   </li>
 </ol>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"> --&gt;
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/sticker.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="c">&lt;!-- </span></code></pre></figure>
-<p>–&gt;</p>
-
-<ol>
-  <li>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде звичайний div<sup><a href="#fn2" id="ref2">2</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб <code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"sticker-example"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker-1"</span><span class="nt">&gt;&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker-2"</span><span class="nt">&gt;&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker-3"</span><span class="nt">&gt;&lt;/div&gt;</span>
-      <span class="nt">&lt;figcaption&gt;</span>Інтерактивні наліпки sticker.js<span class="nt">&lt;/figcaption&gt;</span>
-    <span class="nt">&lt;/figure&gt;</span>
-
-    <span class="nt">&lt;style&gt;</span>
-      <span class="nc">.sticker-example</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="p">{</span>
-        <span class="nl">width</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
-        <span class="nl">height</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="nt">&lt;/style&gt;</span>
-    </code></pre></figure>
-
-<ol>
-  <li>Присвоїти контейнеру ідентифікатор. Клас <code class="highlighter-rouge">sticker</code> або <code class="highlighter-rouge">sticker_js</code> цілком згодиться — головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки ініціалізація скрипта sticker.js відбуватиметься саме тут.</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"sticker-example"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker sticker-1"</span><span class="nt">&gt;&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker sticker-2"</span><span class="nt">&gt;&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sticker sticker-3"</span><span class="nt">&gt;&lt;/div&gt;</span>
-      <span class="nt">&lt;figcaption&gt;</span>Інтерактивні наліпки sticker.js<span class="nt">&lt;/figcaption&gt;</span>
-    <span class="nt">&lt;/figure&gt;</span>
-    </code></pre></figure>
-
-<ol>
-  <li>Зображення на наклейці підключається через CSS на клас <code class="highlighter-rouge">sticker-img</code> — елемент з цим класом буде створено всередині контейнера, на якому ініціалізуватиметься <code class="highlighter-rouge">sticker.js</code>.</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;style&gt;</span>
-      <span class="nc">.sticker</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
-        <span class="nl">background-size</span><span class="p">:</span> <span class="n">contain</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="nc">.sticker-1</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
-        <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('/assets/images/robots/01.png')</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="nc">.sticker-2</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
-        <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('/assets/images/robots/02.png')</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="nc">.sticker-3</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
-        <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('/assets/images/robots/03.png')</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="nt">&lt;/style&gt;</span>
-    </code></pre></figure>
-
-<ol>
-  <li>Підключити ініціалізацію скрипта при завантаженні DOM.</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="cm">/* script.js */</span>
-
-    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"DOMContentLoaded"</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">Sticker</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s1">'.sticker'</span><span class="p">);</span>
-    <span class="p">});</span>
-    </code></pre></figure>
 
 <p>Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри <code class="highlighter-rouge">background</code>: <code class="highlighter-rouge">color</code>, <code class="highlighter-rouge">position</code>, <code class="highlighter-rouge">repeat</code> тощо.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;style&gt;</span>
-      <span class="c">/* shadow opacity */</span>
-      <span class="nc">.sticker-4</span> <span class="nc">.sticker-shadow</span> <span class="p">{</span>
-      <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.6</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="nc">.sticker-5</span> <span class="nc">.sticker-shadow</span> <span class="p">{</span>
-      <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="nc">.sticker-6</span> <span class="nc">.sticker-shadow</span> <span class="p">{</span>
-      <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.1</span><span class="p">;</span>
-      <span class="p">}</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="c">/* shadow opacity */</span>
+  <span class="nc">.sticker-4</span> <span class="nc">.sticker-shadow</span> <span class="p">{</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.6</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.sticker-5</span> <span class="nc">.sticker-shadow</span> <span class="p">{</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.sticker-6</span> <span class="nc">.sticker-shadow</span> <span class="p">{</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.1</span><span class="p">;</span>
+  <span class="p">}</span>
 
-      <span class="c">/* background */</span>
-      <span class="nc">.sticker-4</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
-        <span class="nl">background-color</span><span class="p">:</span> <span class="n">rebeccapurple</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="nc">.sticker-5</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
-        <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("/assets/robots/05.png")</span><span class="p">;</span>
-        <span class="nl">background-size</span><span class="p">:</span> <span class="m">10%</span> <span class="m">10%</span><span class="p">;</span>
-        <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="nc">.sticker-6</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
-        <span class="nl">background-image</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">right</span><span class="p">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">122</span><span class="p">,</span> <span class="m">57</span><span class="p">,</span> <span class="m">206</span><span class="p">,</span> <span class="m">0.75</span><span class="p">),</span> <span class="n">rgba</span><span class="p">(</span><span class="m">38</span><span class="p">,</span> <span class="m">102</span><span class="p">,</span> <span class="m">232</span><span class="p">,</span> <span class="m">0.75</span><span class="p">));</span>
-      <span class="p">}</span>
-    <span class="nt">&lt;/style&gt;</span>
-    </code></pre></figure>
+  <span class="c">/* background */</span>
+  <span class="nc">.sticker-4</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rebeccapurple</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.sticker-5</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("/assets/robots/05.png")</span><span class="p">;</span>
+    <span class="nl">background-size</span><span class="p">:</span> <span class="m">10%</span> <span class="m">10%</span><span class="p">;</span>
+    <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.sticker-6</span> <span class="nc">.sticker-img</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">right</span><span class="p">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">122</span><span class="p">,</span> <span class="m">57</span><span class="p">,</span> <span class="m">206</span><span class="p">,</span> <span class="m">0.75</span><span class="p">),</span> <span class="n">rgba</span><span class="p">(</span><span class="m">38</span><span class="p">,</span> <span class="m">102</span><span class="p">,</span> <span class="m">232</span><span class="p">,</span> <span class="m">0.75</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre>
+</div>
 
 <figure class="sticker-example">
   <div class="sticker sticker-4"></div>

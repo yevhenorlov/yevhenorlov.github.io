@@ -19,7 +19,7 @@ ul,
 figure {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: inherit;
 }
 
 html {
@@ -54,7 +54,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
-  color: #ddd;
+  color: #ededed;
   background-color: #282a36;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
@@ -62,6 +62,12 @@ body {
   font-feature-settings: "kern" 1;
   -webkit-font-kerning: normal;
           font-kerning: normal;
+}
+
+@media screen and (max-width: 960px) {
+  body {
+    font-size: 14px;
+  }
 }
 
 body * {
@@ -120,6 +126,11 @@ figure > img {
 ul,
 ol {
   margin-left: 2rem;
+}
+
+ul div.highlighter-rouge,
+ol div.highlighter-rouge {
+  margin-left: -2rem;
 }
 
 li > ul,
@@ -196,8 +207,6 @@ a:visited:hover, a:visited:focus {
 blockquote {
   border-left: 4px solid;
   padding-left: 1rem;
-  font-size: 18px;
-  letter-spacing: -1px;
   font-style: italic;
 }
 
@@ -219,16 +228,11 @@ code.highlighter-rouge {
 
 figure.highlight,
 div.highlighter-rouge {
-  position: relative;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  left: 50%;
-  min-width: 65vw;
   border-radius: 5px;
 }
 
 pre {
-  padding: 30px 20px 5px;
+  padding: 30px 20px;
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -245,7 +249,7 @@ pre > code {
  */
 .wrapper,
 .landing-wrapper {
-  max-width: 70ch;
+  max-width: 75ch;
   margin-right: auto;
   margin-left: auto;
   padding-right: 2rem;
@@ -282,7 +286,7 @@ pre > code {
 }
 
 .icon > svg path {
-  fill: #ddd;
+  fill: #ededed;
 }
 
 /**
@@ -348,11 +352,6 @@ pre > code {
   padding-bottom: 2rem;
 }
 
-.footer-heading {
-  font-size: 18px;
-  margin-bottom: 1rem;
-}
-
 .contact-list {
   list-style: none;
   margin-left: 0;
@@ -412,7 +411,7 @@ pre > code {
 }
 
 .post-meta {
-  color: #ddd;
+  color: #ededed;
   min-width: 10em;
 }
 
@@ -434,6 +433,7 @@ pre > code {
 
 .footnotes li {
   font-size: smaller;
+  margin-bottom: 1em;
 }
 
 /**
@@ -450,36 +450,6 @@ pre > code {
 .post-content {
   margin-bottom: 2rem;
   counter-reset: p;
-}
-
-.post-content h2 {
-  font-size: 32px;
-}
-
-@media screen and (max-width: 960px) {
-  .post-content h2 {
-    font-size: 28px;
-  }
-}
-
-.post-content h3 {
-  font-size: 26px;
-}
-
-@media screen and (max-width: 960px) {
-  .post-content h3 {
-    font-size: 22px;
-  }
-}
-
-.post-content h4 {
-  font-size: 20px;
-}
-
-@media screen and (max-width: 960px) {
-  .post-content h4 {
-    font-size: 18px;
-  }
 }
 
 .post-content a {
@@ -501,16 +471,12 @@ pre > code {
 /**
  * Works
  */
-.works-content {
-  font-size: 13.33333px;
-}
-
 .works-content ul {
   list-style-type: square;
 }
 
 .works-content ul li {
-  margin-bottom: 1.23609rem;
+  margin-bottom: 2rem;
 }
 
 /**

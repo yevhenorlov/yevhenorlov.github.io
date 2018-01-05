@@ -67,11 +67,6 @@
   }
 }
 
-.footer-heading {
-  font-size: 18px;
-  margin-bottom: $spacing-unit / 2;
-}
-
 .contact-list {
   list-style: none;
   margin-left: 0;
@@ -143,6 +138,7 @@
   padding: $spacing-unit 0;
   li {
     font-size: smaller;
+    margin-bottom: 1em;
   }
 }
 
@@ -160,30 +156,6 @@
 .post-content {
   margin-bottom: $spacing-unit;
   counter-reset: p;
-
-  h2 {
-    font-size: 32px;
-
-    @include media-query($on-laptop) {
-      font-size: 28px;
-    }
-  }
-
-  h3 {
-    font-size: 26px;
-
-    @include media-query($on-laptop) {
-      font-size: 22px;
-    }
-  }
-
-  h4 {
-    font-size: 20px;
-
-    @include media-query($on-laptop) {
-      font-size: 18px;
-    }
-  }
 
   a {
     text-decoration: none;
@@ -206,11 +178,10 @@
  */
 
 .works-content {
-  font-size: $base-font-size / 1.2;
   ul {
     list-style-type: square;
     li {
-      margin-bottom: $spacing-unit / 1.618;
+      margin-bottom: $spacing-unit;
     }
   }
 }

@@ -52,14 +52,14 @@ categories: frontend
 
 1. Скачати бібліотеку з [репозиторію на GitHub](https://github.com/cmiscm/stickerjs) і підключити її перед основним файлом, в якому ініціалізуються скрипти (у нашому випадку це буде `script.js`).
 
-    <!-- {% highlight html %} -->
+    ```html
     <script src="/assets/js/sticker.min.js"></script>
     <script src="/assets/js/script.js"></script>
-    <!-- {% endhighlight %} -->
+    ```
 
 2. Створити HTML-контейнер, який служитиме основою для наклейки&nbsp;- найкраще тут підійде звичайний div<sup><a href="#fn2" id="ref2">2</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю `background-image`, а не з тегом `<img>`. З цієї ж причини важливо, щоб `width` і `height` контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.
 
-    {% highlight html %}
+    ```html
     <figure class="sticker-example">
       <div class="sticker-1"></div>
       <div class="sticker-2"></div>
@@ -73,22 +73,22 @@ categories: frontend
         height: 150px;
       }
     </style>
-    {% endhighlight %}
+    ```
 
 3. Присвоїти контейнеру ідентифікатор. Клас `sticker` або `sticker_js` цілком згодиться — головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки ініціалізація скрипта sticker.js відбуватиметься саме тут.
 
-    {% highlight html %}
+    ```html
     <figure class="sticker-example">
       <div class="sticker sticker-1"></div>
       <div class="sticker sticker-2"></div>
       <div class="sticker sticker-3"></div>
       <figcaption>Інтерактивні наліпки sticker.js</figcaption>
     </figure>
-    {% endhighlight %}
+    ```
 
 4. Зображення на наклейці підключається через CSS на клас `sticker-img` — елемент з цим класом буде створено всередині контейнера, на якому ініціалізуватиметься `sticker.js`.
 
-    {% highlight html %}
+    ```html
     <style>
       .sticker .sticker-img {
         background-size: contain;
@@ -103,49 +103,47 @@ categories: frontend
         background-image: url('/assets/images/robots/03.png');
       }
     </style>
-    {% endhighlight %}
+    ```
 
 5. Підключити ініціалізацію скрипта при завантаженні DOM.
 
-
-    {% highlight javascript %}
+    ```javascript
     /* script.js */
 
     document.addEventListener("DOMContentLoaded", event => {
       Sticker.init('.sticker');
     });
-    {% endhighlight %}
-
+    ```
 
 Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри `background`: `color`, `position`, `repeat` тощо.
 
-    {% highlight html %}
-    <style>
-      /* shadow opacity */
-      .sticker-4 .sticker-shadow {
-      opacity: 0.6;
-      }
-      .sticker-5 .sticker-shadow {
-      opacity: 1;
-      }
-      .sticker-6 .sticker-shadow {
-      opacity: 0.1;
-      }
+```html
+<style>
+  /* shadow opacity */
+  .sticker-4 .sticker-shadow {
+  opacity: 0.6;
+  }
+  .sticker-5 .sticker-shadow {
+  opacity: 1;
+  }
+  .sticker-6 .sticker-shadow {
+  opacity: 0.1;
+  }
 
-      /* background */
-      .sticker-4 .sticker-img {
-        background-color: rebeccapurple;
-      }
-      .sticker-5 .sticker-img {
-        background-image: url("/assets/robots/05.png");
-        background-size: 10% 10%;
-        background-repeat: repeat;
-      }
-      .sticker-6 .sticker-img {
-        background-image: linear-gradient(to right, rgba(122, 57, 206, 0.75), rgba(38, 102, 232, 0.75));
-      }
-    </style>
-    {% endhighlight %}
+  /* background */
+  .sticker-4 .sticker-img {
+    background-color: rebeccapurple;
+  }
+  .sticker-5 .sticker-img {
+    background-image: url("/assets/robots/05.png");
+    background-size: 10% 10%;
+    background-repeat: repeat;
+  }
+  .sticker-6 .sticker-img {
+    background-image: linear-gradient(to right, rgba(122, 57, 206, 0.75), rgba(38, 102, 232, 0.75));
+  }
+</style>
+```
 
 <figure class="sticker-example">
   <div class="sticker sticker-4"></div>

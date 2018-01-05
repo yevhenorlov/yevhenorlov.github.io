@@ -1,6 +1,7 @@
 // Our variables
 $base-font-family: "Fira Mono", monospace;
 $base-font-size: 16px;
+$base-font-size-mobile: 14px;
 $base-font-weight: 400;
 $super-font-weight: 100;
 $base-line-height: 1.7;
@@ -20,11 +21,11 @@ $draculaPurple: #bd93f2;
 $draculaGray: #44475a;
 $draculaBlack: #282a36;
 
-$text-color: #ddd;
+$text-color: #ededed;
 $background-color: $draculaBlack;
 
 // Width of the content area
 $content-width: 960px;
 
 $on-palm: 960px;
-$on-laptop: 960px;
+$in-hand: 760px;
