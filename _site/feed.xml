@@ -1,290 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yevhen orlov</title>
-    <description>computer music, front-end, creative coding
+    <title>yevhenorlov.com</title>
+    <description>блог про фронтенд, цифрове мистецтво і красивий код
 </description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 Jan 2018 22:52:43 +0200</pubDate>
-    <lastBuildDate>Thu, 04 Jan 2018 22:52:43 +0200</lastBuildDate>
+    <link>https://yevhenorlov.com/</link>
+    <atom:link href="https://yevhenorlov.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 05 Jan 2018 17:50:37 +0200</pubDate>
+    <lastBuildDate>Fri, 05 Jan 2018 17:50:37 +0200</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Робимо інтерактивні наліпки за допомогою sticker.js</title>
-        <description>&lt;p&gt;Бібліотека &lt;strong&gt;sticker.js&lt;/strong&gt; дозволяє за допомогою кількох рядків CSS додати оригінальну і досить 
+        <description>&lt;p&gt;Бібліотека &lt;a href=&quot;http://stickerjs.cmiscm.com/&quot;&gt;sticker.js&lt;/a&gt; дозволяє за допомогою кількох рядків CSS додати оригінальну і досить
 безглузду красивість на сайт (мій улюблений тип красивостей).&lt;/p&gt;
 
-&lt;div class=&quot;sticker-example&quot;&gt;
-&lt;div class=&quot;sticker sticker_js sticker-1&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;sticker sticker_js sticker-2&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;sticker sticker_js sticker-3&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;figure class=&quot;sticker-example&quot;&gt;
+  &lt;div class=&quot;sticker sticker-1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker sticker-2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker sticker-3&quot;&gt;&lt;/div&gt;
+  &lt;figcaption&gt;Інтерактивні наліпки (торкніться курсором/пальцем)&lt;sup&gt;&lt;a href=&quot;#fn1&quot; id=&quot;ref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;style&gt;
+  .sticker-example {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  .sticker {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+  }
+  @media screen and (max-width: 760px) {
+    .sticker {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+    }
+  }
+  .sticker .sticker-img {
+    background-size: contain;
+  }
+  .sticker-1 .sticker-img {
+    background-image: url(&#39;/assets/images/robots/01.png&#39;);
+  }
+  .sticker-2 .sticker-img {
+    background-image: url(&#39;/assets/images/robots/02.png&#39;);
+  }
+  .sticker-3 .sticker-img {
+    background-image: url(&#39;/assets/images/robots/03.png&#39;);
+  }
+&lt;/style&gt;
 
 &lt;p&gt;Процес максимально простий.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;Скачати файл з &lt;a href=&quot;https://github.com/cmiscm/stickerjs&quot;&gt;репозиторію на GitHub&lt;/a&gt; і підключити його перед основним файлом, в якому 
-ініціалізуються скрипти (у моєму випадку це &lt;code class=&quot;highlighter-rouge&quot;&gt;script.js&lt;/code&gt;).&lt;/p&gt;
+    &lt;p&gt;Скачати бібліотеку з &lt;a href=&quot;https://github.com/cmiscm/stickerjs&quot;&gt;репозиторію на GitHub&lt;/a&gt; і підключити її перед основним файлом, в якому ініціалізуються скрипти (у нашому випадку це буде &lt;code class=&quot;highlighter-rouge&quot;&gt;script.js&lt;/code&gt;).&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/js/sticker.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/js/script.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде 
-звичайний div (//semantic also?), оскільки бібліотека розрахована на роботу з 
-CSS-властивістю &lt;code class=&quot;highlighter-rouge&quot;&gt;background-image&lt;/code&gt;, а не з тегом &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt;. З цієї ж причини важливо, щоб 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt; і &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt; контейнера були задані, оскільки всередині не буде контенту, який 
-запобігатиме його схлопуванню.&lt;/p&gt;
+    &lt;p&gt;Створити HTML-контейнер, який служитиме основою для наклейки. Тег &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt; не підійде, оскільки бібліотека розрахована на роботу з параметром &lt;code class=&quot;highlighter-rouge&quot;&gt;background-image&lt;/code&gt; згенерованого елемента-нащадка контейнера. Найкраще з цією функцією впорається звичайний &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;&lt;sup&gt;&lt;a href=&quot;#fn2&quot; id=&quot;ref2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. З цієї причини важливо, щоб &lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt; і &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt; контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-example&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Інтерактивні наліпки sticker.js&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
+
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker-example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Присвоїти контейнеру ідентифікатор. Клас &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker&lt;/code&gt; або &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker_js&lt;/code&gt; цілком згодиться 
-— головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки 
-ініціалізація скрипта sticker.js відбуватиметься саме тут.&lt;/p&gt;
+    &lt;p&gt;Присвоїти контейнеру ідентифікатор. Клас &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker&lt;/code&gt; або &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker_js&lt;/code&gt; цілком згодиться — головне, аби ідентифікатор не перетинався з іншими елементами на сайті, оскільки ініціалізація скрипта sticker.js відбуватиметься саме тут.&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker-example&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker sticker-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker sticker-2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sticker sticker-3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Інтерактивні наліпки sticker.js&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Зображення на наклейці підключається через CSS (або inline-стилі//) на клас &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker-img&lt;/code&gt;.&lt;/p&gt;
+    &lt;p&gt;Зображення на наклейці підключається через CSS на клас &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker-img&lt;/code&gt; — елемент з цим класом буде створено всередині контейнера, на якому ініціалізуватиметься &lt;code class=&quot;highlighter-rouge&quot;&gt;sticker.js&lt;/code&gt;.&lt;/p&gt;
+
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;background-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker-1&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&#39;/assets/images/robots/01.png&#39;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker-2&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&#39;/assets/images/robots/02.png&#39;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;.sticker-3&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&#39;/assets/images/robots/03.png&#39;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Підключити ініціалізацію скрипта при завантаженні контенту сторінки.&lt;/p&gt;
+    &lt;p&gt;Підключити ініціалізацію скрипта при завантаженні DOM.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;cm&quot;&gt;/* script.js */&lt;/span&gt;
+
+ &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;DOMContentLoaded&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;Sticker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;.sticker&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри &lt;code class=&quot;highlighter-rouge&quot;&gt;background&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;posiion&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;repeat&lt;/code&gt; тощо. 
-З мінусів - sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки. З плюсів - наліпки шикарні.&lt;/p&gt;
+&lt;p&gt;Також можемо регулювати ступінь прозорості для тіні та всі стандартні параметри &lt;code class=&quot;highlighter-rouge&quot;&gt;background&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;position&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;repeat&lt;/code&gt; тощо.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;/* shadow opacity */&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-4&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-shadow&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-5&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-shadow&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-6&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-shadow&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;/* background */&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-4&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rebeccapurple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-5&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&quot;/assets/robots/05.png&quot;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10%&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.sticker-6&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linear-gradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;122&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;57&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;206&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.75&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;102&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;232&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.75&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;figure class=&quot;sticker-example&quot;&gt;
+  &lt;div class=&quot;sticker sticker-4&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker sticker-5&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker sticker-6&quot;&gt;&lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;style&gt;
+  /* shadow opacity */
+  .sticker-4 .sticker-shadow {
+  opacity: 0.6;
+  }
+  .sticker-5 .sticker-shadow {
+  opacity: 1;
+  }
+  .sticker-6 .sticker-shadow {
+  opacity: 0.1;
+  }
+
+  /* background */
+  .sticker-4 .sticker-img {
+    background-color: coral;
+  }
+  .sticker-5 .sticker-img {
+    background-image: url(&quot;/assets/images/robots/05.png&quot;);
+    background-size: 10% 10%;
+    background-repeat: repeat;
+  }
+  .sticker-6 .sticker-img {
+    background-image: linear-gradient(80deg, rgba(47, 132, 17, 0.75), rgba(232, 255, 0, 0.75));
+  }
+&lt;/style&gt;
+
+&lt;p&gt;Єдиний недолік, який здався суттєвим — sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки.&lt;/p&gt;
+
+&lt;aside class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn1&quot;&gt;Джерело картинок: &lt;a href=&quot;https://www.behance.net/DanielNyari&quot;&gt;Daniel Nyari&lt;/a&gt;.&lt;a href=&quot;#ref1&quot; title=&quot;Повернутися до зноски 1 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+    &lt;li id=&quot;fn2&quot;&gt;Автор допускає, що стандарт HTML5 передбачає більш адекватну семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в &lt;a href=&quot;https://twitter.com/yevhenorlov&quot;&gt;твіттері&lt;/a&gt;.&lt;a href=&quot;#ref2&quot; title=&quot;Повернутися до зноски 2 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/aside&gt;
+
+&lt;script src=&quot;/assets/js/sticker.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/js/script.js&quot;&gt;&lt;/script&gt;
 
 </description>
-        <pubDate>Mon, 09 Oct 2017 18:47:47 +0300</pubDate>
-        <link>/frontend/2017/10/09/sticker-js.html</link>
-        <guid isPermaLink="true">/frontend/2017/10/09/sticker-js.html</guid>
+        <pubDate>Fri, 05 Jan 2018 12:47:47 +0200</pubDate>
+        <link>https://yevhenorlov.com/frontend/2018/01/05/sticker-js.html</link>
+        <guid isPermaLink="true">https://yevhenorlov.com/frontend/2018/01/05/sticker-js.html</guid>
         
         
         <category>frontend</category>
-        
-      </item>
-    
-      <item>
-        <title>entropia (i-iii)</title>
-        <description>&lt;p&gt;stereo version of my 8-channel piece, composed for and performed at ‘Electroacoustic: Dimensions’ concert (Kyiv Contemporary Music Days festival, 2016.09.10)&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/299919674&amp;amp;color=000000&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Wed, 28 Dec 2016 18:37:00 +0200</pubDate>
-        <link>/my-works/music/2016/12/28/entropia.html</link>
-        <guid isPermaLink="true">/my-works/music/2016/12/28/entropia.html</guid>
-        
-        
-        <category>my-works</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>{summary} interview with mark fell 2</title>
-        <description>&lt;p&gt;It’s good to be fixated by technology—and I clearly am. But that fixation should be in terms of how it behaves, not what it looks like on the shelf or how much you paid for it.&lt;/p&gt;
-
-&lt;p&gt;Don’t get hung up on trying to create the perfect studio environment—there isn’t one. I have known so many people who get fixated on what equipment they need or want, instead of using what they have. I also know people who spend more time perpetually rebuilding their studio rather than actually using it to make music.&lt;/p&gt;
-
-&lt;p&gt;Likewise, don’t worry about how good or bad your speakers are. I made my first few albums on a pair of second-hand bottom-of-the-range hi fi speakers that should really have been thrown away years before I acquired them. …Over the years most listeners wrongly assumed that those early pieces had been made on expensive monitors, perhaps in some research institute. But the opposite was true: these tracks were made on crap speakers in the spare room of a social housing project, in a small town in the North of England. It’s comforting to know that a piece of work which won acclaim at ARS Electronica was made with such meagre resources, compared to several other submissions produced in some of the world’s most highly funded research centres. Even these days I use a pair of reasonably cheap studio monitors or old hi fi speakers. In my experience, if you get your work sounding good in your studio, whatever the speakers are, a skilful mastering engineer will be able to make the final thing sound good too.&lt;/p&gt;
-
-&lt;p&gt;If a piece of music is not working, simply adding more and more components will not rescue it. Instead, I find it helps to be selective and subtractive, and to keep things as simple as possible.&lt;/p&gt;
-
-&lt;p&gt;…I still enjoy messing around on a synthesizer or building max patches, and I can easily spend the whole night doing this. But this pleasurable side is almost totally outweighed by the difficulty of actually making work. My advice is this: face up to the fact that music making is mentally and physically demanding; it’s hard, not fun, and probably unhealthy. Because of this I recommend taking lots of breaks, doing housework, walking to the shops, eating good food and so on. Also, I find that it helps if I listen at a relatively quiet level, and to listen carefully. Your ears, like anything else, get tired if you use them too much.&lt;/p&gt;
-
-&lt;p&gt;…In my experience, a clear idea is only any use as a starting point; it is never a destination. It is what you uncover in the process of making a piece of music that makes it interesting. Often, in the process of making work it’s likely that you come up with something quite familiar, and for the music producer (as well as audiences), this can have an instant appeal. A good example is an analog step sequencer triggering a synthesizer with variable filter cutoff with some form of synchronized delay. Let’s admit it: we have all done it, and probably enjoyed it. But for me the instant appeal of the familiar is perhaps less engaging than the ambivalent relationship to unfamiliar musical structures. So, I have this awareness that the familiar has a sort of gravitational pull which I try to avoid; instead, I try to be sensitive to the unfamiliar structures that I encounter while working with technologies and processes.&lt;/p&gt;
-
-&lt;p&gt;…When I first started making music I thought that tracks had to be complicated with lots of different ingredients, levels of energy and sections. It took me a while to realize this was a problem. I remember spending about a year on one track that just kept getting worse and worse. My approach now is to make lots of related tracks that explore the same materials and processes, but each is a different outcome or combination of those materials and processes.&lt;/p&gt;
-
-&lt;p&gt;…for me I found that I simply could not make any kind of decent music using time line environments. With the benefit of several years hindsight, I think the problem is (and was) how those timeline systems structure time—how they position you as a composer outside the music. In effect, your role becomes one of organizing bits of information in a grid like space, where you can see the beginning, middle and end, and all the layers running alongside one another.&lt;/p&gt;
-
-&lt;p&gt;Find some people you can trust and ask their advice lots about everything you do. Community is important, and like any other profession some form of peer support can be very helpful. Don’t move to London or Berlin to further your career. It might work but it’s not worth it.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.xlr8r.com/features/2016/06/artist-tips-mark-fell/&quot;&gt;https://www.xlr8r.com/features/2016/06/artist-tips-mark-fell/&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 30 Sep 2016 14:38:26 +0300</pubDate>
-        <link>/summary/music/2016/09/30/mark-fell3.html</link>
-        <guid isPermaLink="true">/summary/music/2016/09/30/mark-fell3.html</guid>
-        
-        
-        <category>summary</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>{summary} interview with mark fell</title>
-        <description>&lt;p&gt;…I’ve always made a lot of stuff, but I’m quite self-critical and so for a long time, the vast majority of what I did I never actually released. It was almost private experiments. And then I just thought, ‘this is really stupid, I really ought to get it out there’, so I just decided to focus on actually consolidating what I’d done and make a CD of it.&lt;/p&gt;
-
-&lt;p&gt;…For us, there’s music and the music world. I’m more interested in music than the music world, if you see what I mean. It might appear like there’s a six year gap, but it’s only a six year public gap. For all that time, constantly we were working on things, and music and making music. We were as active as we’ve ever been, it’s just we never put anything in the public domain. For a lot of musicians and people making music, music producers, there’s an emphasis, like success or progress is kind of equated with how many releases you’re doing, how many gigs you’re doing. I think, for me, it was quite a liberating thing to realise that you don’t have to do that. There’s a difference between making music and the music world. So my concern was to make progress in the music rather than make progress as an artist with a career. Obviously, the two are connected, it’s not like one happens in a vacuum, but I think you can have differences of emphasis.&lt;/p&gt;
-
-&lt;p&gt;…I’ve seen a lot people that started off really good, and then started to play live and got sucked into this dynamic of just giving the audience a good time, so the music starts off really interesting, but then five years down the line, after five years of live shows, they’re just making really banal kind of party music. And that’s not really what I wanted to do. I think that as well, around the time, I did the DVD project Attack On Silence for Richard [Chartier]’s label [Line], which was very long, it’s incredibly boring. And also as a performer, all I had to do on stage was press one button every three or four minutes. So it’s kind of like a personal challenge to see if I could do as little as possible on stage, and it was like an exercise of trying to resist the temptation to do more and more and more stuff on stage, to be more and more active on stage.&lt;/p&gt;
-
-&lt;p&gt;…Around that time both Mat and I made a definite decision never to nod our heads on stage in time to music. When we first started doing it, you kind of get into it, you start nodding your head, and it is a bit of a signal to the audience that the performers are enjoying it. But what’s going on in that kind of relationship? It’s like prompting the audience to respond in a certain way, or to have some assumptions about how we’re relating to the music. So yeah, since that point, neither of us have nodded our heads on stage in time to music. [laughs]&lt;/p&gt;
-
-&lt;p&gt;…I was at art college at the time that all the Sheffield scene was kind of happening, and the art college group of people were very much a part of it. So I’d go along to those nights, the early Warp – people like Winston Hazel who was in Forgemasters, still is in Forgemasters. So I’d go along to all that stuff, but I never drank alcohol or smoked cigarettes or took drugs, so I was the clean living one. So for me it was always like, I was there, but I could never really get into the total ‘off your face, going for it’ kind of dance type vibe. So I was stood at the side of the dancefloor, just listening to the music. Although I was quite involved in that scene as an audience member, I always felt quite removed from it. In my experience, the scene started to go wrong when people started to have way too many drugs and people started having nervous breakdowns and things. I guess the music I make now is still somehow related to that kind of critical attitude. On the one hand, really being into it. On the other hand, really being quite critical of how that can go wrong.&lt;/p&gt;
-
-&lt;p&gt;…you know you can chop the bar into 16ths? Like the hi-hat will be like 16 of those in a bar? Instead of looping it over 16, I might loop it over 13 or 15. But what’s interesting is using those time signatures with relatively normal sounds, like kick drums, some nice lush chords and vocal sample, you can get away with it, and it doesn’t sound weird or abstract. But what’s actually good about doing that is you can create rhythms that have certain tensions within parts of the loop, which would otherwise be difficult to achieve or perhaps impossible, if you just stuck to a regular four/four structure. Often when you’re doing a loop, it’s like, ‘oh, if only I had a little bit more time at the end of the loop just to put this other thing in’, so it’s kind of like you run out of space or you have too much space.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://daily.redbullmusicacademy.com/2012/05/mark-fell-interview&quot;&gt;http://daily.redbullmusicacademy.com/2012/05/mark-fell-interview&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 30 Sep 2016 14:04:16 +0300</pubDate>
-        <link>/summary/music/2016/09/30/mark-fell2.html</link>
-        <guid isPermaLink="true">/summary/music/2016/09/30/mark-fell2.html</guid>
-        
-        
-        <category>summary</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>{summary} mark fell: patterns in radical spectra</title>
-        <description>&lt;p&gt;Why post-techno?&lt;/p&gt;
-
-&lt;p&gt;Like many of my peers I am uncomfortable with the term ‘post-techno’, unfortunately most of us also agree there are few alternatives and find those even more problematic: intelligent dance music (IDM) places an undue emphasis on intellect; electronic dance music (EDM) is too general to be meaningful; and others awkwardly assert beliefs about malfunctioning technologies and creative process. My preferred term, and one gaining some popularity with my peers, is Unusual Electronic Music Typically Without Academic Affiliation (UEMTWAA)&lt;/p&gt;
-
-&lt;p&gt;Table 1: Classification of a-rhythmic slow-change works in unusual electronic music typically without academic affiliation.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/mark-fell-table1.jpg&quot; alt=&quot;table 1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;…My intention in Long Mix NYC (the title itself clearly a reference to Cage) was to undermine the non-teleological, progression-free, time as vertical rather than linear, the sense of being outside time. Thus. I placed time (in the form of a large LED clock) centre stage, incessantly reminding the audience of exactly how much time they had spent, and more importantly how much more time was left of the performance, how long to go before their meal, or alcohol intake, or whatever they had planned/intended/expected/designed (the teleological, consequential). In opposition to the idealised ‘vertical’ time the piece therefore emphasises a very different temporal abstraction - the western clock-time that “ticks on even if nothing occurs; its emancipation from events is ensured by its own subjugation of an ongoing numbered measure.” (Swain, 1993).&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.divergencepress.com/Journal/JournalIssue/tabid/85/ID/28/categoryId/4/Patterns-in-Radical-Spectra.aspx&quot;&gt;http://www.divergencepress.com/Journal/JournalIssue/tabid/85/ID/28/categoryId/4/Patterns-in-Radical-Spectra.aspx&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 30 Sep 2016 13:56:01 +0300</pubDate>
-        <link>/summary/music/2016/09/30/mark-fell.html</link>
-        <guid isPermaLink="true">/summary/music/2016/09/30/mark-fell.html</guid>
-        
-        
-        <category>summary</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>taking the stage: programme of contemporary uk drama by british council (21.09.2016)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/images/lungs-photo.jpg&quot; alt=&quot;photo&quot; /&gt;
-&lt;em&gt;photo credit: Vasyl Shevchenko&lt;/em&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 26 Sep 2016 13:53:11 +0300</pubDate>
-        <link>/my-works/music/2016/09/26/taking-the-stage.html</link>
-        <guid isPermaLink="true">/my-works/music/2016/09/26/taking-the-stage.html</guid>
-        
-        
-        <category>my-works</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>electroacoustic: dimensions (soundcheck from yesterday)</title>
-        <description>&lt;div id=&quot;fb-root&quot;&gt;&lt;/div&gt;
-&lt;script&gt;(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = &quot;//connect.facebook.net/en_GB/sdk.js#xfbml=1&amp;version=v2.8&quot;;
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, &#39;script&#39;, &#39;facebook-jssdk&#39;));&lt;/script&gt;
-
-&lt;div class=&quot;fb-post&quot; data-href=&quot;https://www.facebook.com/newmusicdays/videos/1759304864310478/&quot; data-width=&quot;500&quot; data-show-text=&quot;false&quot;&gt;&lt;blockquote cite=&quot;https://www.facebook.com/newmusicdays/videos/1759304864310478/&quot; class=&quot;fb-xfbml-parse-ignore&quot;&gt;&lt;p&gt;&amp;#x41c;&amp;#x44b; &amp;#x433;&amp;#x43e;&amp;#x442;&amp;#x43e;&amp;#x432;&amp;#x438;&amp;#x43c;&amp;#x441;&amp;#x44f;. 
-
-&amp;#x41f;&amp;#x440;&amp;#x43e;&amp;#x433;&amp;#x440;&amp;#x430;&amp;#x43c;&amp;#x43c;&amp;#x430;: 
-
-Jaime Reis - Omniscience is a Collective - Part 1 (2009/10)
-
-Jaime Reis - Phonopolis...&lt;/p&gt;Posted by &lt;a href=&quot;https://www.facebook.com/newmusicdays/&quot;&gt;Kyiv Contemporary Music Days&lt;/a&gt; on&amp;nbsp;&lt;a href=&quot;https://www.facebook.com/newmusicdays/videos/1759304864310478/&quot;&gt;Saturday, 10 September 2016&lt;/a&gt;&lt;/blockquote&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sun, 11 Sep 2016 11:43:12 +0300</pubDate>
-        <link>/my-works/music/2016/09/11/kcmd-soundcheck.html</link>
-        <guid isPermaLink="true">/my-works/music/2016/09/11/kcmd-soundcheck.html</guid>
-        
-        
-        <category>my-works</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>{summary} interview with aaron oppenheim</title>
-        <description>&lt;p&gt;…I do not use any MIDI controllers or anything. Early at Mills I made that decision inspired by Ikue Mori’s setup. She visited in my first or second week at Mills, and talked about her stuff. She does not use controllers because it is just simpler and more portable. If you are carrying around a MIDI keyboard every time you play a gig, it is another thing to take with you, it is another thing to break, you can lose it or you just forget to bring it or something like that. What do you do? You cannot play. So many people who do live computer music their systems crash, computers crash, something is not working right, things like that. The more peripherals you add the more likely you will have a technical issue. So I just decided to not have any peripherals and just use the laptop. My controls are all the computer keyboard.&lt;/p&gt;
-
-&lt;p&gt;…the other thing about laptop improvisation is that you are building your instrument at the same time as you are learning to play it. When I was starting out I would add some functionality but then I would have to learn to play that in a musical way. Not only was my system not very well thought out, well programmed or finished, I also was not good at playing it at the beginning. It took a while to develop some ability and remember how to do things and have everything available without having to think about it, that was another thing. It was important to make it easy to start to make a sound so that I would not have to think about it, if you have to think about it before making sound then you lose the intuition, really quick responses and the kind of dialogue you can have when you have this immediate ability to do something. It was also a matter of just practice and playing and learning the instrument that I made and its capabilities.&lt;/p&gt;
-
-&lt;p&gt;…Originally I actually wanted to do more synthesis because I like synthesis and also when I was thinking about the aesthetics of electronic music I was like, “what is the point of using samples because it will just sound like something else. It can sound like another instrument but I could always just get someone else to play that instrument. Why should my computer sound like a piano, it should sound like a computer so I will do synthesis, it is electronic not an acoustic instrument”. In doing that I found my sound very limited and it was hard to shift very quickly. Just changing the bottom of the chain into samples allowed me to switch really fast into something else. Then by just applying a lot of processes and the granulation it still sounds very electronic, you would not confuse my stuff for an actual piano even if I am playing a piano sample because I will do a lot of things to it and it does not sound anything like the original.&lt;/p&gt;
-
-&lt;p&gt;…I am always back and forth on whether or not I like doing live sampling but I do do it. Sometimes I do not like the way other people do that, I feel like it can be a kind of easy cheap effect and sometimes musicians do not like it if you sample them while they are playing, if they can tell you are doing that it will confuse them. It has happened to me several times where I have sampled someone and shifted them or something and if they can tell they are being sampled it will snap them out of what they are doing a lot of the time. If I am sampling live I will want to manipulate it so that it creates this responsive sound and it is not clear that it is from them directly because if it is just sort of echoing them, following along or whatever it often really confuses them. Also my feeling is if I am just sampling them and affecting them I am just an effect pedal. What is the point of me being there?&lt;/p&gt;
-
-&lt;p&gt;…It is definitely related to science. That was always a criticism that people made of Alvin Lucier that it was not really music it was just science experiments or something which I thought was really stupid. But it is true that in his stuff especially, there is this element that is so minimal and he has such clear process based music. He has a very musical sense and he knows what he is doing, he came to Mills one year, I spent quite a bit of time with him and he thinks musically he does not think in terms of science, he does these literally experimental pieces and process pieces because he thinks it will have a musical effect not because he thinks it will be cool. He thinks it will sound nice, interesting.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://experinautas.com/interviews/aaron-oppenheim-laptop-based-improvisation/&quot;&gt;http://experinautas.com/interviews/aaron-oppenheim-laptop-based-improvisation/&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 17 Aug 2016 21:06:28 +0300</pubDate>
-        <link>/summary/music/2016/08/17/aaron-oppenheim.html</link>
-        <guid isPermaLink="true">/summary/music/2016/08/17/aaron-oppenheim.html</guid>
-        
-        
-        <category>summary</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>{summary} interview with aleksi perälä</title>
-        <description>&lt;p&gt;“…You know that feeling when you hear a really amazing song and your hairs go up on your body? Colundi is that feeling all the time. It’s… it’s so amazing. So amazing.” He hesitates for a long time. “Also very, very difficult to put into words.”&lt;/p&gt;
-
-&lt;p&gt;…A self-described “country bumpkin,” he thinks the common ground is upbringing. Just as Wilson-Claridge and Richard D. James reimagined techno in remote Cornwall, Perälä’s encounters with the second summer of love, via Finnish radio at the age of 12, were influenced by his rural location.&lt;/p&gt;
-
-&lt;p&gt;“That’s the whole beauty,” he says. “Because you hear only a few tracks that define the genre for you. And you want to hear more but you can’t. You can tape some stuff off the radio but not enough. So that’s what made me want to start making music. To fill in the gaps.”&lt;/p&gt;
-
-&lt;p&gt;…Perälä was keen to share his discoveries, demonstrating on &lt;a href=&quot;http://www.ovuca.com/research.html&quot;&gt;his site&lt;/a&gt; how he constructed a series of equal temperament scales, dividing the octave into an increasing number of equally spaced steps. “It all started from 33hz and then built up from that,” he explains. “From just one frequency per octave, I went to using two frequencies per octave, then three, four, five all the way up to 32.”&lt;/p&gt;
-
-&lt;p&gt;…Perälä’s epiphany is like any epiphany: utterly real to the person who experienced it, incomprehensible to those who didn’t. The difference with Colundi is that it’s also produced some extraordinary music.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.residentadvisor.net/features/2567&quot;&gt;https://www.residentadvisor.net/features/2567&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 30 Jun 2016 17:03:19 +0300</pubDate>
-        <link>/summary/music/2016/06/30/aleksi-perala.html</link>
-        <guid isPermaLink="true">/summary/music/2016/06/30/aleksi-perala.html</guid>
-        
-        
-        <category>summary</category>
-        
-        <category>music</category>
-        
-      </item>
-    
-      <item>
-        <title>{summary} interview with autechre 3</title>
-        <description>&lt;p&gt;&lt;strong&gt;So you say the studio takes up most of your time. How is that for you? Is it gruelling, or enjoyable?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Sean Booth: Oh, I’m one of those weird guys who’d do it anyway.&lt;/p&gt;
-
-&lt;p&gt;Rob Brown: It’s definitely habit forming.&lt;/p&gt;
-
-&lt;p&gt;Sean Booth: It’s fully addictive. If I have a choice of going out or staying in and doing some patching, I’ll almost always choose staying in unless I’m under a lot of pressure to go out. Takes quite a lot to get me out of here. I mean, I’m not socially that bad, but I just really, really like making music. I don’t have to make any effort to get stuck in here. If I did I’d probably get a teaching job or something because I’d need something else in life, but I don’t!&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;You even enjoy it if it’s just experimenting with software and you haven’t got anything resembling a track?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Sean Booth: I’ll be totally honest, there’s parts of what we do that are really fucking irritating. If I’m trying to build something and it’s not working but I can’t work out what the bug is, and I spend a month debugging it—that’s not that unusual—then I’ll be really fucking banging my head against a brick wall for a month. It’s a horrible feeling. But what you get at the end of it, when you’ve solved the problem and finally figured out that stupid mistake you made five weeks ago that you could easily have avoided—well, we’re back to learning. You’ve immediately learned. If I could do it and not have that, ever, it would be better, though. But I’m happy with it, warts and all. And when it is working, it’s all set up, then doing tracks on it… well, there’s nothing like it. It’s amazing. So it’s a compulsion, I suppose. I don’t see that as being gruelling. It’s really invigorating, and whatever the opposite of gruelling is— life affirming!&lt;/p&gt;
-
-&lt;p&gt;…if you’re doing art, you have to consider the medium a lot. With this store thing that we’ve constructed, we wanted to be conscious of what it was and how it worked, because if we were just flinging albums up on there it would be a meaningless thing. There is a set of liberties that you can exploit if you’ve got that facility. I mean, I’ve been following various kids on SoundCloud and they’ll upload 50 tracks in a day. No artist in any other context would do this, but on SoundCloud nobody’s there to tell them that this is wrong. We also quite like the chapters thing, like you have if you’re doing marathon TV watching. Like, if I’m watching some big mainstream show like Game Of Thrones, I’ll watch four or five of them in a row on a Sunday afternoon—and that’s no longer weird for people to do that. So I guess we’re making music for people who’ll do things like that, who want to be completist and check out the whole of a thing.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.residentadvisor.net/features/2756&quot;&gt;https://www.residentadvisor.net/features/2756&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 11 Jun 2016 16:04:08 +0300</pubDate>
-        <link>/summary/music/2016/06/11/autechre3.html</link>
-        <guid isPermaLink="true">/summary/music/2016/06/11/autechre3.html</guid>
-        
-        
-        <category>summary</category>
-        
-        <category>music</category>
         
       </item>
     

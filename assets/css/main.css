@@ -21,7 +21,7 @@ ul,
 figure {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: inherit;
 }
 
 html {
@@ -56,7 +56,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
-  color: #ddd;
+  color: #ededed;
   background-color: #282a36;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
@@ -64,6 +64,16 @@ body {
   font-feature-settings: "kern" 1;
   -webkit-font-kerning: normal;
           font-kerning: normal;
+}
+
+@media screen and (max-width: 960px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+body * {
+  font-family: "Fira Mono", monospace;
 }
 
 /**
@@ -97,6 +107,17 @@ img {
 /**
  * Figures
  */
+figure {
+  width: 100%;
+}
+
+figcaption {
+  font-size: smaller;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
 figure > img {
   display: block;
 }
@@ -107,6 +128,11 @@ figure > img {
 ul,
 ol {
   margin-left: 2rem;
+}
+
+ul div.highlighter-rouge,
+ol div.highlighter-rouge {
+  margin-left: -2rem;
 }
 
 li > ul,
@@ -183,8 +209,6 @@ a:visited:hover, a:visited:focus {
 blockquote {
   border-left: 4px solid;
   padding-left: 1rem;
-  font-size: 18px;
-  letter-spacing: -1px;
   font-style: italic;
 }
 
@@ -195,20 +219,25 @@ blockquote > :last-child {
 /**
  * Code formatting
  */
-pre,
-code {
-  border: 1px solid #44475a;
-  border-radius: 2px;
-  background-color: #44475a;
-}
-
 code {
   padding: 1px 5px;
 }
 
+code.highlighter-rouge {
+  background-color: #44475a;
+  border-radius: 2px;
+}
+
+figure.highlight,
+div.highlighter-rouge {
+  border-radius: 5px;
+}
+
 pre {
-  padding: 8px 12px;
+  padding: 30px 20px;
   overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 pre > code {
@@ -222,7 +251,7 @@ pre > code {
  */
 .wrapper,
 .landing-wrapper {
-  max-width: 70ch;
+  max-width: 75ch;
   margin-right: auto;
   margin-left: auto;
   padding-right: 2rem;
@@ -259,14 +288,14 @@ pre > code {
 }
 
 .icon > svg path {
-  fill: #ddd;
+  fill: #ededed;
 }
 
 /**
  * Site header
  */
 .site-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -275,29 +304,12 @@ pre > code {
 }
 
 .site-header .wrapper {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-@media screen and (max-width: 960px) {
-  .site-header .wrapper {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-}
-
-.site-header * {
-  text-decoration: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .site-header + * {
-  margin-top: 6rem;
-}
-
-@media screen and (max-width: 960px) {
-  .site-header + * {
-    margin-top: 3rem;
-  }
+  margin-top: 3rem;
 }
 
 .site-title {
@@ -336,11 +348,6 @@ pre > code {
 .site-footer .wrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.footer-heading {
-  font-size: 18px;
-  margin-bottom: 1rem;
 }
 
 .contact-list {
@@ -402,7 +409,7 @@ pre > code {
 }
 
 .post-meta {
-  color: #ddd;
+  color: #ededed;
   min-width: 10em;
 }
 
@@ -414,6 +421,17 @@ pre > code {
 
 .post-title {
   margin: 0;
+}
+
+.footnotes {
+  margin-top: 4rem;
+  border-top: 1px solid #44475a;
+  padding: 2rem 0;
+}
+
+.footnotes li {
+  font-size: smaller;
+  margin-bottom: 1em;
 }
 
 /**
@@ -430,36 +448,6 @@ pre > code {
 .post-content {
   margin-bottom: 2rem;
   counter-reset: p;
-}
-
-.post-content h2 {
-  font-size: 32px;
-}
-
-@media screen and (max-width: 960px) {
-  .post-content h2 {
-    font-size: 28px;
-  }
-}
-
-.post-content h3 {
-  font-size: 26px;
-}
-
-@media screen and (max-width: 960px) {
-  .post-content h3 {
-    font-size: 22px;
-  }
-}
-
-.post-content h4 {
-  font-size: 20px;
-}
-
-@media screen and (max-width: 960px) {
-  .post-content h4 {
-    font-size: 18px;
-  }
 }
 
 .post-content a {
@@ -481,23 +469,19 @@ pre > code {
 /**
  * Works
  */
-.works-content {
-  font-size: 13.33333px;
-}
-
 .works-content ul {
   list-style-type: square;
 }
 
 .works-content ul li {
-  margin-bottom: 1.23609rem;
+  margin-bottom: 2rem;
 }
 
 /**
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fff;
+  background: #000;
 }
 
 .highlighter-rouge .highlight {
@@ -505,7 +489,7 @@ pre > code {
 }
 
 .highlight .c {
-  color: #998;
+  color: #44475a;
   font-style: italic;
 }
 
@@ -519,11 +503,12 @@ pre > code {
 }
 
 .highlight .o {
+  color: #fa79ca;
   font-weight: bold;
 }
 
 .highlight .cm {
-  color: #998;
+  color: #44475a;
   font-style: italic;
 }
 
@@ -533,7 +518,7 @@ pre > code {
 }
 
 .highlight .c1 {
-  color: #998;
+  color: #44475a;
   font-style: italic;
 }
 
@@ -612,33 +597,33 @@ pre > code {
 }
 
 .highlight .kt {
-  color: #458;
+  color: #50fa7b;
   font-weight: bold;
 }
 
 .highlight .m {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .s {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .na {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .nb {
-  color: #0086B3;
+  color: #bd93f2;
 }
 
 .highlight .nc {
-  color: #458;
+  color: #50fa7b;
   font-weight: bold;
 }
 
 .highlight .no {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .ni {
@@ -659,12 +644,16 @@ pre > code {
   color: #555;
 }
 
+.highlight .nl {
+  color: #8be9fd;
+}
+
 .highlight .nt {
-  color: #000080;
+  color: #fa79ca;
 }
 
 .highlight .nv {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .ow {
@@ -676,51 +665,51 @@ pre > code {
 }
 
 .highlight .mf {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .mh {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .mi {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .mo {
-  color: #099;
+  color: #bd93f2;
 }
 
 .highlight .sb {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sc {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sd {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .s2 {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .se {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sh {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .si {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sx {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .sr {
@@ -728,7 +717,7 @@ pre > code {
 }
 
 .highlight .s1 {
-  color: #d14;
+  color: #f3fb7a;
 }
 
 .highlight .ss {
@@ -740,17 +729,17 @@ pre > code {
 }
 
 .highlight .vc {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .vg {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .vi {
-  color: #008080;
+  color: #50fa7b;
 }
 
 .highlight .il {
-  color: #099;
+  color: #bd93f2;
 }

@@ -20,7 +20,7 @@ ul,
 figure {
   margin: 0;
   padding: 0;
-  font-size: $base-font-size;
+  font-size: inherit;
 }
 
 html {
@@ -62,6 +62,13 @@ body {
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
+  @include media-query($on-palm) {
+    font-size: $base-font-size-mobile;
+  }
+}
+
+body * {
+  font-family: $base-font-family;
 }
 
 /**
@@ -98,6 +105,16 @@ img {
  * Figures
  */
 
+figure {
+  width: 100%;
+}
+figcaption {
+  font-size: smaller;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
 figure > img {
   display: block;
 }
@@ -109,6 +126,9 @@ figure > img {
 ul,
 ol {
   margin-left: $spacing-unit;
+  div.highlighter-rouge {
+    margin-left: -$spacing-unit;
+  }
 }
 
 li {
@@ -184,8 +204,6 @@ a:visited {
 blockquote {
   border-left: 4px solid;
   padding-left: $spacing-unit / 2;
-  font-size: 18px;
-  letter-spacing: -1px;
   font-style: italic;
 
   > :last-child {
@@ -197,20 +215,25 @@ blockquote {
  * Code formatting
  */
 
-pre,
-code {
-  border: 1px solid $draculaGray;
-  border-radius: 2px;
-  background-color: $draculaGray;
-}
-
 code {
   padding: 1px 5px;
 }
 
+code.highlighter-rouge {
+  background-color: $draculaGray;
+  border-radius: 2px;
+}
+
+figure.highlight,
+div.highlighter-rouge {
+  border-radius: 5px;
+}
+
 pre {
-  padding: 8px 12px;
+  padding: 30px 20px;
   overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 
   > code {
     border: 0;
@@ -225,15 +248,14 @@ pre {
 
 .wrapper,
 .landing-wrapper {
-  // max-width: calc(#{$content-width} - (#{$spacing-unit} * 5));
-  max-width: 70ch;
+  max-width: 75ch;
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit;
-  padding-left: $spacing-unit; // border: 2px #f1f1f1 dashed;
+  padding-left: $spacing-unit;
   @extend %clearfix;
 
-  @include media-query($on-laptop) {
+  @include media-query($on-palm) {
     max-width: calc(#{$content-width} - (#{$spacing-unit}));
     padding-right: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;

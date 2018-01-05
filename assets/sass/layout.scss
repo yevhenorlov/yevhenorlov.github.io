@@ -3,30 +3,20 @@
  */
 
 .site-header {
-  position: fixed;
+  // position: fixed;
+  position: absolute; // change to "fixed" once show/hide on scroll script is implemented
   top: 0;
   left: 0;
   width: 100%;
   background: inherit;
   z-index: 99;
   .wrapper {
-    padding-top: $spacing-unit;
-    padding-bottom: $spacing-unit;
-    @include media-query($on-palm) {
-      padding-top: $spacing-unit / 2;
-      padding-bottom: $spacing-unit / 2;
-    }
-  }
-
-  * {
-    text-decoration: none;
+    padding-top: $spacing-unit / 2;
+    padding-bottom: $spacing-unit / 2;
   }
 
   + * {
-    margin-top: $spacing-unit * 3;
-    @include media-query($on-palm) {
-      margin-top: $spacing-unit * 1.5;
-    }
+    margin-top: $spacing-unit * 1.5;
   }
 }
 
@@ -65,11 +55,6 @@
     padding-top: $spacing-unit;
     padding-bottom: $spacing-unit;
   }
-}
-
-.footer-heading {
-  font-size: 18px;
-  margin-bottom: $spacing-unit / 2;
 }
 
 .contact-list {
@@ -137,6 +122,16 @@
   margin: 0;
 }
 
+.footnotes {
+  margin-top: $spacing-unit * 2;
+  border-top: 1px solid $draculaGray;
+  padding: $spacing-unit 0;
+  li {
+    font-size: smaller;
+    margin-bottom: 1em;
+  }
+}
+
 /**
  * Posts
  */
@@ -151,30 +146,6 @@
 .post-content {
   margin-bottom: $spacing-unit;
   counter-reset: p;
-
-  h2 {
-    font-size: 32px;
-
-    @include media-query($on-laptop) {
-      font-size: 28px;
-    }
-  }
-
-  h3 {
-    font-size: 26px;
-
-    @include media-query($on-laptop) {
-      font-size: 22px;
-    }
-  }
-
-  h4 {
-    font-size: 20px;
-
-    @include media-query($on-laptop) {
-      font-size: 18px;
-    }
-  }
 
   a {
     text-decoration: none;
@@ -197,11 +168,10 @@
  */
 
 .works-content {
-  font-size: $base-font-size / 1.2;
   ul {
     list-style-type: square;
     li {
-      margin-bottom: $spacing-unit / 1.618;
+      margin-bottom: $spacing-unit;
     }
   }
 }

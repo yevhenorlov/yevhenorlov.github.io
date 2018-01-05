@@ -29,10 +29,10 @@ layout: default
             <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
           </p>
         </header>
-        {{ post.content | markdownify | truncatewords: 60 }}
+        {{ post.content | markdownify | truncatewords: 30, "&hellip;" }}
       </article>
       <p>
-        <a href="{{ post.url }}" class="read-more">Read more&hellip;</a>
+        <a href="{{ post.url }}" class="read-more">Читати далі&hellip;</a>
       </p>
     </li>
     {% endfor %}

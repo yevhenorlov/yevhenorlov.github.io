@@ -1,6 +1,7 @@
 // Our variables
 $base-font-family: "Fira Mono", monospace;
 $base-font-size: 16px;
+$base-font-size-mobile: 14px;
 $base-font-weight: 400;
 $super-font-weight: 100;
 $base-line-height: 1.7;
@@ -10,18 +11,21 @@ $cathodeGlow: 0 0 3px;
 $transition-time: 0.2s;
 
 // dracula colors
-$draculaBlack: #282a36;
-$draculaGray: #44475a;
+$draculaPink: #fa79ca;
+$draculaOrange: #fcb95f;
+$draculaYellow: #f3fb7a;
+$draculaGreen: #50fa7b;
 $draculaLightBlue: #8be9fd;
 $draculaBlue: #6272a4;
-$draculaGreen: #50fa7b;
 $draculaPurple: #bd93f2;
+$draculaGray: #44475a;
+$draculaBlack: #282a36;
 
-$text-color: #ddd;
+$text-color: #ededed;
 $background-color: $draculaBlack;
 
 // Width of the content area
 $content-width: 960px;
 
 $on-palm: 960px;
-$on-laptop: 960px;
+$in-hand: 500px;

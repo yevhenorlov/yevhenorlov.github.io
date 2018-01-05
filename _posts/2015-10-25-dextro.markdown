@@ -1,7 +1,0 @@
----
-layout: post
-title:  "{summary} interview with dextro"
-date:   2015-10-25 17:47:47 +0200
-categories: summary music
----
-[He was also annoyed with the tendency of artists to promote themselves, rather than let the work speak for itself, as well as artists’ tendency “to address the ratio or intellect of their audience rather than their intuition or subconscious.”](http://www.generateddesign.com/we-talked-with-dextro-one-of-the-most-elusive-algorithmic-artists/)
