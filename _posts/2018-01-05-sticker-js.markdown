@@ -2,6 +2,7 @@
 layout: post
 title:  "Робимо інтерактивні наліпки за допомогою sticker.js"
 date:   2018-01-05 12:47:47 +0200
+image: /assets/images/og/og-frontend.png
 categories: frontend
 ---
 

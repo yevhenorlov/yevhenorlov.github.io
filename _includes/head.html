@@ -32,8 +32,17 @@
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   <meta property="og:site_name" content="{{ site.title }}" />
   <meta property="og:locale" content="uk_UA" />
-  <meta name="twitter:site" content="@chronotope" />
+  <meta name="twitter:site" content="@yevhenorlov" />
+  <meta name="twitter:creator" content="@yevhenorlov">
   <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="twitter:card" content="summary_large_image">
+  {% if page.image %}
+  <meta property="og:image" content="{{page.image}}" />
+  <meta name="twitter:image" content="{{page.image}}" />
+  {% else %}
+  <meta property="og:image" content="/assets/images/og/og-frontend.png" />
+  <meta name="twitter:image" content="/assets/images/og/og-frontend.png" />
+  {% endif %}
 
 
   <link rel="stylesheet" href="/assets/css/main.css">
