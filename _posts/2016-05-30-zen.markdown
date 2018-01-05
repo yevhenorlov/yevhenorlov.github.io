@@ -1,7 +1,0 @@
----
-layout: post
-title:  "{summary} zen"
-date:   2016-05-30 01:03:25 +0200
-categories: summary zen
----
-[...Do you think clearing up your confusion using your conceptual mind will bring you any closer to the realization talked about in Zen? Have you considered just dwelling in the confusion until it can no longer sustain itself?](https://www.reddit.com/r/zen/comments/4lkgrr/who_are_the_most_important_posters_to_ignore_on/d3o31ht)

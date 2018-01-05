@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 
   <head>
   <meta charset="utf-8">
@@ -28,11 +28,20 @@
   <script src="https://use.fontawesome.com/9f6fb3027d.js"></script>
 
   <title>Робимо інтерактивні наліпки за допомогою sticker.js</title>
-  <meta name="description" content="Бібліотека sticker.js дозволяє за допомогою кількох рядків CSS додати оригінальну і доситьбезглузду красивість на сайт (мій улюблений тип красивостей).">
+
+  <meta name="author" content="Yevhen Orlov" />
+  <meta property="og:title" content="Робимо інтерактивні наліпки за допомогою sticker.js">
+  <meta property="og:descripion" name="description" content="Бібліотека sticker.js дозволяє за допомогою кількох рядків CSS додати оригінальну і доситьбезглузду красивість на сайт (мій улюблений тип красивостей).">
+  <meta property="og:url" content="/frontend/2018/01/05/sticker-js.html" />
+  <meta property="og:site_name" content="yevhenorlov.com" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta name="twitter:site" content="@chronotope" />
+  <meta name="twitter:description" content="Бібліотека sticker.js дозволяє за допомогою кількох рядків CSS додати оригінальну і доситьбезглузду красивість на сайт (мій улюблений тип красивостей)." />
+
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="/frontend/2017/10/09/sticker-js.html">
-  <link rel="alternate" type="application/rss+xml" title="yevhen orlov" href=" /feed.xml
+  <link rel="canonical" href="/frontend/2018/01/05/sticker-js.html">
+  <link rel="alternate" type="application/rss+xml" title="yevhenorlov.com" href=" /feed.xml
     ">
 </head>
 
@@ -41,33 +50,11 @@
     <header class="site-header">
 
   <div class="wrapper">
-
-    <!-- <a class="site-title" href="/">yevhen orlov</a> -->
     <a class="site-title" href="/">/</a>
 
     <nav class="site-nav">
-        <!--
-        
-          
-        
-          
-          <a class="page-link" href="/contact">contact</a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-          <a class="page-link" href="/works">works</a>
-          
-        
-        -->
-        <!-- <a class="page-link" href="/works">works</a> -->
-        <a class="page-link" href="/archive">archive</a>
-        <a class="page-link" href="/contact">contact</a>
+        <a class="page-link" href="/archive">архів</a>
+        <a class="page-link" href="/contact">контакти</a>
     </nav>
 
   </div>
@@ -81,7 +68,7 @@
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Робимо інтерактивні наліпки за допомогою sticker.js</h1>
-    <p class="post-meta"><time datetime="2017-10-09T18:47:47+03:00" itemprop="datePublished">Oct 9, 2017</time></p>
+    <p class="post-meta"><time datetime="2018-01-05T12:47:47+02:00" itemprop="datePublished">Jan 5, 2018</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
@@ -92,7 +79,7 @@
   <div class="sticker sticker-1"></div>
   <div class="sticker sticker-2"></div>
   <div class="sticker sticker-3"></div>
-  <figcaption>Інтерактивні наліпки, торкніться курсором/пальцем</figcaption>
+  <figcaption>Інтерактивні наліпки (торкніться курсором/пальцем)<sup><a href="#fn1" id="ref1">1</a></sup></figcaption>
 </figure>
 
 <style>
@@ -103,8 +90,8 @@
     margin: 40px 0;
   }
   .sticker {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin: 20px;
   }
   @media screen and (max-width: 760px) {
@@ -131,16 +118,20 @@
 <p>Процес максимально простий.</p>
 
 <ol>
-  <li>Скачати бібліотеку з <a href="https://github.com/cmiscm/stickerjs">репозиторію на GitHub</a> і підключити її перед основним файлом, в якому ініціалізуються скрипти (у нашому випадку це буде <code class="highlighter-rouge">script.js</code>).</li>
-</ol>
+  <li>
+    <p>Скачати бібліотеку з <a href="https://github.com/cmiscm/stickerjs">репозиторію на GitHub</a> і підключити її перед основним файлом, в якому ініціалізуються скрипти (у нашому випадку це буде <code class="highlighter-rouge">script.js</code>).</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/sticker.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
-    </code></pre></figure>
+    <p>&lt;!–</p>
+  </li>
+</ol>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"> --&gt;
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/sticker.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="c">&lt;!-- </span></code></pre></figure>
+<p>–&gt;</p>
 
 <ol>
-  <li>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде звичайний div<sup><a href="#fn1" id="ref1">1</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб <code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.</li>
+  <li>Створити HTML-контейнер, який служитиме основою для наклейки - найкраще тут підійде звичайний div<sup><a href="#fn2" id="ref2">2</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю <code class="highlighter-rouge">background-image</code>, а не з тегом <code class="highlighter-rouge">&lt;img&gt;</code>. З цієї ж причини важливо, щоб <code class="highlighter-rouge">width</code> і <code class="highlighter-rouge">height</code> контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.</li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"sticker-example"</span><span class="nt">&gt;</span>
@@ -152,8 +143,8 @@
 
     <span class="nt">&lt;style&gt;</span>
       <span class="nc">.sticker-example</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="p">{</span>
-        <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
-        <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="nt">&lt;/style&gt;</span>
     </code></pre></figure>
@@ -262,10 +253,13 @@
   }
 </style>
 
-<p>Єдиний суттєвий мінус, який вдалось помітити — sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки.</p>
+<p>Єдиний недолік, який здався суттєвим — sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки.</p>
 
 <aside class="footnotes">
-  <sup id="fn1">1. Автор допускає, що HTML5 передбачає більш адекватну семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в <a href="https://twitter.com/yevhenorlov">твіттері</a>.<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></sup>
+  <ol>
+    <li id="fn1">Джерело картинок: <a href="https://www.behance.net/DanielNyari">Daniel Nyari</a>.<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></li>
+    <li id="fn2">Автор допускає, що стандарт HTML5 передбачає більш адекватну семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в <a href="https://twitter.com/yevhenorlov">твіттері</a>.<a href="#ref2" title="Jump back to footnote 2 in the text.">&#8617;</a></li>
+  </ol>
 </aside>
 
 <script src="/assets/js/sticker.min.js"></script>
@@ -284,7 +278,7 @@
   <div class="wrapper">
     &copy; 2015
     <script>new Date().getFullYear()>2015&&document.write("— "+new Date().getFullYear());</script>
-    yevhen orlov
+    євген орлов
   </div>
 </footer>
 

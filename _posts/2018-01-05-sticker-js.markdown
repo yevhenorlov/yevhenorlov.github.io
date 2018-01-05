@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Робимо інтерактивні наліпки за допомогою sticker.js"
-date:   2017-10-09 17:47:47 +0200
+date:   2018-01-05 12:47:47 +0200
 categories: frontend
 ---
 
@@ -12,7 +12,7 @@ categories: frontend
   <div class="sticker sticker-1"></div>
   <div class="sticker sticker-2"></div>
   <div class="sticker sticker-3"></div>
-  <figcaption>Інтерактивні наліпки, торкніться курсором/пальцем</figcaption>
+  <figcaption>Інтерактивні наліпки (торкніться курсором/пальцем)<sup><a href="#fn1" id="ref1">1</a></sup></figcaption>
 </figure>
 
 <style>
@@ -23,8 +23,8 @@ categories: frontend
     margin: 40px 0;
   }
   .sticker {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin: 20px;
   }
   @media screen and (max-width: 760px) {
@@ -52,13 +52,12 @@ categories: frontend
 
 1. Скачати бібліотеку з [репозиторію на GitHub](https://github.com/cmiscm/stickerjs) і підключити її перед основним файлом, в якому ініціалізуються скрипти (у нашому випадку це буде `script.js`).
 
-    {% highlight html %}
-      <script src="/assets/js/sticker.min.js"></script>
-      <script src="/assets/js/script.js"></script>
-    </body>
-    {% endhighlight %}
+    <!-- {% highlight html %} -->
+    <script src="/assets/js/sticker.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <!-- {% endhighlight %} -->
 
-2. Створити HTML-контейнер, який служитиме основою для наклейки&nbsp;- найкраще тут підійде звичайний div<sup><a href="#fn1" id="ref1">1</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю `background-image`, а не з тегом `<img>`. З цієї ж причини важливо, щоб `width` і `height` контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.
+2. Створити HTML-контейнер, який служитиме основою для наклейки&nbsp;- найкраще тут підійде звичайний div<sup><a href="#fn2" id="ref2">2</a></sup>, оскільки бібліотека розрахована на роботу з CSS-властивістю `background-image`, а не з тегом `<img>`. З цієї ж причини важливо, щоб `width` і `height` контейнера були задані, оскільки всередині не буде контенту, який запобігатиме його схлопуванню.
 
     {% highlight html %}
     <figure class="sticker-example">
@@ -70,8 +69,8 @@ categories: frontend
 
     <style>
       .sticker-example > div {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
       }
     </style>
     {% endhighlight %}
@@ -180,10 +179,13 @@ categories: frontend
   }
 </style>
 
-Єдиний суттєвий мінус, який вдалось помітити — sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки.
+Єдиний недолік, який здався суттєвим — sticker.js розрахований на рівносторонні зображення і за замовчуванням малює лише круглі наліпки.
 
 <aside class="footnotes">
-  <sup id="fn1">1. Автор допускає, що HTML5 передбачає більш адекватну семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в <a href="https://twitter.com/yevhenorlov">твіттері</a>.<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></sup>
+  <ol>
+    <li id="fn1">Джерело картинок: <a href="https://www.behance.net/DanielNyari">Daniel Nyari</a>.<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></li>
+    <li id="fn2">Автор допускає, що стандарт HTML5 передбачає більш адекватну семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в <a href="https://twitter.com/yevhenorlov">твіттері</a>.<a href="#ref2" title="Jump back to footnote 2 in the text.">&#8617;</a></li>
+  </ol>
 </aside>
 
 <script src="/assets/js/sticker.min.js"></script>

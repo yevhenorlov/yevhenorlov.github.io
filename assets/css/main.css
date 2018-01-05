@@ -230,7 +230,7 @@ div.highlighter-rouge {
 }
 
 pre {
-  padding: 20px;
+  padding: 30px 20px 5px;
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -300,15 +300,8 @@ pre > code {
 }
 
 .site-header .wrapper {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-@media screen and (max-width: 960px) {
-  .site-header .wrapper {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .site-header * {
@@ -316,13 +309,7 @@ pre > code {
 }
 
 .site-header + * {
-  margin-top: 6rem;
-}
-
-@media screen and (max-width: 960px) {
-  .site-header + * {
-    margin-top: 3rem;
-  }
+  margin-top: 3rem;
 }
 
 .site-title {
@@ -445,6 +432,10 @@ pre > code {
   margin-top: 4rem;
   border-top: 1px solid #44475a;
   padding: 2rem 0;
+}
+
+.footnotes li {
+  font-size: smaller;
 }
 
 /**
