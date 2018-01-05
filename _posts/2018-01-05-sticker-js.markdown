@@ -181,8 +181,8 @@ categories: frontend
 
 <aside class="footnotes">
   <ol>
-    <li id="fn1">Джерело картинок: <a href="https://www.behance.net/DanielNyari">Daniel Nyari</a>.<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></li>
-    <li id="fn2">Автор допускає, що стандарт HTML5 передбачає більш адекватну семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в <a href="https://twitter.com/yevhenorlov">твіттері</a>.<a href="#ref2" title="Jump back to footnote 2 in the text.">&#8617;</a></li>
+    <li id="fn1">Джерело картинок: <a href="https://www.behance.net/DanielNyari">Daniel Nyari</a>.<a href="#ref1" title="Повернутися до зноски 1 в тексті.">&#8617;</a></li>
+    <li id="fn2">Автор допускає, що стандарт HTML5 передбачає більш адекватну семантичну опцію. Кинути в автора помідором і вказати на таку опцію можна в <a href="https://twitter.com/yevhenorlov">твіттері</a>.<a href="#ref2" title="Повернутися до зноски 2 в тексті.">&#8617;</a></li>
   </ol>
 </aside>
 

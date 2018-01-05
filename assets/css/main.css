@@ -295,7 +295,7 @@ pre > code {
  * Site header
  */
 .site-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -306,10 +306,6 @@ pre > code {
 .site-header .wrapper {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.site-header * {
-  text-decoration: none;
 }
 
 .site-header + * {
