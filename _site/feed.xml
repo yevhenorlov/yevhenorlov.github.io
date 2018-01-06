@@ -2,18 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yevhenorlov.com</title>
-    <description>блог про фронтенд, цифрове мистецтво і красивий код
+    <description>блог про веб-розробку, цифрове мистецтво і красивий код
 </description>
     <link>https://yevhenorlov.com/</link>
     <atom:link href="https://yevhenorlov.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 Jan 2018 18:04:24 +0200</pubDate>
-    <lastBuildDate>Fri, 05 Jan 2018 18:04:24 +0200</lastBuildDate>
+    <pubDate>Sat, 06 Jan 2018 10:01:12 +0200</pubDate>
+    <lastBuildDate>Sat, 06 Jan 2018 10:01:12 +0200</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Робимо інтерактивні наліпки за допомогою sticker.js</title>
-        <description>&lt;p&gt;Бібліотека &lt;a href=&quot;http://stickerjs.cmiscm.com/&quot;&gt;sticker.js&lt;/a&gt; дозволяє за допомогою кількох рядків CSS додати оригінальну і досить
-безглузду красивість на сайт (мій улюблений тип красивостей).&lt;/p&gt;
+        <description>&lt;p&gt;Бібліотека &lt;a href=&quot;http://stickerjs.cmiscm.com/&quot;&gt;sticker.js&lt;/a&gt; дозволяє за допомогою кількох рядків CSS додати оригінальну і досить безглузду красивість на сайт (мій улюблений тип красивостей).&lt;/p&gt;
 
 &lt;figure class=&quot;sticker-example&quot;&gt;
   &lt;div class=&quot;sticker sticker-1&quot;&gt;&lt;/div&gt;
@@ -146,7 +145,7 @@
 
   &lt;span class=&quot;c&quot;&gt;/* background */&lt;/span&gt;
   &lt;span class=&quot;nc&quot;&gt;.sticker-4&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rebeccapurple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;coral&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;nc&quot;&gt;.sticker-5&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sticker-img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&quot;/assets/robots/05.png&quot;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
