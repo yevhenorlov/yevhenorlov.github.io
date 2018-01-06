@@ -4,6 +4,7 @@
 const gulp = require('gulp'),
   sass = require('gulp-sass'),
   sassGlob = require('gulp-sass-glob'),
+  cssnano = require('gulp-cssnano'),
   autoprefixer = require('gulp-autoprefixer'),
   iconfont = require('gulp-iconfont'),
   watch = require('gulp-watch'),
@@ -39,6 +40,7 @@ gulp.task('sass', function () {
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(insert.prepend('---\n---\n'))
+    .pipe(cssnano())
     .pipe(gulp.dest('assets/css/'));
 });
 

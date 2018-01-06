@@ -12,6 +12,7 @@
     "gulp-watch": "^4.3.11"
   },
   "devDependencies": {
+    "gulp-cssnano": "^2.1.2",
     "gulp-sass": "^3.1.0"
   },
   "scripts": {
