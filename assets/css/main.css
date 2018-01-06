@@ -497,6 +497,12 @@ pre > code {
   min-height: calc(100vh - 210px);
 }
 
+@media screen and (max-width: 500px) {
+  .page-404 {
+    min-height: calc(100vh - 270px);
+  }
+}
+
 .page-404 > * {
   line-height: 1;
 }
@@ -518,7 +524,7 @@ pre > code {
 }
 
 .page-404 h2 {
-  font-size: 40px;
+  font-size: 30px;
   color: #fa79ca;
   color: #50fa7b;
   color: #ededed;
@@ -532,7 +538,7 @@ pre > code {
 }
 
 .page-404 a {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 /**
