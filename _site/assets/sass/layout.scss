@@ -105,7 +105,7 @@
   @include media-query($on-palm) {
     flex-wrap: wrap;
   }
-  &:hover{
+  &:hover {
     background: $draculaGray;
   }
 }
@@ -173,5 +173,44 @@
     li {
       margin-bottom: $spacing-unit;
     }
+  }
+}
+
+/**
+ * 404
+ */
+
+.page-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 210px);
+  > * {
+    line-height: 1;
+  }
+  hgroup {
+    text-align: center;
+  }
+  h1 {
+    font-size: 150px;
+    color: $draculaRed;
+    text-shadow: 0 0 10px;
+    @include media-query($in-hand) {
+      font-size: 80px;
+    }
+  }
+  h2 {
+    font-size: 40px;
+    color: $draculaPink;
+    color: $draculaGreen;
+    color: $text-color;
+    text-shadow: 0 0 10px;
+    @include media-query($in-hand) {
+      font-size: 20px;
+    }
+  }
+  a {
+    margin-top: 60px;
   }
 }

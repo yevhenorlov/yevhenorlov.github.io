@@ -478,6 +478,64 @@ pre > code {
 }
 
 /**
+ * 404
+ */
+.page-404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: calc(100vh - 210px);
+}
+
+.page-404 > * {
+  line-height: 1;
+}
+
+.page-404 hgroup {
+  text-align: center;
+}
+
+.page-404 h1 {
+  font-size: 150px;
+  color: #ff5555;
+  text-shadow: 0 0 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .page-404 h1 {
+    font-size: 80px;
+  }
+}
+
+.page-404 h2 {
+  font-size: 40px;
+  color: #fa79ca;
+  color: #50fa7b;
+  color: #ededed;
+  text-shadow: 0 0 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .page-404 h2 {
+    font-size: 20px;
+  }
+}
+
+.page-404 a {
+  margin-top: 60px;
+}
+
+/**
  * Syntax highlighting styles
  */
 .highlight {
