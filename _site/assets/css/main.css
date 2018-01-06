@@ -341,11 +341,21 @@ pre > code {
  */
 .site-footer {
   color: #6272a4;
+  text-transform: lowercase;
 }
 
 .site-footer .wrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.site-footer .footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .contact-list {
@@ -355,15 +365,6 @@ pre > code {
 
 .contact-list > li {
   margin-bottom: 1.23609rem;
-}
-
-.contact-social-icons * {
-  margin-right: 5px;
-  border: none !important;
-}
-
-.contact-social-icons i {
-  padding: 5px;
 }
 
 /**

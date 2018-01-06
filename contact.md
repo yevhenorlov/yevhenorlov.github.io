@@ -3,15 +3,10 @@ layout: default
 title: contact
 permalink: /contact
 ---
+
 <ul class="contact-list">
-  <li>yevhenorlov(at)gmail.com</li>
-  <li class="contact-social-icons">
-    <a href="http://twitter.com/yevhenorlov"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-    <a href="http://soundcloud.com/yvhn"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
-    <a href="http://www.instagram.com/yevhenorlov"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-    <a href="http://github.com/yevhenorlov"><i class="fa fa-github" aria-hidden="true"></i></a>
-    <a href="http://linkedin.com/in/yevhenorlov"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-  </li>
+  <li>twitter: <a href="http://twitter.com/yevhenorlov">@yevhenorlov</a></li>
+  <li>github: <a href="http://github.com/yevhenorlov">/yevhenorlov</a></li>
+  <li>linkedin: <a href="http://linkedin.com/in/yevhenorlov">/yevhenorlov</a></li>
+  <li>mail: yevhenorlov(at)gmail.com</li>
 </ul>
-
-

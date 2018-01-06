@@ -51,9 +51,14 @@
 
 .site-footer {
   color: $draculaBlue;
+  text-transform: lowercase;
   .wrapper {
     padding-top: $spacing-unit;
     padding-bottom: $spacing-unit;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -64,15 +69,6 @@
   > li {
     margin-bottom: $spacing-unit / 1.618;
   }
-}
-
-.contact-social-icons * {
-  margin-right: 5px;
-  border: none !important;
-}
-
-.contact-social-icons i {
-  padding: 5px;
 }
 
 /**
