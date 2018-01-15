@@ -6,9 +6,64 @@
 </description>
     <link>https://yevhenorlov.com/</link>
     <atom:link href="https://yevhenorlov.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 06 Jan 2018 10:35:16 +0200</pubDate>
-    <lastBuildDate>Sat, 06 Jan 2018 10:35:16 +0200</lastBuildDate>
+    <pubDate>Mon, 15 Jan 2018 11:24:09 +0200</pubDate>
+    <lastBuildDate>Mon, 15 Jan 2018 11:24:09 +0200</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>text-decoration повертається</title>
+        <description>&lt;p&gt;Поки автори W3C-чернетки &lt;a href=&quot;https://drafts.csswg.org/css-text-decor-4/#text-decoration-line-continuity&quot;&gt;вирішують&lt;/a&gt;, як між собою уживатимуться CSS-властивості &lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration-skip&lt;/code&gt; і &lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration-skip-ink&lt;/code&gt;&lt;sup&gt;&lt;a href=&quot;#fn1&quot; id=&quot;ref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, нові підкреслення можна використовувати вже сьогодні. Підтримка, очікувано, ще доволі &lt;a href=&quot;https://caniuse.com/#search=text-decoration-skip&quot;&gt;кепська&lt;/a&gt;, але хоча б зворотньо сумісна.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: можемо спокійно додавати &lt;code class=&quot;highlighter-rouge&quot;&gt;body { text-decoration-skip: ink; }&lt;/code&gt; в &lt;code class=&quot;highlighter-rouge&quot;&gt;global-rules.css&lt;/code&gt; і одразу користуватись перевагами красивих андерлайнів там, де це вже можливо.&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nc&quot;&gt;.old-underline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.new-underline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-decoration-skip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;На момент цієї публікації в Firefox, Edge і Safari видимої різниці між двома варіантами немає — Edge і Firefox не підтримують &lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration-skip&lt;/code&gt; взагалі, тоді як Safari використовує свій варіант властивості під назвою &lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit-text-decoration-skip&lt;/code&gt; і завжди перериває лінію підкреслення за замовчуванням. Користувачі Chrome на прикладі двох наступних абзаців можуть подивитись, як працюватиме новий стандарт після затвердження.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;old-underline&quot;&gt;Так виглядає стандартний підкреслений текст. Лінія перекреслюює гліфи і зливається з усіма знаками, включаючи знаки пунктуації. Спеціалісти стверджують, що людям з дислексією це сильно ускладнює читання&lt;/span&gt;&lt;sup&gt;&lt;a href=&quot;#fn2&quot; id=&quot;ref2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. З цих причин на практиці таке підкреслення часто вимикають глобальним правилом типу &lt;code class=&quot;highlighter-rouge&quot;&gt;a {text-decoration: none;}&lt;/code&gt; і лінію малюють заново за допомогою &lt;code class=&quot;highlighter-rouge&quot;&gt;border-bottom&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;background-image&lt;/code&gt;, псевдоедементів &lt;code class=&quot;highlighter-rouge&quot;&gt;before/after&lt;/code&gt; тощо.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;new-underline&quot;&gt;Нова CSS-властивість автоматично розриває лінію підкреслення, коли та перетинає гліф. Це спрощує візуальне сприйняття і робить текст більш доступним для людей, яким складно читати.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Більше картинок і посилань можна знайти &lt;a href=&quot;https://medium.com/@iamhiwelo/improving-text-readability-for-dyslexic-users-with-skip-ink-underlines-bf52a2f3426b&quot;&gt;тут&lt;/a&gt; і &lt;a href=&quot;https://css-tricks.com/almanac/properties/t/text-decoration-skip/&quot;&gt;тут&lt;/a&gt;.&lt;/p&gt;
+
+&lt;style&gt;
+  .old-underline{
+    text-decoration: underline;
+  }
+  .new-underline{
+    text-decoration: underline;
+    text-decoration-skip: ink;
+  }
+  .new-underline.overline{
+    text-decoration: overline;
+  }
+&lt;/style&gt;
+
+&lt;aside class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn1&quot;&gt;На момент написання цього поста розробники Chrome &lt;a href=&quot;https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/47BHtmz0jVY&quot;&gt;заявили про намір&lt;/a&gt; прибрати ink зі списку можливих значень властивості text-decoration-skip і винести його в окрему властивість text-decoration-skip-ink зі значеннями auto і none, що дозволить увімкнути новий тип підкреслень глобально за замовчуванням.&lt;a href=&quot;#ref1&quot; title=&quot;Повернутися до зноски 1 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+    &lt;li id=&quot;fn2&quot;&gt;&lt;a href=&quot;https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/&quot;&gt;Dos and don&#39;ts on designing for accessibility (Karwai Pun, 2016)&lt;/a&gt;&lt;a href=&quot;#ref2&quot; title=&quot;Повернутися до зноски 2 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/aside&gt;
+</description>
+        <pubDate>Mon, 15 Jan 2018 11:20:00 +0200</pubDate>
+        <link>https://yevhenorlov.com/frontend/2018/01/15/text-decoration-returns.html</link>
+        <guid isPermaLink="true">https://yevhenorlov.com/frontend/2018/01/15/text-decoration-returns.html</guid>
+        
+        
+        <category>frontend</category>
+        
+      </item>
     
       <item>
         <title>Робимо інтерактивні наліпки за допомогою sticker.js</title>
