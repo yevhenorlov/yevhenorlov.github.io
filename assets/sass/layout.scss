@@ -149,13 +149,13 @@
 
   > p {
     position: relative;
-    &:before {
-      content: counter(p, decimal-leading-zero);
-      counter-increment: p;
-      position: absolute;
-      left: -4em;
-      opacity: 0.2;
-    }
+    // &:before {
+    //   content: counter(p, decimal-leading-zero);
+    //   counter-increment: p;
+    //   position: absolute;
+    //   left: -4em;
+    //   opacity: 0.2;
+    // }
   }
 }
 
