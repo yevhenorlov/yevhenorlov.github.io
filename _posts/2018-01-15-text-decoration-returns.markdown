@@ -38,9 +38,6 @@ categories: frontend
     text-decoration: underline;
     text-decoration-skip: ink;
   }
-  .new-underline.overline{
-    text-decoration: overline;
-  }
 </style>
 
 <aside class="footnotes">
