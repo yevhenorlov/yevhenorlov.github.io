@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#282a36" />
+  <!-- google analytics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-88752842-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono&amp;subset=cyrillic-ext" rel="stylesheet">
+
+  <title>text-decoration повертається</title>
+
+  <meta name="author" content="Yevhen Orlov" />
+  <meta property="og:title" content="text-decoration повертається">
+  <meta property="og:descripion" name="description" content="Поки автори W3C-чернетки вирішують, як між собою уживатимуться CSS-властивості text-decoration-skip і text-decoration-skip-ink1, нові підкреслення можна вико...">
+  <meta property="og:url" content="https://yevhenorlov.com/frontend/2018/01/15/text-decoration-returns.html" />
+  <meta property="og:site_name" content="yevhenorlov.com" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta name="twitter:site" content="@yevhenorlov" />
+  <meta name="twitter:creator" content="@yevhenorlov">
+  <meta name="twitter:description" content="Поки автори W3C-чернетки вирішують, як між собою уживатимуться CSS-властивості text-decoration-skip і text-decoration-skip-ink1, нові підкреслення можна вико..." />
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta property="og:image" content="https://yevhenorlov.com/assets/images/og/2018-01-15.png" />
+  <meta name="twitter:image" content="https://yevhenorlov.com/assets/images/og/2018-01-15.png" />
+  
+
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="https://yevhenorlov.com/frontend/2018/01/15/text-decoration-returns.html">
+  <link rel="alternate" type="application/rss+xml" title="yevhenorlov.com" href="https://yevhenorlov.com /feed.xml
+    ">
+</head>
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <a class="site-title" title="home" href="/">/</a>
+
+    <nav class="site-nav">
+        <a class="page-link" title="archive" href="/archive">архів</a>
+        <a class="page-link" title="contact" href="/contact">контакти</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">text-decoration повертається</h1>
+    <p class="post-meta"><time datetime="2018-01-15T10:30:00+02:00" itemprop="datePublished">Jan 15, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Поки автори W3C-чернетки <a href="https://drafts.csswg.org/css-text-decor-4/#text-decoration-line-continuity">вирішують</a>, як між собою уживатимуться CSS-властивості <code class="highlighter-rouge">text-decoration-skip</code> і <code class="highlighter-rouge">text-decoration-skip-ink</code><sup><a href="#fn1" id="ref1">1</a></sup>, нові підкреслення можна використовувати вже сьогодні. Підтримка, очікувано, ще доволі <a href="https://caniuse.com/#search=text-decoration-skip">кепська</a>, але хоча б зворотньо сумісна.</p>
+
+<p><strong>TL;DR</strong>: можемо спокійно додавати <code class="highlighter-rouge">body { text-decoration-skip: ink; }</code> в <code class="highlighter-rouge">global-rules.css</code> і одразу користуватись перевагами красивих андерлайнів там, де це вже можливо.</p>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code>
+<span class="nc">.old-underline</span><span class="p">{</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.new-underline</span><span class="p">{</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
+  <span class="nl">text-decoration-skip</span><span class="p">:</span> <span class="n">ink</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>На момент цієї публікації в Firefox, Edge і Safari видимої різниці між двома варіантами немає — Edge і Firefox не підтримують <code class="highlighter-rouge">text-decoration-skip</code> взагалі, тоді як Safari використовує свій варіант властивості під назвою <code class="highlighter-rouge">-webkit-text-decoration-skip</code> і завжди перериває лінію підкреслення за замовчуванням. Користувачі Chrome на прикладі двох наступних абзаців можуть подивитись, як працюватиме новий стандарт після затвердження.</p>
+
+<p><span class="old-underline">Так виглядає стандартний підкреслений текст. Лінія перекреслюює гліфи і зливається з усіма знаками, включаючи знаки пунктуації. Спеціалісти стверджують, що людям з дислексією це сильно ускладнює читання</span><sup><a href="#fn2" id="ref2">2</a></sup>. З цих причин на практиці таке підкреслення часто вимикають глобальним правилом типу <code class="highlighter-rouge">a {text-decoration: none;}</code> і лінію малюють заново за допомогою <code class="highlighter-rouge">border-bottom</code>, <code class="highlighter-rouge">background-image</code>, псевдоедементів <code class="highlighter-rouge">before/after</code> тощо.</p>
+
+<p><span class="new-underline">Нова CSS-властивість автоматично розриває лінію підкреслення, коли та перетинає гліф. Це спрощує візуальне сприйняття і робить текст більш доступним для людей, яким складно читати.</span></p>
+
+<p>Більше картинок і посилань можна знайти <a href="https://medium.com/@iamhiwelo/improving-text-readability-for-dyslexic-users-with-skip-ink-underlines-bf52a2f3426b">тут</a> і <a href="https://css-tricks.com/almanac/properties/t/text-decoration-skip/">тут</a>.</p>
+
+<style>
+  .old-underline{
+    text-decoration: underline;
+  }
+  .new-underline{
+    text-decoration: underline;
+    text-decoration-skip: ink;
+  }
+  .new-underline.overline{
+    text-decoration: overline;
+  }
+</style>
+
+<aside class="footnotes">
+  <ol>
+    <li id="fn1">На момент написання цього поста розробники Chrome <a href="https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/47BHtmz0jVY">заявили про намір</a> прибрати ink зі списку можливих значень властивості text-decoration-skip і винести його в окрему властивість text-decoration-skip-ink зі значеннями auto і none, що дозволить увімкнути новий тип підкреслень глобально за замовчуванням.<a href="#ref1" title="Повернутися до зноски 1 в тексті.">&#8617;</a></li>
+    <li id="fn2"><a href="https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/">Dos and don'ts on designing for accessibility (Karwai Pun, 2016)</a><a href="#ref2" title="Повернутися до зноски 2 в тексті.">&#8617;</a></li>
+  </ol>
+</aside>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-content">
+      <span>&copy; 2018 Євген Орлов</span>
+      <a href="https://yevhenorlov.com/feed.xml">RSS</a>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>
