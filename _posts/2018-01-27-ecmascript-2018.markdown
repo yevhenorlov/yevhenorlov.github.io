@@ -1,22 +1,22 @@
 ---
 layout: post
-title:  "ECMAScript 2018: найкрутіші фічі, яких варто очікувати"
-date:   2018-01-29 12:00:00 +0200
+title:  "ECMAScript 2018: найкращі хіти"
+date:   2018-01-27 12:00:00 +0200
 # image: https://yevhenorlov.com/assets/images/og/og-frontend.png
 categories: frontend, javascript
 ---
-Днями став відомий набір фіч, які увійдуть до стандарту ECMAScript 2018<sup><a href="#fn1" id="ref1">1</a></sup>. Повний список можна подивитись в <a href="http://2ality.com/2017/02/ecmascript-2018.html">пості</a> доктора Раушмаєра, а я напишу детальніше про пару штук, які здались мені найцікавішими.
+Днями став відомий набір фіч, які увійдуть до стандарту ECMAScript 2018<sup><a href="#fn1" id="ref1">1</a></sup>. Повний список можна подивитись в <a href="http://2ality.com/2017/02/ecmascript-2018.html">Акселя Раушмаєра</a>, а я напишу детальніше про пару штук, які здались мені найцікавішими.
 
 ## Spread в об'єктах
 
-Оператор `spread` (`...`) дозволяє дістати значення з так званих `iterables`. За замовчуванням до `iterables` входять типи об'єктів, чиї прототипи містять метод `@@iterator`. До таких належать `String`, `Array`, `TypedArray`, `Map` та `Set`.
+Оператор `spread` (`...`) дозволяє витягти значення з так званих `iterables`. За замовчуванням до `iterables` входять типи об'єктів, чиї прототипи містять метод `@@iterator`. До таких належать `String`, `Array`, `TypedArray`, `Map` та `Set`.
 
 ### Як було?
 
 До сьогодні `spread` сильно полегшував життя у випадках, коли потрібно було клонувати масив чи передати масив параметрів у функцію.
 
 ```javascript
-/* Pass by reference vs. Pass by value */
+/* Передача за посиланням vs. Передача за значенням */
 const band1 = ['john', 'paul', 'george', 'pete'];
 const band2 = band1;
 band2[3] = 'ringo';
@@ -45,8 +45,35 @@ portisheadThird.push(...touringMembers) // perfection.gif
 console.log(portisheadThird); // => ['beth', 'geoff', 'adrian', 'jim', 'clive', 'john'];
 ```
 
+### Що змінилось?
+
+В новому стандарті `spread` стане доступним і для об'єктів. Дві речі, про які потрібно пам'ятати: він працює тільки для власних (не наслідуваних) властивостей об'єктів і дозволяє робити лише неглибоке клонування об'єкта (на один рівень вниз).
+
+```javascript
+/* shallow clone */
+
+const ogre = {
+  hp: 120,
+  inventory: {
+    weapon: 'big stick'
+  }
+}
+
+const ogreInjured = {...ogre};
+ogreInjured.hp = 42;
+ogreInjured.inventory.weapon = 'small hammer';
+
+/*
+ * ogreInjured.hp передається за значенням,
+ * ogreInjured.inventory.weapon передається за посиланням:
+ */
+console.log(ogreInjured); // => {hp: 42, inventory: {weapon: 'small hammer'}}
+console.log(ogre); // => {hp: 120, inventory: {weapon: 'small hammer'}}
+```
+
 ## Rest в об'єктах
-/Rest:/
+
+
 /before: function definition, destructuring an array/
 
 ## Зворотні регулярні вирази

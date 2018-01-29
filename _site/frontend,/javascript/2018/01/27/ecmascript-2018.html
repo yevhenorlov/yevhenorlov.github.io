@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#282a36" />
+  <!-- google analytics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-88752842-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono&amp;subset=cyrillic-ext" rel="stylesheet">
+
+  <title>ECMAScript 2018: найкращі хіти</title>
+
+  <meta name="author" content="Yevhen Orlov" />
+  <meta property="og:title" content="ECMAScript 2018: найкращі хіти">
+  <meta property="og:descripion" name="description" content="Днями став відомий набір фіч, які увійдуть до стандарту ECMAScript 20181. Повний список можна подивитись в Акселя Раушмаєра, а я напишу детальніше про пару ш...">
+  <meta property="og:url" content="https://yevhenorlov.com/frontend,/javascript/2018/01/27/ecmascript-2018.html" />
+  <meta property="og:site_name" content="yevhenorlov.com" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta name="twitter:site" content="@yevhenorlov" />
+  <meta name="twitter:creator" content="@yevhenorlov">
+  <meta name="twitter:description" content="Днями став відомий набір фіч, які увійдуть до стандарту ECMAScript 20181. Повний список можна подивитись в Акселя Раушмаєра, а я напишу детальніше про пару ш..." />
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta property="og:image" content="https://yevhenorlov.com/assets/images/og/og-frontend.png" />
+  <meta name="twitter:image" content="https://yevhenorlov.com/assets/images/og/og-frontend.png" />
+  
+
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="https://yevhenorlov.com/frontend,/javascript/2018/01/27/ecmascript-2018.html">
+  <link rel="alternate" type="application/rss+xml" title="yevhenorlov.com" href="https://yevhenorlov.com /feed.xml
+    ">
+</head>
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <a class="site-title" title="home" href="/">/</a>
+
+    <nav class="site-nav">
+        <a class="page-link" title="archive" href="/archive">архів</a>
+        <a class="page-link" title="contact" href="/contact">контакти</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">ECMAScript 2018: найкращі хіти</h1>
+    <p class="post-meta"><time datetime="2018-01-27T12:00:00+02:00" itemprop="datePublished">Jan 27, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Днями став відомий набір фіч, які увійдуть до стандарту ECMAScript 2018<sup><a href="#fn1" id="ref1">1</a></sup>. Повний список можна подивитись в <a href="http://2ality.com/2017/02/ecmascript-2018.html">Акселя Раушмаєра</a>, а я напишу детальніше про пару штук, які здались мені найцікавішими.</p>
+
+<h2 id="spread-в-обєктах">Spread в об’єктах</h2>
+
+<p>Оператор <code class="highlighter-rouge">spread</code> (<code class="highlighter-rouge">...</code>) дозволяє витягти значення з так званих <code class="highlighter-rouge">iterables</code>. За замовчуванням до <code class="highlighter-rouge">iterables</code> входять типи об’єктів, чиї прототипи містять метод <code class="highlighter-rouge">@@iterator</code>. До таких належать <code class="highlighter-rouge">String</code>, <code class="highlighter-rouge">Array</code>, <code class="highlighter-rouge">TypedArray</code>, <code class="highlighter-rouge">Map</code> та <code class="highlighter-rouge">Set</code>.</p>
+
+<h3 id="Як-було">Як було?</h3>
+
+<p>До сьогодні <code class="highlighter-rouge">spread</code> сильно полегшував життя у випадках, коли потрібно було клонувати масив чи передати масив параметрів у функцію.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="cm">/* Передача за посиланням vs. Передача за значенням */</span>
+<span class="kr">const</span> <span class="nx">band1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'john'</span><span class="p">,</span> <span class="s1">'paul'</span><span class="p">,</span> <span class="s1">'george'</span><span class="p">,</span> <span class="s1">'pete'</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">band2</span> <span class="o">=</span> <span class="nx">band1</span><span class="p">;</span>
+<span class="nx">band2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ringo'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">band2</span><span class="p">);</span> <span class="c1">// =&gt; ['john', 'paul', 'george', 'ringo'];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">band1</span><span class="p">);</span> <span class="c1">// =&gt; ['john', 'paul', 'george', 'ringo'];</span>
+
+<span class="kr">const</span> <span class="nx">band3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'syd'</span><span class="p">,</span> <span class="s1">'roger'</span><span class="p">,</span> <span class="s1">'rick'</span><span class="p">,</span> <span class="s1">'nick'</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">band4</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">band3</span><span class="p">];</span>
+<span class="nx">band4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'david'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">band4</span><span class="p">);</span> <span class="c1">// =&gt; ['david', 'roger', 'rick', 'nick'];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">band3</span><span class="p">);</span> <span class="c1">// =&gt; ['syd', 'roger', 'rick', 'nick'];</span>
+</code></pre>
+</div>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">portisheadFirst</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'beth'</span><span class="p">,</span> <span class="s1">'geoff'</span><span class="p">,</span> <span class="s1">'adrian'</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">touringMembers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'jim'</span><span class="p">,</span> <span class="s1">'clive'</span><span class="p">,</span> <span class="s1">'john'</span><span class="p">];</span>
+<span class="nx">portisheadFirst</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">touringMembers</span><span class="p">);</span> <span class="c1">// створює масив в масиві</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">portisheadFirst</span><span class="p">);</span> <span class="c1">// =&gt; ['beth', 'geoff', 'adrian', ['jim', 'clive', 'john']];</span>
+
+<span class="kr">const</span> <span class="nx">portisheadSecond</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'beth'</span><span class="p">,</span> <span class="s1">'geoff'</span><span class="p">,</span> <span class="s1">'adrian'</span><span class="p">];</span>
+<span class="nx">portisheadSecond</span><span class="p">.</span><span class="nx">push</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">portisheadSecond</span><span class="p">,</span> <span class="nx">touringMembers</span><span class="p">);</span> <span class="c1">// працює, але не надто добре читається</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">portisheadSecond</span><span class="p">);</span> <span class="c1">// =&gt; ['beth', 'geoff', 'adrian', 'jim', 'clive', 'john'];</span>
+
+<span class="kr">const</span> <span class="nx">portisheadThird</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'beth'</span><span class="p">,</span> <span class="s1">'geoff'</span><span class="p">,</span> <span class="s1">'adrian'</span><span class="p">];</span>
+<span class="nx">portisheadThird</span><span class="p">.</span><span class="nx">push</span><span class="p">(...</span><span class="nx">touringMembers</span><span class="p">)</span> <span class="c1">// perfection.gif</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">portisheadThird</span><span class="p">);</span> <span class="c1">// =&gt; ['beth', 'geoff', 'adrian', 'jim', 'clive', 'john'];</span>
+</code></pre>
+</div>
+
+<h3 id="Що-змінилось">Що змінилось?</h3>
+
+<p>В новому стандарті <code class="highlighter-rouge">spread</code> стане доступним і для об’єктів. Дві речі, про які потрібно пам’ятати: він працює тільки для власних (не наслідуваних) властивостей об’єктів і дозволяє робити лише неглибоке клонування об’єкта (на один рівень вниз).</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="cm">/* shallow clone */</span>
+
+<span class="kr">const</span> <span class="nx">ogre</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">hp</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+  <span class="na">inventory</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">weapon</span><span class="p">:</span> <span class="s1">'big stick'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">ogreInjured</span> <span class="o">=</span> <span class="p">{...</span><span class="nx">ogre</span><span class="p">};</span>
+<span class="nx">ogreInjured</span><span class="p">.</span><span class="nx">hp</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="nx">ogreInjured</span><span class="p">.</span><span class="nx">inventory</span><span class="p">.</span><span class="nx">weapon</span> <span class="o">=</span> <span class="s1">'small hammer'</span><span class="p">;</span>
+
+<span class="cm">/*
+ * ogreInjured.hp передається за значенням,
+ * ogreInjured.inventory.weapon передається за посиланням:
+ */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ogreInjured</span><span class="p">);</span> <span class="c1">// =&gt; {hp: 42, inventory: {weapon: 'small hammer'}}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ogre</span><span class="p">);</span> <span class="c1">// =&gt; {hp: 120, inventory: {weapon: 'small hammer'}}</span>
+</code></pre>
+</div>
+
+<h2 id="rest-в-обєктах">Rest в об’єктах</h2>
+
+<p>/before: function definition, destructuring an array/</p>
+
+<h2 id="Зворотні-регулярні-вирази">Зворотні регулярні вирази</h2>
+<h2 id="Асинхронна-ітерація">Асинхронна ітерація</h2>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// test code</span>
+</code></pre>
+</div>
+
+<aside class="footnotes">
+  <ol>
+    <li id="fn1">Процес TC39 передбачає, що фічі, які вийшли на четвертий етап затвердження, майже гарантовано з'являться в релізі. Але це <a href="http://exploringjs.com/es2016-es2017/ch_tc39-process.html#_dont-call-them-ecmascript-20xx-features">не точно</a>.<a href="#ref1" title="Повернутися до зноски 1 в тексті.">&#8617;</a></li>
+  </ol>
+</aside>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-content">
+      <span>&copy; 2018 Євген Орлов</span>
+      <a href="https://yevhenorlov.com/feed.xml">RSS</a>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>
