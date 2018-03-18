@@ -2,7 +2,7 @@
 layout: post
 title:  "Vim для хіпстерів, або вічне сяйво вдалих інженерних рішень"
 date:   2018-03-19 08:00:00 +0200
-image: https://yevhenorlov.com/assets/images/og/2018-01-19.png
+image: https://yevhenorlov.com/assets/images/og/2018-03-19.png
 categories: workflow
 ---
 
