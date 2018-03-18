@@ -30,7 +30,7 @@
   <meta name="author" content="Yevhen Orlov" />
   <meta property="og:title" content="text-decoration повертається">
   <meta property="og:descripion" name="description" content="Поки автори W3C-чернетки вирішують, як між собою уживатимуться CSS-властивості text-decoration-skip і text-decoration-skip-ink1, нові підкреслення можна вико...">
-  <meta property="og:url" content="https://yevhenorlov.com/frontend/2018/01/15/text-decoration-returns.html" />
+  <meta property="og:url" content="http://localhost:4000/frontend/2018/01/15/text-decoration-returns.html" />
   <meta property="og:site_name" content="yevhenorlov.com" />
   <meta property="og:locale" content="uk_UA" />
   <meta name="twitter:site" content="@yevhenorlov" />
@@ -44,8 +44,8 @@
 
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="https://yevhenorlov.com/frontend/2018/01/15/text-decoration-returns.html">
-  <link rel="alternate" type="application/rss+xml" title="yevhenorlov.com" href="https://yevhenorlov.com /feed.xml
+  <link rel="canonical" href="http://localhost:4000/frontend/2018/01/15/text-decoration-returns.html">
+  <link rel="alternate" type="application/rss+xml" title="yevhenorlov.com" href="http://localhost:4000 /feed.xml
     ">
 </head>
 
@@ -80,7 +80,7 @@
 
 <p><strong>TL;DR</strong>: можемо спокійно додавати <code class="highlighter-rouge">body { text-decoration-skip: ink; }</code> в <code class="highlighter-rouge">global-rules.css</code> і одразу користуватись перевагами красивих андерлайнів там, де це вже можливо.</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nc">.old-underline</span><span class="p">{</span>
   <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
 <span class="p">}</span>
@@ -89,8 +89,7 @@
   <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
   <span class="nl">text-decoration-skip</span><span class="p">:</span> <span class="n">ink</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>На момент цієї публікації в Firefox, Edge і Safari видимої різниці між двома варіантами немає — Edge і Firefox не підтримують <code class="highlighter-rouge">text-decoration-skip</code> взагалі, тоді як Safari використовує свій варіант властивості під назвою <code class="highlighter-rouge">-webkit-text-decoration-skip</code> і завжди перериває лінію підкреслення за замовчуванням. Користувачі Chrome на прикладі двох наступних абзаців можуть подивитись, як працюватиме новий стандарт після затвердження.</p>
 
