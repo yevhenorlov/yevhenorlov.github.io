@@ -132,7 +132,7 @@ color dracula
   <ol><li id="fn1"><a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">Stack Overflow: Helping One Million Developers Exit Vim.</a>
   <a href="#ref1" title="Повернутися до зноски 1 в тексті.">&#8617;</a></li>
     <li id="fn2">Перший варіант поста включав лічильник літредакторів, які
-    померли на цьому реченні. Автор відмовляється вибачатись.
+    померли намагаючись прочитати це речення. Автор відмовляється вибачатись.
 <a href="#ref2" title="Повернутися до зноски 2 в тексті.">&#8617;</a></li>
 
 <li id="fn3">Не буде несподіванкою той факт, що процес налаштування Vim відрізняється для UNIX і
