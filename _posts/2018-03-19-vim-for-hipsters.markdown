@@ -75,11 +75,11 @@ $ touch ~/.vimrc
 
 ```
 set clipboard=unnamed    " використовувати загальний буфер обміну замість вбудованого у Vim
-set smartindent          " автоматичний відступ там, де це потрібно
+set smartindent          " автоматичний відступ 
 set number               " показувати номер рядка по лівому краю
 set cursorline           " підсвітити рядок
-set showmatch            " підсвітити парну дужку для дужки під курсором
-set incsearch            " пошук одразу при введення запиту
+set showmatch            " підсвітити парну дужку 
+set incsearch            " пошук одразу при введенні запиту
 set hlsearch             " підсвітити результати пошуку
 set ignorecase smartcase " пошук з врахуванням регістру лише тоді, коли в запиті є великі літери
 set backspace=2          " зняти обмеження для backspace
