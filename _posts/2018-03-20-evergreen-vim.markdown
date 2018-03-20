@@ -62,7 +62,7 @@ $ git clone https://github.com/prettier/vim-prettier ~/.vim/bundle/
 ```bash
 $ cd ~/.vim/bundle
 $ git init
-$ git add submodule https://github.com/prettier/vim-prettier
+$ git submodule add https://github.com/prettier/vim-prettier
 ```
 
 Додавши в такий спосіб всі потрібні плагіни до репозиторія `bundle`, можемо
