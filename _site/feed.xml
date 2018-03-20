@@ -6,9 +6,169 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Mar 2018 07:46:24 +0200</pubDate>
-    <lastBuildDate>Mon, 19 Mar 2018 07:46:24 +0200</lastBuildDate>
+    <pubDate>Tue, 20 Mar 2018 09:05:36 +0200</pubDate>
+    <lastBuildDate>Tue, 20 Mar 2018 09:05:36 +0200</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Vim для хіпстерів, або вічне сяйво вдалих інженерних рішень</title>
+        <description>&lt;p&gt;Якби я був серйозним програмістом як мій батько або мій брат, я проводив би 
+більше часу за написанням коду і вивченням документації. Натомість я перетворюю 
+свій workflow на фетиш і документую процес тут. Втім, в цього поста є більш гідний 
+привід: &lt;a href=&quot;/assets/images/img/country_stuck_vim-1-2-1024x1024.png&quot;&gt;статистика 
+свідчить&lt;/a&gt;&lt;sup&gt;&lt;a href=&quot;#fn1&quot; id=&quot;ref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, що
+нам пора серйозно поговорити про Vim.&lt;/p&gt;
+
+&lt;h2 id=&quot;життя-після-q&quot;&gt;Життя після :q!&lt;/h2&gt;
+
+&lt;p&gt;Коли я трохи навчився долати паніку, що охоплювала мене щоразу, як консольна
+команда &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit&lt;/code&gt; закидала мене в редактор, який закривається кнопкою
+живлення на комп’ютері,&lt;sup&gt;&lt;a href=&quot;#fn2&quot; id=&quot;ref2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; мені трапилась &lt;a href=&quot;https://medium.freecodecamp.org/lessons-from-my-first-year-of-live-coding-on-twitch-41a32e2f41c1&quot;&gt;стаття&lt;/a&gt;
+інженерки Microsoft Сюз Хінтон. Сюз щотижня стрімить на твітчі свій код, який
+вона набирає у Vim. Так я вперше дізнався, що архаїчний на перший
+погляд редактор має декілька переваг, які навіть сьогодні роблять його основним
+інструментом для топ-спеціалістів.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/gif/dozens-of-us.gif&quot; alt=&quot;(There are dozens of us! Dozens!)&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Тільки клавіатура.&lt;/strong&gt; Для мене це стало найважливішим аргументом, і, водночас,
+найменш очевидним. Цінність стає зрозумілою, коли через півдня
+роботи помічаєш, що руки менше втомились. Потім повертаєшся до звичного
+редактора, і тільки тут звертаєш увагу, наскільки постійне хапання за мишку
+збиває з ритму.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Мінімалізм.&lt;/strong&gt; Я терпіти не можу більшість IDE, з якими мені доводилось
+працювати, саме за їх візуальну надмірність. Три ряди кнопок і одразу кілька
+лінтерів, що підкреслюють/виділяють код десятком кольорів, з’їдаючи при цьому
+гігабайти пам’яті, are not my idea of fun. Справа смаку, звісно, але мені
+простіше погуглити і підключити мінімум необхідного для роботи, ніж отримувати
+купу непотрібного і незрозумілого мотлоху “з коробки”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Швидкість.&lt;/strong&gt; Див. вище. Моїм першим редактором був легковісний Sublime Text,
+але навіть йому далеко до блискавичності Vim.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Інтегрованість в консоль.&lt;/strong&gt; Необхідний для моєї роботи мінімум інструментів:
+браузер, графічний редактор, текстовий редактор, консоль, месенджер. Кожне
+зайве відкрите вікно збільшує плутанину, тому чим більше інструментів я можу
+розмістити в консолі, тим краще. Завдяки Vim і
+&lt;a href=&quot;https://github.com/erroneousboat/slack-term&quot;&gt;slack-term&lt;/a&gt; мені вистачає трьох
+вікон на все.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Кастомізація.&lt;/strong&gt; Важливо, що Vim можна і треба налаштовувати. Можливості
+кастомізації настільки широкі, що це з незвички відлякує багатьох. Оптимальний
+підхід тут — ставитись до еволюції свого сетапу як до процесу, який ніколи не
+буде завершений, і додавати новий функціонал поступово, мірою виникнення потреби.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;з-чого-почати&quot;&gt;З чого почати?&lt;/h2&gt;
+
+&lt;p&gt;Команда &lt;code class=&quot;highlighter-rouge&quot;&gt;vimtutor&lt;/code&gt; в терміналі пропонує стислий і зрозумілий практичний вступ
+до редактора - ідеальний спосіб почати знайомство. Після освоєння навігації і
+базових команд можемо влаштуватись зручніше - для цього треба створити файл
+конфігурації, який Vim зчитуватиме щоразу при запуску&lt;sup&gt;&lt;a href=&quot;#fn3&quot; id=&quot;ref3&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch&lt;/span&gt; ~/.vimrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Саме у &lt;code class=&quot;highlighter-rouge&quot;&gt;.vimrc&lt;/code&gt; прописуються основні користувацькі налаштування: меппінг команд,
+підсвітка синтаксису, відступи, елементи інтерфейсу тощо. Писати файл з нуля не
+потрібно, краще взяти чужий за основу. Я запозичив більшу частину у вищезгаданої
+Сюз Хінтон, &lt;a href=&quot;https://github.com/yevhenorlov/dotfiles/blob/master/.vimrc&quot;&gt;моя конфігурація&lt;/a&gt;
+також лежить у відкритому доступі.&lt;/p&gt;
+
+&lt;p&gt;Варто виділити декілька налаштувань, які особливо полегшать роботу тим, хто
+прийшов з більш традиційних редакторів (тобто всім, хто використовує Vim в 2018 році).&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set clipboard=unnamed    &quot; використовувати загальний буфер обміну замість вбудованого у Vim
+set smartindent          &quot; автоматичний відступ 
+set number               &quot; показувати номер рядка по лівому краю
+set cursorline           &quot; підсвітити рядок
+set showmatch            &quot; підсвітити парну дужку 
+set incsearch            &quot; пошук одразу при введенні запиту
+set hlsearch             &quot; підсвітити результати пошуку
+set ignorecase smartcase &quot; пошук з врахуванням регістру лише тоді, коли в запиті є великі літери
+set backspace=2          &quot; зняти обмеження для backspace
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;any-colour-you-like&quot;&gt;Any colour you like&lt;/h2&gt;
+
+&lt;p&gt;Файли кольорової підсвітки зберігаються окремо. Я використовую палітру
+&lt;a href=&quot;https://draculatheme.com/vim/&quot;&gt;dracula&lt;/a&gt; всюди, де це можливо (включаючи цей
+сайт), гугл має знати більше про ваші улюблені теми.&lt;/p&gt;
+
+&lt;p&gt;Підключати просто. З папки, в якій знаходиться файл підсвітки:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; ~/.vim/colors &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mv &lt;/span&gt;dracula.vim &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Після цього підключити файл в &lt;code class=&quot;highlighter-rouge&quot;&gt;.vimrc&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;syntax &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;color&lt;/span&gt; dracula
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;vim-на-стероїдах&quot;&gt;Vim на стероїдах&lt;/h2&gt;
+
+&lt;p&gt;Користувачі ставлять різні вимоги до редактора коду залежно від своїх смаків і
+повсякденних задач. Цей попит екосистема Vim успішно задовольняє за допомогою
+надзвичайно широкого набору доступних плагінів, які розширюють базовий
+функціонал. Для пошуку під конкретні потреби є чудовий сайт
+&lt;a href=&quot;https://vimawesome.com/&quot;&gt;vimawesome.com&lt;/a&gt;, але так само, як і з конфігурацією
+&lt;code class=&quot;highlighter-rouge&quot;&gt;.vimrc&lt;/code&gt;, можна виділити базовий набір корисних плагінів.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/scrooloose/nerdtree&quot;&gt;NerdTree&lt;/a&gt;. Сайдбар для навігації по проекту, звичний для популярних редакторів.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/ctrlpvim/ctrlp.vim&quot;&gt;CtrlP&lt;/a&gt;. Fuzzy search aka “пухнастий пошук”, моментальний пошук файлів у проекті за їх назвою.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/vim-airline/vim-airline&quot;&gt;vim-airline&lt;/a&gt;. Легковісна панель статусу для зручної орієнтації в основному вікні.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/terryma/vim-multiple-cursors/&quot;&gt;vim-multiple-cursors&lt;/a&gt;.
+Мультикурсор для одночасного редагування тексту в кількох точках файлу.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/tpope/vim-surround&quot;&gt;vim-surround&lt;/a&gt;. Коли потрібно швидко змінити
+тип дужок навколо виразу.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Про те, як зручно підключити vim-плагіни і підтримувати їх оновленими до останньої
+версії, піде мова у наступному пості.&lt;/p&gt;
+
+&lt;aside class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;&lt;li id=&quot;fn1&quot;&gt;&lt;a href=&quot;https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/&quot;&gt;Stack Overflow: Helping One Million Developers Exit Vim.&lt;/a&gt;
+  &lt;a href=&quot;#ref1&quot; title=&quot;Повернутися до зноски 1 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+    &lt;li id=&quot;fn2&quot;&gt;Перший варіант поста включав лічильник літредакторів, які
+    померли намагаючись прочитати це речення. Автор відмовляється вибачатись.
+&lt;a href=&quot;#ref2&quot; title=&quot;Повернутися до зноски 2 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+
+&lt;li id=&quot;fn3&quot;&gt;Не буде несподіванкою той факт, що процес налаштування Vim відрізняється для UNIX і
+Windows. Оскільки я описую свій процес, наведені тут кроки підходять для Mac-юзерів
+і, скоріш за все, підійдуть для користувачів Linux. Тим не менш, попри відмінності в
+файлових системах, внутрішня конфігурація Vim практично не відрізняється.
+&lt;a href=&quot;#ref3&quot; title=&quot;Повернутися до зноски 3 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/aside&gt;
+</description>
+        <pubDate>Mon, 19 Mar 2018 08:00:00 +0200</pubDate>
+        <link>http://localhost:4000/workflow/2018/03/19/vim-for-hipsters.html</link>
+        <guid isPermaLink="true">http://localhost:4000/workflow/2018/03/19/vim-for-hipsters.html</guid>
+        
+        
+        <category>workflow</category>
+        
+      </item>
     
       <item>
         <title>text-decoration повертається</title>

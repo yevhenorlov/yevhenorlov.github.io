@@ -126,7 +126,7 @@ color dracula
    тип дужок навколо виразу.
 
 Про те, як зручно підключити vim-плагіни і підтримувати їх оновленими до останньої
-версії, піде мова у наступному пості.
+версії, піде мова у [наступному пості](/workflow/2018/03/20/evergreen-vim.html).
 
 <aside class="footnotes">
   <ol><li id="fn1"><a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">Stack Overflow: Helping One Million Developers Exit Vim.</a>
