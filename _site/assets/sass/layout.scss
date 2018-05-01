@@ -219,3 +219,27 @@
     margin-top: 50px;
   }
 }
+
+#pinkdot {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: $draculaPink;
+  position: absolute;
+  z-index: 999;
+  top: -100px;
+  left: -100px;
+  &:hover {
+    background: $draculaGreen;
+    animation: rotation 2s linear infinite;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateZ(0) scale(2)
+  }
+  to {
+    transform: rotateZ(359deg) scale(2)
+  }
+}

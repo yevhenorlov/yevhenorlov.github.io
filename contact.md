@@ -4,6 +4,9 @@ title: контакти
 permalink: /contact
 ---
 
+<script src="/assets/js/pinkdot.js"></script>
+<a href="https://yevhenorlov.bandcamp.com" id="pinkdot"></a>
+
 <ul class="contact-list">
   <li>twitter: <a href="http://twitter.com/yevhenorlov">@yevhenorlov</a></li>
   <li>github: <a href="http://github.com/yevhenorlov">/yevhenorlov</a></li>
