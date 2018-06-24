@@ -6,9 +6,108 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Mar 2018 09:05:36 +0200</pubDate>
-    <lastBuildDate>Tue, 20 Mar 2018 09:05:36 +0200</lastBuildDate>
+    <pubDate>Sun, 24 Jun 2018 21:44:28 +0300</pubDate>
+    <lastBuildDate>Sun, 24 Jun 2018 21:44:28 +0300</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Вічнозелений Vim: просте керування плагінами за допомогою git-субмодулів</title>
+        <description>&lt;p&gt;&lt;a href=&quot;/workflow/2018/03/19/vim-for-hipsters.html&quot;&gt;Минулого разу&lt;/a&gt; ми побіжно торкнулись теми Vim-плагінів, однак не поговорили про те, 
+як вони підключаються. В цьому пості я хотів би розглянути один з варіантів зручної організації
+плагінів, а також спосіб їх швидкого і безболісного оновлення до останньої
+версії. Для цього ми використаємо Pathogen, GitHub і функціонал git під назвою
+submodules.&lt;/p&gt;
+
+&lt;h2 id=&quot;pathogen&quot;&gt;Pathogen&lt;/h2&gt;
+
+&lt;p&gt;Існує кілька способів керування плагінами у Vim. &lt;a href=&quot;https://github.com/tpope/vim-pathogen&quot;&gt;Pathogen&lt;/a&gt;
+Тіма Поупа — один з найпопулярніших. Встановлюється він дуже просто:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; ~/.vim/autoload ~/.vim/bundle &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-LSso&lt;/span&gt; ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Після цього у &lt;code class=&quot;highlighter-rouge&quot;&gt;.vimrc&lt;/code&gt; слід вписати наступне:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;execute pathogen#infect()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Тепер Pathogen при запуску Vim автоматично підтягуватиме всі плагіни,
+репозиторії яких розміщені в &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.vim/bundle/&lt;/code&gt;. Тобто, щоб встановити,
+наприклад, плагін Prettier, потрібна одна команда в терміналі:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/prettier/vim-prettier ~/.vim/bundle/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Однак такий сетап залишає пару проблем:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Повторювати щоразу довгий процес конфігурації розгортаючи
+середовище на новій машині нікому не хочеться. &lt;code class=&quot;highlighter-rouge&quot;&gt;.vimrc&lt;/code&gt;, так само, як
+&lt;code class=&quot;highlighter-rouge&quot;&gt;.bash_profile&lt;/code&gt; і інші файли налаштувань, можна зберегти в репозиторій
+на GitHub і здійснювати контроль версій своїх конфігів через
+нього. Але Pathogen не зберігає списку плагінів, які підключає,
+тож спосіб, в який їх можна швидко за потреби встановити, не очевидний.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Якщо ми клонуємо 15 репозиторіїв в &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle/&lt;/code&gt;, це означає
+15 запитів &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull&lt;/code&gt; щоразу, як ми захочемо оновити всі плагіни до останньої
+версії. Звісно, ці 15 запитів можна об’єднати в один довгий і незручний shell-скрипт. 
+Але є кращий спосіб.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;git-субмодулі&quot;&gt;Git субмодулі&lt;/h2&gt;
+
+&lt;p&gt;Як відомо, git забороняє розміщувати репозиторій всередині репозиторія.
+Натомість є можливість послатись всередині одного на інший,
+оголосивши дочірній репозиторій субмодулем батьківського.&lt;/p&gt;
+
+&lt;p&gt;Цей функціонал ідеально підходить для нашої мети. Замість того, щоб клонувати
+плагіни в &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle/&lt;/code&gt;, оголосимо їх у якості субмодулів&lt;sup&gt;&lt;a href=&quot;#fn1&quot; id=&quot;ref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/.vim/bundle
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git submodule add https://github.com/prettier/vim-prettier
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Додавши в такий спосіб всі потрібні плагіни до репозиторія &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle&lt;/code&gt;, можемо
+запушити його на GitHub. Субмодулі відобразяться там як посилання на відповідні
+репозиторії, з яких їх було клоновано.&lt;/p&gt;
+
+&lt;p&gt;Тепер у випадку, коли нам потрібно швидко встановити набір плагінів для Vim,
+просто клонуємо цей репозиторій у відповідне місце.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/username/bundle ~/.vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Оновлювати дочірні репозиторії також дуже просто:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/.vim/bundle
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git submodule foreach git pull origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Субмодулі можуть включати в себе інші субмодулі, тому за бажання можна
+організувати всі конфігураційні файли в один мега-репозиторій, як я спробував
+це зробити &lt;a href=&quot;https://github.com/yevhenorlov/dotfiles&quot;&gt;тут&lt;/a&gt;. Справа смаку, спробуйте і вирішіть для себе.&lt;/p&gt;
+
+&lt;aside class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn1&quot;&gt;З метою ілюстрації цей метод дещо спрощений. Кращою ідеєю
+    буде розміщувати батьківський репозиторій на рівень вище, щоб охопити
+    залежності в інших піддиректоріях (autoload, colors тощо).&lt;a href=&quot;#ref1&quot; title=&quot;Повернутися до зноски 1 в тексті.&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/aside&gt;
+</description>
+        <pubDate>Tue, 20 Mar 2018 09:00:00 +0200</pubDate>
+        <link>http://localhost:4000/workflow/2018/03/20/evergreen-vim.html</link>
+        <guid isPermaLink="true">http://localhost:4000/workflow/2018/03/20/evergreen-vim.html</guid>
+        
+        
+        <category>workflow</category>
+        
+      </item>
     
       <item>
         <title>Vim для хіпстерів, або вічне сяйво вдалих інженерних рішень</title>
@@ -144,7 +243,7 @@ set backspace=2          &quot; зняти обмеження для backspace
 &lt;/ol&gt;
 
 &lt;p&gt;Про те, як зручно підключити vim-плагіни і підтримувати їх оновленими до останньої
-версії, піде мова у наступному пості.&lt;/p&gt;
+версії, піде мова у &lt;a href=&quot;/workflow/2018/03/20/evergreen-vim.html&quot;&gt;наступному пості&lt;/a&gt;.&lt;/p&gt;
 
 &lt;aside class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;&lt;li id=&quot;fn1&quot;&gt;&lt;a href=&quot;https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/&quot;&gt;Stack Overflow: Helping One Million Developers Exit Vim.&lt;/a&gt;
