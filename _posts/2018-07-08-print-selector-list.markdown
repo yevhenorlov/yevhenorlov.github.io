@@ -63,7 +63,7 @@ printSelectorList('.article-section')
 вказати необов'язковий другий атрибут і вивести аутпут в консоль.
 
 ```javascript
-/* printSelectorList(selector, printToConsole) */
+/* printSelectorList(selector, logToConsole) */
 
 printSelectorList('.article-section', true)
 ```
