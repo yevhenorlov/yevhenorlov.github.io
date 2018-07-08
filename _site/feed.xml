@@ -6,9 +6,76 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 Jun 2018 21:44:28 +0300</pubDate>
-    <lastBuildDate>Sun, 24 Jun 2018 21:44:28 +0300</lastBuildDate>
+    <pubDate>Sun, 08 Jul 2018 11:49:16 +0300</pubDate>
+    <lastBuildDate>Sun, 08 Jul 2018 11:49:16 +0300</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Як я перестав хвилюватись і полюбив outline</title>
+        <description>&lt;p&gt;Коротко напишу про, напевно, найпопулярнішу і, водночас, найприкрішу помилку верстальників — як наївних початківців, так і безвідповідальних професіоналів. Якщо ви вже здогадались, про що піде мова, стикались з цією проблемою і чесно намагались вирішити, перший розділ можна пропустити.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem&quot;&gt;The problem&lt;/h2&gt;
+
+&lt;p&gt;Стандартна ситуація: сторінку зверстано, всі відступи/шрифти строго по макету, навіть є адекватні ховери на інтерактивних елементах. Дизайнер, проджект менеджер і замовник задоволені всім, окрім одного: при кліку на інпут або кнопку навколо елемента з’являється некрасива рамка, яка геть не узгоджується з рештою дизайну.&lt;/p&gt;
+
+&lt;p&gt;Ставлять задачу: прибрати рамку. Тут абсолютна більшість верстальників-початківців, трохи погугливши, знаходить просте і елегантне рішення:&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:focus&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;outline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Рамка зникає, клієнт задоволений, таск закривається і фронтендер переходить до наступної задачі. Більше того, ці три рядки коду тепер слідують за верстальником з проекту в проект.&lt;/p&gt;
+
+&lt;p&gt;Єдине “але”: тепер сайтом абсолютно неможливо користуватись без мишки. Outline, який виділяв елемент у фокусі при навігації з клавіатури, тепер невидимий. Юзер може лише здогадуватись, в якому місці сторінки він знаходиться.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/gif/confused.gif&quot; alt=&quot;(Gif of a confused man blinking)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Цьому сценарію вже стільки років, що, здавалось би, пора вже перестати наступати на одні й ті самі граблі. В тих рідкісних випадках, де проблему доступності сайту все ж визнають, активний стан елемента намагаються показати в інший спосіб — наприклад, через зміну кольору чи прозорості елемента так само, як при наведенні на нього мишкою. Цей спосіб не завжди дієвий, бо напряму залежить від ефективності дизайну конкретного макету. Мені доводилось бачити ховери, які ледь змінюють значення параметра opacity — досить ефективно, коли юзер бачить елемент, над яким тримає курсор, і зовсім не ефективно у випадку навігації клавішею Tab. В таких випадках варто було б інвестувати в додатковий код, який займається специфічно станом &lt;code class=&quot;highlighter-rouge&quot;&gt;:focus&lt;/code&gt;. Скажу чесно — мені поки не доводилось бачити, щоб хтось цим займався.&lt;/p&gt;
+
+&lt;p&gt;Але є простіший варіант.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-solution&quot;&gt;The solution&lt;/h2&gt;
+
+&lt;p&gt;Вдалим компромісом було б зробити так, щоб відвідувачі сайту, які користуються мишкою, не бачили outline взагалі, але щоб power-юзери і люди з обмеженими фізичними можливостями бачили його при навігації з клавіатури. Такий підхід був би універсальним, оскільки не залежав би від імплементації фокус-станів на конкретному сайті.&lt;/p&gt;
+
+&lt;p&gt;Саме в такий спосіб працює бібліотека &lt;a href=&quot;https://www.npmjs.com/package/smart-outline&quot;&gt;smart-outline&lt;/a&gt;. Все, що потрібно — додати її до списку production-залежностей і ініціалізувати після завантаження сторінки.&lt;/p&gt;
+
+&lt;p&gt;На прикладі npm:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;smart-outline
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* index.js */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;smartOutline&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'smart-outline'&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;smartOutline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Якщо десь в файлах стилів залишився &lt;code class=&quot;highlighter-rouge&quot;&gt;:focus {outline:none;}&lt;/code&gt;, прибираємо.&lt;/p&gt;
+
+&lt;p&gt;Тепер все працює майже так, як треба. Лишається невеликий баг: якщо перший клік після завантаження сторінки попадає на інтерактивний елемент, рамка з’являється на долю секунди перед тим, як зникнути. Вирішується досить банально:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* index.js */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;smartOutline&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'smart-outline'&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;smartOutline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* імітуємо клік одразу після ініціалізації плагіна, щоб outline зник */&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'body'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Більше джерел на цю тему можна знайти &lt;a href=&quot;http://www.outlinenone.com/&quot;&gt;тут&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 25 Jun 2018 09:00:00 +0300</pubDate>
+        <link>http://localhost:4000/frontend,/a11y/2018/06/25/smart-outline.html</link>
+        <guid isPermaLink="true">http://localhost:4000/frontend,/a11y/2018/06/25/smart-outline.html</guid>
+        
+        
+        <category>frontend,</category>
+        
+        <category>a11y</category>
+        
+      </item>
     
       <item>
         <title>Вічнозелений Vim: просте керування плагінами за допомогою git-субмодулів</title>

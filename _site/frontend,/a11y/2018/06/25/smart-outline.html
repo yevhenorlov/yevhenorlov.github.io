@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#282a36" />
+  <!-- google analytics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-88752842-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono&amp;subset=cyrillic-ext" rel="stylesheet">
+
+  <title>Як я перестав хвилюватись і полюбив outline</title>
+
+  <meta name="author" content="Yevhen Orlov" />
+  <meta property="og:title" content="Як я перестав хвилюватись і полюбив outline">
+  <meta property="og:descripion" name="description" content="Коротко напишу про, напевно, найпопулярнішу і, водночас, найприкрішу помилку верстальників — як наївних початківців, так і безвідповідальних професіоналів. Я...">
+  <meta property="og:url" content="http://localhost:4000/frontend,/a11y/2018/06/25/smart-outline.html" />
+  <meta property="og:site_name" content="yevhenorlov.com" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta name="twitter:site" content="@yevhenorlov" />
+  <meta name="twitter:creator" content="@yevhenorlov">
+  <meta name="twitter:description" content="Коротко напишу про, напевно, найпопулярнішу і, водночас, найприкрішу помилку верстальників — як наївних початківців, так і безвідповідальних професіоналів. Я..." />
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta property="og:image" content="https://yevhenorlov.com/assets/images/og/og-frontend.png" />
+  <meta name="twitter:image" content="https://yevhenorlov.com/assets/images/og/og-frontend.png" />
+  
+
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/frontend,/a11y/2018/06/25/smart-outline.html">
+  <link rel="alternate" type="application/rss+xml" title="yevhenorlov.com" href="http://localhost:4000 /feed.xml
+    ">
+</head>
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <a class="site-title" title="home" href="/">/</a>
+
+    <nav class="site-nav">
+        <a class="page-link" title="archive" href="/archive">архів</a>
+        <a class="page-link" title="contact" href="/contact">контакти</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Як я перестав хвилюватись і полюбив outline</h1>
+    <p class="post-meta"><time datetime="2018-06-25T09:00:00+03:00" itemprop="datePublished">Jun 25, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Коротко напишу про, напевно, найпопулярнішу і, водночас, найприкрішу помилку верстальників — як наївних початківців, так і безвідповідальних професіоналів. Якщо ви вже здогадались, про що піде мова, стикались з цією проблемою і чесно намагались вирішити, перший розділ можна пропустити.</p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>Стандартна ситуація: сторінку зверстано, всі відступи/шрифти строго по макету, навіть є адекватні ховери на інтерактивних елементах. Дизайнер, проджект менеджер і замовник задоволені всім, окрім одного: при кліку на інпут або кнопку навколо елемента з’являється некрасива рамка, яка геть не узгоджується з рештою дизайну.</p>
+
+<p>Ставлять задачу: прибрати рамку. Тут абсолютна більшість верстальників-початківців, трохи погугливши, знаходить просте і елегантне рішення:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="nd">:focus</span> <span class="p">{</span>
+  <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Рамка зникає, клієнт задоволений, таск закривається і фронтендер переходить до наступної задачі. Більше того, ці три рядки коду тепер слідують за верстальником з проекту в проект.</p>
+
+<p>Єдине “але”: тепер сайтом абсолютно неможливо користуватись без мишки. Outline, який виділяв елемент у фокусі при навігації з клавіатури, тепер невидимий. Юзер може лише здогадуватись, в якому місці сторінки він знаходиться.</p>
+
+<p><img src="/assets/images/gif/confused.gif" alt="(Gif of a confused man blinking)" /></p>
+
+<p>Цьому сценарію вже стільки років, що, здавалось би, пора вже перестати наступати на одні й ті самі граблі. В тих рідкісних випадках, де проблему доступності сайту все ж визнають, активний стан елемента намагаються показати в інший спосіб — наприклад, через зміну кольору чи прозорості елемента так само, як при наведенні на нього мишкою. Цей спосіб не завжди дієвий, бо напряму залежить від ефективності дизайну конкретного макету. Мені доводилось бачити ховери, які ледь змінюють значення параметра opacity — досить ефективно, коли юзер бачить елемент, над яким тримає курсор, і зовсім не ефективно у випадку навігації клавішею Tab. В таких випадках варто було б інвестувати в додатковий код, який займається специфічно станом <code class="highlighter-rouge">:focus</code>. Скажу чесно — мені поки не доводилось бачити, щоб хтось цим займався.</p>
+
+<p>Але є простіший варіант.</p>
+
+<h2 id="the-solution">The solution</h2>
+
+<p>Вдалим компромісом було б зробити так, щоб відвідувачі сайту, які користуються мишкою, не бачили outline взагалі, але щоб power-юзери і люди з обмеженими фізичними можливостями бачили його при навігації з клавіатури. Такий підхід був би універсальним, оскільки не залежав би від імплементації фокус-станів на конкретному сайті.</p>
+
+<p>Саме в такий спосіб працює бібліотека <a href="https://www.npmjs.com/package/smart-outline">smart-outline</a>. Все, що потрібно — додати її до списку production-залежностей і ініціалізувати після завантаження сторінки.</p>
+
+<p>На прикладі npm:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>smart-outline
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* index.js */</span>
+<span class="k">import</span> <span class="nx">smartOutline</span> <span class="k">from</span> <span class="s1">'smart-outline'</span>
+
+<span class="nx">smartOutline</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Якщо десь в файлах стилів залишився <code class="highlighter-rouge">:focus {outline:none;}</code>, прибираємо.</p>
+
+<p>Тепер все працює майже так, як треба. Лишається невеликий баг: якщо перший клік після завантаження сторінки попадає на інтерактивний елемент, рамка з’являється на долю секунди перед тим, як зникнути. Вирішується досить банально:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* index.js */</span>
+<span class="k">import</span> <span class="nx">smartOutline</span> <span class="k">from</span> <span class="s1">'smart-outline'</span>
+
+<span class="nx">smartOutline</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
+<span class="cm">/* імітуємо клік одразу після ініціалізації плагіна, щоб outline зник */</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Більше джерел на цю тему можна знайти <a href="http://www.outlinenone.com/">тут</a>.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-content">
+      <span>&copy; 2018 Євген Орлов</span>
+      <a href="https://yevhenorlov.com/feed.xml">RSS</a>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>
