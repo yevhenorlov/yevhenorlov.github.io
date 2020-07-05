@@ -3,8 +3,11 @@ layout: works
 title: works
 permalink: /works
 ---
+
 ### electronic & electroacoustic music
 
+- **15.03.2019** [02NT8](https://yevhenorlov.bandcamp.com/album/02nt8)
+- **30-04.2018** live @ Noise Tent #8 (Kyiv, Plivka)
 - **11.11.2017** [01](http://yevhenorlov.bandcamp.com/album/01)
 - **10.09.2016** live @ Electroacoustic: Dimensions (Kyiv, IZOLYATSIA)
 - **05-09.2016** participant composer at [Kyiv Contemporary Music Days masterclass with Jaime Reis](http://www.kecmp.eu/masterclasses-results)
